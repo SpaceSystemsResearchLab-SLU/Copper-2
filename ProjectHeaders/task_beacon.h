@@ -1,7 +1,14 @@
 #ifndef __task_beacon
 #define __task_beacon
 
+typedef struct _eps_data {
+    char eps_hex[65];
+    int eps_hex_size;
+} EPS_DATA;
+
 extern void task_beacon(void);
+extern void init_eps_data(EPS_DATA*);
+extern void read_eps_values(EPS_DATA*);
 
 #define SCLK_HIGH         csk_io33_high()
 #define SCLK_LOW          csk_io33_low()

@@ -4,6 +4,7 @@
 #include "radio.h"
 #include "task_radio_talk.h"
 #include "debug_functions.h"
+#include "task_beacon.h"
 
 // Pumpkin headers
 #include "csk_uart.h"
@@ -16,7 +17,8 @@ static char temp[100];
 
 RADIO_CONFIGURATION_TYPE radio_configuration;
 
-extern void read_eps_values(char* beacon_header);
+extern void init_eps_data(EPS_DATA* eps_data);
+extern void read_eps_values(EPS_DATA* epsdata);
 
 // we ran into a lot of issues with endianness and memcopy/moving values from structs
 // to arrays which is why we're doing all this goofy, clunky, char array accessing.
@@ -178,7 +180,8 @@ void task_radio_talk(void) {
   static RADIO_TX_PACKET_HEADER header;
   static RADIO_TX_PACKET packet;
   static char* msgqpayload;
-  static char beacon_header[65];
+  static char beacon_header[65] = "Hello";
+  static EPS_DATA epsdata;
 
 
   // ATMEGA EPS SPI settings
@@ -192,7 +195,7 @@ void task_radio_talk(void) {
   while (1) {
     // wait to make sure task_radio_listen isn't receiving anything
     // OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
-    dprintf("task talk has the semaphore\r\n");
+    //dprintf("task talk has the semaphore\r\n");
 
     /*if (OSMsgQCount(RADIOMSGQP)) {
       msgqpayload = (char*)OSReadMsgQ(RADIOMSGQP);
@@ -201,13 +204,21 @@ void task_radio_talk(void) {
     
     // DEBUG: REMOVE: for beacon testing 
    // while (1) {
-      //read_eps_values(beacon_header);
-   
+      Nop();
+      Nop();
+      Nop();
+      Nop();
+      init_eps_data(&epsdata);
+     read_eps_values(&epsdata);
+    //  char tmp[10] = "hello!";
+    //  char tmp2[20];
+   //   sprintf(tmp2, "%s", tmp);
+      
       fill_out_radio_tx_packet(&packet,
           &header,
           TRANSMIT_DATA,
-          65,
-          beacon_header);
+          epsdata.eps_hex_size,
+          epsdata.eps_hex);
       send_packet_to_radio(&packet);
 
      // OS_Delay(250);

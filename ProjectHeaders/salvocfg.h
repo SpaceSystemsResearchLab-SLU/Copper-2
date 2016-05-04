@@ -1,6 +1,6 @@
 // Salvo configuration file
 
-#define OSCOMPILER                  OSMPLAB_C30
+//#define OSCOMPILER                  OSMPLAB_C30
 #define OSTARGET                    OSPIC24F
 #define OSUSE_LIBRARY               TRUE
 #define OSLIBRARY_CONFIG            OSA
