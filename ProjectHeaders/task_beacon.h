@@ -8,7 +8,7 @@ typedef struct _eps_data {
 
 extern void task_beacon(void);
 extern void init_eps_data(EPS_DATA*);
-extern void read_eps_values(EPS_DATA*);
+//extern void read_eps_values(char*);
 
 #define SCLK_HIGH         csk_io33_high()
 #define SCLK_LOW          csk_io33_low()

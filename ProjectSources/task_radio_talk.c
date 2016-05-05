@@ -17,8 +17,72 @@ static char temp[100];
 
 RADIO_CONFIGURATION_TYPE radio_configuration;
 
-extern void init_eps_data(EPS_DATA* eps_data);
-extern void read_eps_values(EPS_DATA* epsdata);
+
+void read_eps_values(char* inputarray) {
+  static unsigned char data;
+  static unsigned int ADCData[NUM_ADC_CHANNELS]={0};
+  static unsigned int count;
+  static int i;
+  static char* p_beacon_header;
+
+  // Context switching in salvo (ie. OS_Delay()) will wipeout the values of any input arguments
+  // as it is impossible to make them static.  So we store the value in a static var before we context switch
+  // to get around this.
+  p_beacon_header = inputarray;
+
+  CS1_LOW;
+  OS_Delay(20);
+
+  for(data=0;data<8;data++) { //ADC-Reads (10-Bits)
+    ADCData[data]=0;
+    for(count=0;count<10;count++) { //Bits
+      SCLK_HIGH;
+      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+      ADCData[data]|=(MISO<<count);
+      SCLK_LOW;
+      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+    }
+  }
+
+  CS1_HIGH;
+  OS_Delay(20);
+
+  CS2_LOW;
+  // Without this delay, ADC is read incorrectly
+  OS_Delay(20);
+
+  for(data=8;data<16;data++) { //ADC-Reads (10-Bits)
+    ADCData[data]=0;
+    for(count=0;count<10;count++) { //Bits
+      SCLK_HIGH;
+      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+      ADCData[data]|=(MISO<<count);
+      SCLK_LOW;
+      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+    }
+  }
+  CS2_HIGH;
+
+  Nop();
+  Nop();
+  Nop();
+  Nop();
+
+  sprintf(p_beacon_header, "%03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X", ADCData[0], ADCData[1], ADCData[2], ADCData[3], ADCData[4],
+      ADCData[5], ADCData[6], ADCData[7], ADCData[8], ADCData[9], ADCData[10], ADCData[11],
+      ADCData[12], ADCData[13], ADCData[14], ADCData[15]);
+
+  Nop();
+  Nop();
+  Nop();
+  Nop();
+  return;
+
+  // DEBUGGING
+  //dprintf("adc_hdr: %s\r\n", adc_hdr);
+} // END extern void read_eps_values()*/
+
+
 
 // we ran into a lot of issues with endianness and memcopy/moving values from structs
 // to arrays which is why we're doing all this goofy, clunky, char array accessing.
@@ -180,17 +244,8 @@ void task_radio_talk(void) {
   static RADIO_TX_PACKET_HEADER header;
   static RADIO_TX_PACKET packet;
   static char* msgqpayload;
-  static char beacon_header[65] = "Hello";
-  static EPS_DATA epsdata;
-
-
-  // ATMEGA EPS SPI settings
-  /*TRISE|=BIT9;
-  SCLK_LOW;
-  CS1_HIGH;
-  CS2_HIGH;
-   */
-  // END ATMEGA EPS SPI settings
+  static char beacon_header[65] = {1};
+  //static EPS_DATA epsdata;
 
   while (1) {
     // wait to make sure task_radio_listen isn't receiving anything
@@ -208,17 +263,22 @@ void task_radio_talk(void) {
       Nop();
       Nop();
       Nop();
-      init_eps_data(&epsdata);
-     read_eps_values(&epsdata);
-    //  char tmp[10] = "hello!";
-    //  char tmp2[20];
-   //   sprintf(tmp2, "%s", tmp);
-      
+      OS_Delay(10);
+      Nop();
+      Nop();
+      Nop();
+      Nop();
+     read_eps_values(beacon_header);
+     Nop();
+     Nop();
+     Nop();
+     Nop();
+
       fill_out_radio_tx_packet(&packet,
           &header,
           TRANSMIT_DATA,
-          epsdata.eps_hex_size,
-          epsdata.eps_hex);
+          65,
+          beacon_header);
       send_packet_to_radio(&packet);
 
      // OS_Delay(250);

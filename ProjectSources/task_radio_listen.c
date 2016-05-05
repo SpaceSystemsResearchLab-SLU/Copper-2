@@ -86,7 +86,7 @@ void task_radio_listen(void) {
           case INCOMING_TRANSCEIVER_CONFIG:  // transceiver config incoming, this will be in response to a 0x1005 command to the radio
             dprintf("Incoming transciever config\r\n");
             fill_out_radio_config(received_packet);
-            print_radio_config();
+            //print_radio_config();
             break;
           case SET_TRANSCEIVER_CONFIG_ACK:  // set transceiver config ack
             dprintf("set config ACK\r\n");
