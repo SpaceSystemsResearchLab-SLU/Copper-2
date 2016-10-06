@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectSources/init.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/salvoqins.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/salvoinit2.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/MCC30/salvohook_wdt.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/salvobinsem.c</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectSources/task_test.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/salvodelay.c</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectSources/main.c</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectHeaders/salvocfg.h</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectSources/task_radio_talk.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/salvosem.c</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectSources/testfile.c</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectHeaders/testfile.h</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectSources/task_radio_listen.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/MCC30/salvohook_interrupt.c</file>
+            <file>file:/C:/Users/CDH/Documents/Copper2v1-new_lib_build/ProjectHeaders/radio.h</file>
+            <file>file:/C:/Pumpkin/Library/PIC24/Src/pic24_uart1.c</file>
+            <file>file:/C:/Pumpkin/Salvo/Src/salvosched.c</file>
+            <file>file:/C:/Pumpkin/Library/PIC24/Src/pic24_uart2.c</file>
+        </group>
+    </open-files>
+</project-private>
