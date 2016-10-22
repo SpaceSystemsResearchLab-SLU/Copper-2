@@ -223,7 +223,7 @@ class fromCam:
 
 def main():
   camera = Quark()
-  camera.nop()
+  camera.nop() 
   while not camera.response:
     sleep(0.1)
     camera.nop()
@@ -249,18 +249,14 @@ def find_address():
   num_snaps = int('0x' + num_snaps[4:])     # Convert hex to int 
                                             # will work.
 
-  for i in range(1, num_snaps + 1):           
-    self._send('FFFE0013') 
-    size_location.append()
-            
-    #size_locationd(camera._sizeaddresssnapbynumber(i)) - is this needed/does command214 do more appropriate function? -Carter
-    #adress - stored above? referencing line 235
-    #GET_NUC_ADDRESS command(#214) in Flir IDD
+  for i in range(1, num_snaps+1):           # Compiles a list of addresses to delete
+    size_location.append(camera._sizeaddresssnapbynumber(i)) 
+                                            #GET_MEMORY_ADDRESS command(#214) in Flir IDD also appears to apply, not sure if it was used previously
 
 
-def snap_erase():
+def snap_erase():                           # Deletes the snap in given address
   for item in size_location:
-    self._send('ERASE_MEMORY_BLOCK(' + item + ')') 
+    self._send('0xD4(' + item + ')') 
   # ERASE_MEMORY_BLOCK command(#212) with flash 
   # block calculated from find_address() as argument
 
