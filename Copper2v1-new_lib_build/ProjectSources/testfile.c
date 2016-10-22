@@ -5,4 +5,6 @@
 
 void testfunction(void) {
   static int i = 0;
-}
+
+  return;
+  }
