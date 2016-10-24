@@ -224,7 +224,7 @@ class fromCam:
 def main():
   camera = Quark()
   camera.nop() 
-  while not camera.response:
+  while not camera.response:                 #stuck in infinite loop
     sleep(0.1)
     camera.nop()
 
