@@ -22,7 +22,7 @@ def tohexstr(intval):
   if (intval == 0):
     return '00'
   else:
-    data = format(intval, 'x')
+   data = format(intval, 'x')
     if len(data)%2 == 1:
       data = '0' + data
     return data
@@ -31,7 +31,6 @@ class Quark:
   def __init__(self):
     self.serial_connection = serial.Serial("/dev/ttyUSB0", 921600, timeout=0.5)
     self.serial_connection.flushInput()
-    self.response = 0
 
   def nop(self):
     self._send("6e0000000000", "")
@@ -43,11 +42,12 @@ class Quark:
 
   def _get_and_check_response(self):
     response = self.serial_connection.read(self.serial_connection.inWaiting())
-    if response:
+    if response: #Something wrong here: infinite no response
       self.response = fromCam(response)
       return True
     else:
       print "No response from cam."
+
   
   def simple_read(self):
     # need to sleep here, python is too fast for the camera
@@ -180,7 +180,7 @@ class fromCam:
       self._argument += response[i]
 
     #print "argument: " + str(self._argument) + "\nargument_length: " + str(self._argument_length)
-    print "response: " + str(binascii.b2a_hex(response))
+   # print "response: " + str(binascii.b2a_hex(response))
 
     self._crc2_msb = (8 + self._argument_length) + 1 # first crc byte is one byte past the end of the argument
     self._crc2_lsb = (8 + self._argument_length) + 2 # two bytes past end
