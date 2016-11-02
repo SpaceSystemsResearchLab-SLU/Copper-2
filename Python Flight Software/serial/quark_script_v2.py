@@ -157,7 +157,16 @@ class Quark:
       outfile.write(self.response._argument)
 
     outfile.close()
-      
+
+  def parse_numSnaps_Response(self):
+      self._send("630000d60004", "fffe0013")
+      if (_get_and_check_response):
+          currentNumSnaps = get_argument(self,4,7) # could be bytes 0-3, we'll find out when we test
+          currentNumSnaps = int(currentNumSnaps, 16)
+      return currentNumSnaps
+
+  def checkNumSnaps(self, max_count = self.get_max_quark_Snap_Count()):
+     return (self.parse_numSnaps_Response() <= max_count) 
 
 class fromCam:
   def __init__(self, response):
