@@ -168,7 +168,7 @@ class Quark:
           return int(response.get_argument(4,7), 16)
 
   
-  def checkNumSnaps(self, max_count = self.get_max_quark_Snap_Count()):
+  def check_numSnaps(self, max_count = self.get_max_quark_Snap_Count()):
      return (self.parse_numSnaps_Response() <= max_count) 
 
   # make sure the status message is okay
@@ -185,7 +185,7 @@ class Quark:
       return int(numImages)
     
   def get_images_in_directory(self):
-      int count
+      int count = 0
       files = os.listdir()
       for name in files
           if name.endswith(".bmp")
