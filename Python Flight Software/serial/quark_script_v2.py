@@ -178,11 +178,19 @@ class Quark:
       return True
 
   # get the number of images, stored in a flat-file
-  def get_number_of_Images(self):
+  def get_number_of_Images(self):_in
       f = open('numIm.txt','r')
       numImages = f.readline()
       f.close()
       return int(numImages)
+    
+  def get_images_in_directory(self):
+      int count
+      files = os.listdir()
+      for name in files
+          if name.endswith(".bmp")
+              count ++
+      return count           
 
   def get_max_quark_Snap_Count(self):
       f = open('maxSnapcount.txt','r')
@@ -195,6 +203,9 @@ class Quark:
       images = int(f.readline()) + 1
       f.write(images)
       f.close()
+      
+  def check_number_of_images(self):
+      return bool(get_number_of_Images() == get_images_in_directory())
 
 class fromCam:
   def __init__(self, response):
