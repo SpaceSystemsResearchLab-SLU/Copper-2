@@ -24,14 +24,13 @@ def tohexstr(intval):
   else:
     data = format(intval, 'x')
     if len(data)%2 == 1:
-      data = '0' + data
+    data = '0' + data
     return data
 
 class Quark:
   def __init__(self):
     self.serial_connection = serial.Serial("/dev/ttyUSB0", 921600, timeout=0.5)
     self.serial_connection.flushInput()
-    self.response = 0
 
   def nop(self):
     self._send("6e0000000000", "")
@@ -43,11 +42,12 @@ class Quark:
 
   def _get_and_check_response(self):
     response = self.serial_connection.read(self.serial_connection.inWaiting())
-    if response:
+    if response: #Something wrong here: infinite no response
       self.response = fromCam(response)
       return True
     else:
       print "No response from cam."
+
   
   def simple_read(self):
     # need to sleep here, python is too fast for the camera
@@ -157,7 +157,44 @@ class Quark:
       outfile.write(self.response._argument)
 
     outfile.close()
-      
+
+  # get the number of snaps stored on camera
+  def parse_numSnaps_Response(self):
+      self._send("630000d60004", "fffe0013")
+      if (_get_and_check_response):
+          # could be bytes 0-3, we'll find out when we test
+          #currentNumSnaps = int(response.get_argument(4,7), 16)
+          #return currentNumSnaps
+          return int(response.get_argument(4,7), 16)
+
+  
+  def checkNumSnaps(self, max_count = self.get_max_quark_Snap_Count()):
+     return (self.parse_numSnaps_Response() <= max_count) 
+
+  # make sure the status message is okay
+  def verify_image_valid(self, resp):
+      if resp._status != '00':
+          return False
+      return True
+
+  # get the number of images, stored in a flat-file
+  def get_number_of_Images(self):
+      f = open('numIm.txt','r')
+      numImages = f.readline()
+      f.close()
+      return int(numImages)
+
+  def get_max_quark_Snap_Count(self):
+      f = open('maxSnapcount.txt','r')
+      maxImages = f.readline()
+      f.close()
+      return int(maxImages)
+
+  def increment_number_of_Images(self):
+      f = open('numIm.txt','r+')
+      images = int(f.readline()) + 1
+      f.write(images)
+      f.close()
 
 class fromCam:
   def __init__(self, response):
@@ -180,7 +217,7 @@ class fromCam:
       self._argument += response[i]
 
     #print "argument: " + str(self._argument) + "\nargument_length: " + str(self._argument_length)
-    print "response: " + str(binascii.b2a_hex(response))
+   # print "response: " + str(binascii.b2a_hex(response))
 
     self._crc2_msb = (8 + self._argument_length) + 1 # first crc byte is one byte past the end of the argument
     self._crc2_lsb = (8 + self._argument_length) + 2 # two bytes past end
@@ -224,7 +261,7 @@ class fromCam:
 def main():
   camera = Quark()
   camera.nop() 
-  while not camera.response:
+  while not camera.response:                 #stuck in infinite loop
     sleep(0.1)
     camera.nop()
 
