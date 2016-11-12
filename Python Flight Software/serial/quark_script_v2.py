@@ -22,9 +22,9 @@ def tohexstr(intval):
   if (intval == 0):
     return '00'
   else:
-   data = format(intval, 'x')
+    data = format(intval, 'x')
     if len(data)%2 == 1:
-      data = '0' + data
+    data = '0' + data
     return data
 
 class Quark:
@@ -158,15 +158,43 @@ class Quark:
 
     outfile.close()
 
+  # get the number of snaps stored on camera
   def parse_numSnaps_Response(self):
       self._send("630000d60004", "fffe0013")
       if (_get_and_check_response):
-          currentNumSnaps = get_argument(self,4,7) # could be bytes 0-3, we'll find out when we test
-          currentNumSnaps = int(currentNumSnaps, 16)
-      return currentNumSnaps
+          # could be bytes 0-3, we'll find out when we test
+          #currentNumSnaps = int(response.get_argument(4,7), 16)
+          #return currentNumSnaps
+          return int(response.get_argument(4,7), 16)
 
+  
   def checkNumSnaps(self, max_count = self.get_max_quark_Snap_Count()):
      return (self.parse_numSnaps_Response() <= max_count) 
+
+  # make sure the status message is okay
+  def verify_image_valid(self, resp):
+      if resp._status != '00':
+          return False
+      return True
+
+  # get the number of images, stored in a flat-file
+  def get_number_of_Images(self):
+      f = open('numIm.txt','r')
+      numImages = f.readline()
+      f.close()
+      return int(numImages)
+
+  def get_max_quark_Snap_Count(self):
+      f = open('maxSnapcount.txt','r')
+      maxImages = f.readline()
+      f.close()
+      return int(maxImages)
+
+  def increment_number_of_Images(self):
+      f = open('numIm.txt','r+')
+      images = int(f.readline()) + 1
+      f.write(images)
+      f.close()
 
 class fromCam:
   def __init__(self, response):
