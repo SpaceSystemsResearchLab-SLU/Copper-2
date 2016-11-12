@@ -102,7 +102,6 @@ void init(void) {
   iPPSInput(IN_FN_PPS_U1RX,IN_PIN_PPS_RP30);        // uart1 (csk_uart0) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP16,OUT_FN_PPS_U1TX);     // uart1 (csk_uart0) tx pin setup
 
-  
   // Funny, these just so happen to be the pins that the HE radio uses...
   iPPSInput(IN_FN_PPS_U2RX,IN_PIN_PPS_RP10);        // uart2 (csk_uart1) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP17,OUT_FN_PPS_U2TX);     // uart2 (csk_uart1) tx pin setup

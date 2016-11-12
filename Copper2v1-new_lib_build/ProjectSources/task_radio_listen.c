@@ -39,7 +39,7 @@ void fill_out_radio_config(unsigned char* config_array) {
 }
 
 void task_radio_listen(void) {
-  static int recieved = 0;
+  static int received = 0;
   static int binsem;
   //static char message_to_send[MAX_OSMESSAGEARRAY_LEN];
   MSGQMESSAGE message_to_tasktalk;
@@ -48,19 +48,19 @@ void task_radio_listen(void) {
     // Wait to make sure task_radio_talk is not using radio
     OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
 
-    while (!recieved) {
+    while (!received) {
       dprintf("task listen waiting for something on radio\r\n");
       while(csk_uart1_count() > 0) {
         dprintf("task listen got something on radio\r\n");
         received_packet[i] = csk_uart1_getchar();
-        recieved = 1;
+        received = 1;
         i++;
       }
 
       // start parsing radio response (command type bytes for responses will
       // always begin with 0x20XX which is why we're only checking the last 
       // byte of the command type)
-      if (recieved) {
+      if (received) {
         switch(received_packet[3]) {
           case NO_OP_COMMAND_ACK:  // No-op ACK
             dprintf("no-op command ACK\r\n");
@@ -71,9 +71,9 @@ void task_radio_listen(void) {
           case TRANSMIT_DATA_ACK:  // Transmit ACK
             dprintf("transmit data ACK\r\n");
             break;
-          case INCOMING_RECEIVED_DATA:  // received data payload incoming
+          case INCOMING_received_DATA:  // received data payload incoming
             // parse the data
-            dprintf("Incoming recieved data:\r\n");
+            dprintf("Incoming received data:\r\n");
             dnprintf(i, received_packet);
             //memcpy(received_packet, message_to_send, i); THIS IS SIMPLE LOOPBACK FOR RADIO TESTING
             // more robust messaging implementation
@@ -133,7 +133,7 @@ void task_radio_listen(void) {
     }
     // signal task_radio_talk that we're done and then yield to scheduler
     OSSignalBinSem(BINSEM_RADIO_CLEAR);
-    recieved = 0;
+    received = 0;
     OS_Delay(50);
   }
 }
