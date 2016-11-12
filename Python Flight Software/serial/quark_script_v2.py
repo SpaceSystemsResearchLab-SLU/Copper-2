@@ -189,7 +189,7 @@ class Quark:
       files = os.listdir()
       for name in files
           if name.endswith(".bmp")
-              count ++
+              count += 1
       return count           
 
   def get_max_quark_Snap_Count(self):
