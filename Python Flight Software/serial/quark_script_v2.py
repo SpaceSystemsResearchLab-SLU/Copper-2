@@ -5,6 +5,7 @@ from time import sleep
 import crc16
 import string
 import sys
+import os, os.path
 
 def tohex(intval):
   if (intval == 0):
@@ -27,10 +28,33 @@ def tohexstr(intval):
     data = '0' + data
     return data
 
+def get_number_of_Images():
+    numfile = open('num_images.txt', 'r+')
+    img_num = int(numfile.read())
+    return img_num
+
+def get_images_in_directory():
+    for item in os.listdir('.'):
+        count = 0
+        if item.find('.bmp'):
+            count += 1
+    return count
+
+def check_number_of_images():
+    if get_number_of_Images() == get_images_in_directory():
+        return True
+    else:
+        return False
+
 class Quark:
   def __init__(self):
     self.serial_connection = serial.Serial("/dev/ttyUSB0", 921600, timeout=0.5)
-    self.serial_connection.flushInput()
+    self.serial_connection.flushInput()\
+
+  def increment_number_of_images():
+    img_num = get_number_of_images()
+    numwrite = open('num_images.txt','w')
+    numwrite.write(str(img_num))
 
   def nop(self):
     self._send("6e0000000000", "")
