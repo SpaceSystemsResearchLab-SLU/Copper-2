@@ -69,6 +69,7 @@ extern void print_radio_config() {
     dprintf("%02x", radio_config[i]);
   }
   dprintf("\r\n");
+  Nop();Nop();Nop();Nop();
 }
 
 unsigned int calc_fletcher_chksum(unsigned char * payload, int payload_size) {
@@ -136,6 +137,7 @@ void fill_out_radio_tx_packet(RADIO_TX_PACKET* packet,
 
   if (payload_size) {
     memcpy(&packet->payload, payload, payload_size);
+    // I think that packet_array only exists to service this checksum (MAS)
     memcpy((packet_array+8), payload, payload_size);
     chksum = calc_fletcher_chksum(packet_array, (8 + payload_size));
     int tempchksuma = chksum & 0xFF00;
@@ -148,7 +150,8 @@ void fill_out_radio_tx_packet(RADIO_TX_PACKET* packet,
 void send_packet_to_radio(RADIO_TX_PACKET* packet) {
   static int i;
   static char message[265];
-
+ Nop();Nop();Nop();Nop(); //debug
+ 
   // send header to radio
   csk_uart1_putchar((packet->header.sync_chars & 0xFF00) >> 8);
   csk_uart1_putchar(packet->header.sync_chars & 0xFF);
@@ -160,7 +163,7 @@ void send_packet_to_radio(RADIO_TX_PACKET* packet) {
   csk_uart1_putchar(packet->header.header_chksum_b);
 
   // if we have a packet, send that too (w/ packet checksum)
-  if (packet->header.payload_size) {
+  if (packet->header.command_type && packet->header.payload_size) {
     for (i; i < packet->header.payload_size; i++) {
       csk_uart1_putchar(packet->payload[i]);
     }
@@ -168,8 +171,21 @@ void send_packet_to_radio(RADIO_TX_PACKET* packet) {
 
     csk_uart1_putchar(packet->payload_chksum_a);
     csk_uart1_putchar(packet->payload_chksum_b);
-  }
+   }
 
+}
+
+extern void printnames() {
+  static RADIO_TX_PACKET_HEADER header;
+  static RADIO_TX_PACKET packet;
+  static char* payload = "Nick\nFred";
+
+  fill_out_radio_tx_packet(&packet,
+            &header,
+            TRANSMIT_DATA,
+            9,
+            payload);
+    send_packet_to_radio(&packet);
 }
 
 void task_radio_talk(void) {
@@ -198,7 +214,7 @@ void task_radio_talk(void) {
 
   while (1) {
     // wait to make sure task_radio_listen isn't receiving anything
-    // OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
+    //OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
     //dprintf("task talk has the semaphore\r\n");
 
     /*if (OSMsgQCount(RADIOMSGQP)) {
@@ -270,19 +286,36 @@ void task_radio_talk(void) {
     //OS_Delay(10);
 
   //  read_eps_values(beacon_header);
+    /* Commented out for debug: 20161114 -- DJU 
     fill_out_radio_tx_packet(&packet,
             &header,
             TRANSMIT_DATA,
             65,
             beacon_header);
     send_packet_to_radio(&packet);
-    
+    OS_Delay(250);
+    OS_Delay(250);
+    OS_Delay(250);
+    OS_Delay(250);
+    */
+
+  
+    fill_out_radio_tx_packet(&packet,
+            &header,
+            GET_TRANSCEIVER_CONFIG,
+            0,
+            0);
+    send_packet_to_radio(&packet);
+
     Nop();Nop();Nop();Nop();
 
-    OS_Delay(250);
-    OS_Delay(250);
-    OS_Delay(250);
-    OS_Delay(250);
+  
+    // debug conditional
+   // if (csk_uart1_count()) {
+   //   Nop();Nop();Nop();Nop();Nop();Nop();Nop();Nop();
+   // }
+
+    
   //} //end while(1) -- inner
 
 
@@ -292,7 +325,7 @@ void task_radio_talk(void) {
   //}
 
   // tell task_radio_listen that we're done transmitting
-  // OSSignalBinSem(BINSEM_RADIO_CLEAR);
- // OS_Delay(50);
+  //OSSignalBinSem(BINSEM_RADIO_CLEAR);
+  OS_Delay(50);
   } //end while(1) main
 }

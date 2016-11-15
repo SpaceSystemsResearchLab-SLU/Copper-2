@@ -14,6 +14,7 @@ static unsigned char received_packet[MAX_RADIO_PACKET_LENGTH];
 
 extern RADIO_CONFIGURATION_TYPE radio_configuration;
 
+extern void printnames();
 extern void print_radio_config();
 extern void write_msgqmessage_to_OStypeMsgP(MSGQMESSAGE* message_struct, OStypeMsgP message);
 
@@ -39,23 +40,33 @@ void fill_out_radio_config(unsigned char* config_array) {
 }
 
 void task_radio_listen(void) {
-  static int received = 0;
+  static unsigned int received;
   static int binsem;
   //static char message_to_send[MAX_OSMESSAGEARRAY_LEN];
   MSGQMESSAGE message_to_tasktalk;
 
+  //int i;
+  // flush uart1
+  //for (i=0; i <100; i++) { csk_uart1_putchar(NULL); }
+  received = 0; // init flag to false
   while (1) {
     // Wait to make sure task_radio_talk is not using radio
-    OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
+    //OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
 
-    while (!received) {
+    // wait until uart has something
+    while (!csk_uart1_count()) {
       dprintf("task listen waiting for something on radio\r\n");
-      while(csk_uart1_count() > 0) {
+      Nop();Nop();Nop();Nop(); //debug
+      while(!received && (csk_uart1_count() > 0) ) {
         dprintf("task listen got something on radio\r\n");
         received_packet[i] = csk_uart1_getchar();
-        received = 1;
         i++;
       }
+      // check packet header for 'He' to see if Helium is talking to us
+      if ((received_packet[0] == SYNC_A) && (received_packet[1] == SYNC_B)) { // 'He'
+          received = 1;
+      }
+      Nop();Nop();Nop();Nop(); //debug
 
       // start parsing radio response (command type bytes for responses will
       // always begin with 0x20XX which is why we're only checking the last 
@@ -75,10 +86,18 @@ void task_radio_listen(void) {
             // parse the data
             dprintf("Incoming received data:\r\n");
             dnprintf(i, received_packet);
+            if (received_packet[8] == 'N' && received_packet[8] == 'A' && received_packet[8] == 'M' && received_packet[8] == 'E' && received_packet[8] == 'S') {
+                printnames();
+            }
             //memcpy(received_packet, message_to_send, i); THIS IS SIMPLE LOOPBACK FOR RADIO TESTING
             // more robust messaging implementation
             /*message_to_tasktalk.msgtype = Radio_Transmission;
+             extern void printnames()
             message_to_tasktalk.message = received_packet;
+             * if (received_packet[4] == 'N' && received_packet[5] == 'A' && ...) {
+                OS_Delay(50);
+                printnames();
+             * }
             message_to_tasktalk.message_len = i;
             write_msgqmessage_to_OStypeMsgP(&message_to_tasktalk, message_to_send);
             OSSignalMsgQ(RADIOMSGQP, message_to_send);*/
@@ -125,15 +144,15 @@ void task_radio_listen(void) {
             // TODO: error handling
             dprintf("unknown command byte. dumping packet:\r\n");
             dnprintf(i, received_packet);
-        }
-      }
+        } // end switch case
+      } // end if (received)
       i = 0;
-
+      received = 0;
       OS_Delay(50);
-    }
+    } // end while (!csk_uart1_count())
     // signal task_radio_talk that we're done and then yield to scheduler
-    OSSignalBinSem(BINSEM_RADIO_CLEAR);
-    received = 0;
+    //OSSignalBinSem(BINSEM_RADIO_CLEAR);
+    //<--- I think you need to move this to line 149 (MAS)
     OS_Delay(50);
   }
 }

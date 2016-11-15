@@ -82,7 +82,10 @@ void init(void) {
   csk_io39_low();  // H2.9 == PI1_IO
   csk_io35_low();  // H2.13 == QUARK_IO
   csk_io34_low();  // H2.14 == BURN CIRCUIT (AKA: PI2_IO)
-
+  
+ 
+  
+  
   // Set up to run with primary oscillator.
   // See _CONFIG2 above. A configuration-word-centric setup of the
   //  oscillator(s) was chosen because of its relative simplicity.
