@@ -242,7 +242,7 @@ class fromCam:
       status_message = 'CAM_NOT_READY'
     elif self._status == '03':
       status_message = 'CAM_RANGE_ERROR'
-    elif self._status == '04':
+    elif self._status == '04':pyt
       status_message = 'CAM_CHECKSUM_ERROR'
     elif self._status == '05':
       status_message = 'CAM_UNDEFINED_PROCESS_ERROR'
@@ -267,6 +267,10 @@ class fromCam:
       end_index = self._argument_length
     return self._argument[start_index : end_index]
 
+  def send_image_to_PIC(self, int(image_num))
+    f = open("pi_img_" + str(image_num) + '.bmp', 'r')
+    f.close()
+    
   
 
 def main():
