@@ -30,31 +30,31 @@
       <logicalFolder name="f6"
                      displayName="Microchip PIC24F Peripheral Libraries"
                      projectFiles="true">
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/adc.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/comparator.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/crc.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/ctmu.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/dma.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/dpslp.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/ecrc.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/epmp.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/GenericTypeDefs.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/i2c.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/incap.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/mcpwm.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/outcompare.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_periph_features.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_plib.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/pmp.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/ports.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PPS.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PwrMgnt.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/Rtcc.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/spi.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/sram.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/timer.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/uart.h</itemPath>
-        <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/wdt.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/GenericTypeDefs.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_periph_features.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_plib.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PPS.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PwrMgnt.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/Rtcc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/adc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/comparator.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/crc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/ctmu.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/dma.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/dpslp.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/ecrc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/epmp.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/i2c.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/incap.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/mcpwm.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/outcompare.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/pmp.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/ports.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/spi.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/sram.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/timer.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/uart.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/wdt.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="PIC24 Libraries" projectFiles="true">
         <itemPath>../../../../../Pumpkin/Library/PIC24/Inc/pic24_uart.h</itemPath>
@@ -109,7 +109,7 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-      <itemPath>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/PIC24F/gld/p24FJ256GA110.gld</itemPath>
+      <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/PIC24F/gld/p24FJ256GA110.gld</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -164,17 +164,17 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>ProjectHeaders</Elem>
-    <Elem>ProjectSources</Elem>
-    <Elem>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/PIC24F/gld</Elem>
-    <Elem>../../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F</Elem>
-    <Elem>../../../../../Pumpkin/CubeSatKit/PIC24/inc</Elem>
-    <Elem>../../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN</Elem>
-    <Elem>../../../../../Pumpkin/Library/PIC24/Inc</Elem>
-    <Elem>../../../../../Pumpkin/Salvo/Inc</Elem>
-    <Elem>../../../../../Pumpkin/CubeSatKit/PIC24/src</Elem>
-    <Elem>../../../../../Pumpkin/Library/PIC24/Src</Elem>
-    <Elem>../../../../../Pumpkin/Salvo/Src</Elem>
+    <Elem>C:\work\CDH\Production_Projects\Copper-2\Copper2v1-new_lib_build\ProjectHeaders</Elem>
+    <Elem>C:\work\CDH\Production_Projects\Copper-2\Copper2v1-new_lib_build\ProjectSources</Elem>
+    <Elem>C:\Pumpkin\CubeSatKit\PIC24\inc</Elem>
+    <Elem>C:\Pumpkin\CubeSatKit\HCC-Embedded\EFFS-THIN</Elem>
+    <Elem>C:\Pumpkin\Library\PIC24\Inc</Elem>
+    <Elem>C:\Pumpkin\Salvo\Inc</Elem>
+    <Elem>C:\Pumpkin\CubeSatKit\PIC24\src</Elem>
+    <Elem>C:\Pumpkin\Library\PIC24\Src</Elem>
+    <Elem>C:\Pumpkin\Salvo\Src</Elem>
+    <Elem>C:\work\CDH\Microchip\xc16\v1.26\support\peripheral_24F</Elem>
+    <Elem>C:\work\CDH\Microchip\xc16\v1.26\support\PIC24F\gld</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

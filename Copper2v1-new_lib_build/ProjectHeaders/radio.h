@@ -15,12 +15,42 @@ extern "C" {
 #endif
 
 /*------- Radio defines -------*/
+#define HE_TELEM_LEN    16
+#define HE_CONFIG_LEN   34
 #define MAX_RADIO_PACKET_LENGTH     265
 // Radio header sync chars
-#define SYNC_A    0x48     // 'H'
-#define SYNC_B    0x65     // 'e'
+#define SYNC_A    0x48                  // 'H'
+#define SYNC_B    0x65                  // 'e'
 
-// CDI packet command type byte defines (commands to radio)
+/* The incoming callsign hex values are multiplied by 2
+ * per MAS to get valid results. e.g.- 'A' (0x41) will appear
+ * as 0x82 in the transmission. See: callsignCheck function
+ * in task_HeListen.c -- DJU
+*/
+#define CALL0	'C'  // 0x41 *2 = 0x82
+#define CALL1	'U'  // 0x52 *2 = 0xA4
+#define CALL2	'2'  // 0x47 *2 = 0x8E
+#define CALL3	0
+#define CALL4	0
+#define CALL5	0
+#define GROUND0	'S'  // 0x53 *2 = 0xA6
+#define GROUND1	'L'  // 0x4C *2 = 0x98
+#define GROUND2	'U'  // 0x55 *2 = 0xAA
+#define GROUND3	'G'  // 0x47 *2 = 0x8E
+#define GROUND4	'N'  // 0x4E *2 = 0x9C
+#define GROUND5	'D'  // 0x44 *2 = 0x88
+
+/*************** RADIO CHANNEL FREQUENCY ******************
+ * NOTE: HEX values are in sent in REVERSE order!!!
+ * 0x68360200 == 00 02 36 68 = 145000 KHz (Channel RX Freq)
+ * 0x2AAC0600 == 00 06 AC 2A = 437249 KHz (Channel TX Freq)
+ * ********************************************************/
+//#define ONE_FORTY_FIVE_ZERO_ZERO_ZERO_KHZ  0x68360200
+//#define FOUR_THIRTY_SEVEN_TWO_FOUR_EIGHT_KHZ 0x00AC0600
+#define ONE_FORTY_FIVE_ZERO_ZERO_ZERO_KHZ  0x00023668
+#define FOUR_THIRTY_SEVEN_TWO_FOUR_EIGHT_KHZ 0x0006AC00
+
+  // CDI packet command type byte defines (commands to radio)
 #define NO_OP_COMMAND 0x1001
 #define RESET_SYSTEM 0x1002
 #define TRANSMIT_DATA 0x1003
@@ -46,7 +76,7 @@ extern "C" {
 #define NO_OP_COMMAND_ACK 0x01
 #define RESET_SYSTEM_ACK 0x02
 #define TRANSMIT_DATA_ACK 0x03
-#define INCOMING_received_DATA 0x04
+#define INCOMING_RECEIVED_DATA 0x04
 #define INCOMING_TRANSCEIVER_CONFIG 0x05
 #define SET_TRANSCEIVER_CONFIG_ACK 0x06
 #define INCOMING_TELEMETRY_STRUCT 0x07

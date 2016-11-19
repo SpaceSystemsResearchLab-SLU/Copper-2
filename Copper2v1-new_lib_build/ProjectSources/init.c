@@ -82,10 +82,7 @@ void init(void) {
   csk_io39_low();  // H2.9 == PI1_IO
   csk_io35_low();  // H2.13 == QUARK_IO
   csk_io34_low();  // H2.14 == BURN CIRCUIT (AKA: PI2_IO)
-  
- 
-  
-  
+
   // Set up to run with primary oscillator.
   // See _CONFIG2 above. A configuration-word-centric setup of the
   //  oscillator(s) was chosen because of its relative simplicity.
@@ -118,14 +115,14 @@ void init(void) {
           
   // Init UARTs to 115200 baud 
   // UARTs won't transmit until interrupts are enabled ...
-  csk_uart0_open(UART_115200_N81_MAIN);
+  csk_uart0_open(UART_115200_N81_MAIN); // goes to Pis
   //csk_uart0_open(UART_9600_N81_MAIN);
   // set radio uart to 9600
   csk_uart1_open(UART_9600_N81_MAIN);
   csk_uart2_open(UART_115200_N81_MAIN);
-  dprintf(STR_CRLF STR_CRLF);
-  dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
-  dprintf(STR_VERSION "." STR_CRLF);
+ // dprintf(STR_CRLF STR_CRLF);
+ // dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
+ // dprintf(STR_VERSION "." STR_CRLF);
   
   // initialize the real time clock
   RtccInitClock();
