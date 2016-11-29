@@ -102,7 +102,6 @@ void init(void) {
   iPPSInput(IN_FN_PPS_U1RX,IN_PIN_PPS_RP30);        // uart1 (csk_uart0) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP16,OUT_FN_PPS_U1TX);     // uart1 (csk_uart0) tx pin setup
 
-  
   // Funny, these just so happen to be the pins that the HE radio uses...
   iPPSInput(IN_FN_PPS_U2RX,IN_PIN_PPS_RP10);        // uart2 (csk_uart1) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP17,OUT_FN_PPS_U2TX);     // uart2 (csk_uart1) tx pin setup
@@ -116,14 +115,14 @@ void init(void) {
           
   // Init UARTs to 115200 baud 
   // UARTs won't transmit until interrupts are enabled ...
-  csk_uart0_open(UART_115200_N81_MAIN);
+  csk_uart0_open(UART_115200_N81_MAIN); // goes to Pis
   //csk_uart0_open(UART_9600_N81_MAIN);
   // set radio uart to 9600
   csk_uart1_open(UART_9600_N81_MAIN);
   csk_uart2_open(UART_115200_N81_MAIN);
-  dprintf(STR_CRLF STR_CRLF);
-  dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
-  dprintf(STR_VERSION "." STR_CRLF);
+ // dprintf(STR_CRLF STR_CRLF);
+ // dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
+ // dprintf(STR_VERSION "." STR_CRLF);
   
   // initialize the real time clock
   RtccInitClock();

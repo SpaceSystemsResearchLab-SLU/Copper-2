@@ -4,6 +4,7 @@
 #include "csk_uart.h"
 #include "csk_hw.h"
 #include "salvo.h"
+#include "task_beacon.h"
 
 // Microchip headers
 #include "p24FJ256GA110.h"
@@ -12,13 +13,13 @@
 
 void task_test(void) {
 
-//static int received = 0;
-//static char temp[100];
-//static int i;
+static int received = 0;
+static char temp[100];
+static int i;
 rtccTimeDate init_rtcc_time;
 
-  while(1) {
-    Nop();Nop();Nop();Nop();Nop();
+//  while(1) {
+//    Nop();Nop();Nop();Nop();Nop();
 /**
     dprintf("mon: %02x\r\n", init_rtcc_time.f.mon);
     dprintf("mday: %02x\r\n", init_rtcc_time.f.mday);
@@ -28,11 +29,11 @@ rtccTimeDate init_rtcc_time;
     dprintf("sec: %02x\r\n", init_rtcc_time.f.sec);
     dprintf("wday: %02x\r\n", init_rtcc_time.f.wday);
  **/
-     Nop();Nop();Nop();Nop();Nop();
+ //    Nop();Nop();Nop();Nop();Nop();
      
-    OS_Delay(50);
-  } // end while(1)
-}
+//    OS_Delay(50);
+ // } // end while(1)
+//}
   //csk_io39_high();   // Turn Pi ON!!!
   /**
   while (!received) {
@@ -49,7 +50,7 @@ rtccTimeDate init_rtcc_time;
   }
 **/
   
-/*
+
   // ATMEGA EPS SPI settings
   TRISE|=BIT9;
   SCLK_LOW;
@@ -58,7 +59,7 @@ rtccTimeDate init_rtcc_time;
   // END ATMEGA EPS SPI settings
 
   while(1) {
-    i = 0;
+/*    i = 0;
     while(csk_uart0_count() > 0) {
       temp[i] = csk_uart0_getchar();
       i++;
@@ -125,10 +126,11 @@ rtccTimeDate init_rtcc_time;
       csk_io34_high();
       csk_io35_high();
       csk_io39_high();
-      OS_Delay(100);
+      OS_Delay(100);*/
       csk_io34_low();
       csk_io35_low();
       csk_io39_low();
 
     OS_Delay(100);
-  }*/
+  }
+}

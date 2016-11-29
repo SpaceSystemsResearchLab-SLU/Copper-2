@@ -71,6 +71,7 @@ class Quark:
       return True
     else:
       print "No response from cam."
+      return False
 
   
   def simple_read(self):
@@ -192,21 +193,29 @@ class Quark:
           return int(response.get_argument(4,7), 16)
 
   
-  def checkNumSnaps(self, max_count = self.get_max_quark_Snap_Count()):
+  def check_numSnaps(self, max_count = self.get_max_quark_Snap_Count()):
      return (self.parse_numSnaps_Response() <= max_count) 
 
   # make sure the status message is okay
   def verify_image_valid(self, resp):
-      if resp._status != '00':
+      if ( (resp._status != '00') || resp == '' ):
           return False
       return True
 
   # get the number of images, stored in a flat-file
-  def get_number_of_Images(self):
+  def get_number_of_Images(self):_in
       f = open('numIm.txt','r')
       numImages = f.readline()
       f.close()
       return int(numImages)
+    
+  def get_images_in_directory(self):
+      int count = 0
+      files = os.listdir()
+      for name in files
+          if name.endswith(".bmp")
+              count += 1
+      return count           
 
   def get_max_quark_Snap_Count(self):
       f = open('maxSnapcount.txt','r')
@@ -219,6 +228,9 @@ class Quark:
       images = int(f.readline()) + 1
       f.write(images)
       f.close()
+      
+  def check_number_of_images(self):
+      return bool(get_number_of_Images() == get_images_in_directory())
 
 class fromCam:
   def __init__(self, response):
@@ -255,7 +267,7 @@ class fromCam:
       status_message = 'CAM_NOT_READY'
     elif self._status == '03':
       status_message = 'CAM_RANGE_ERROR'
-    elif self._status == '04':
+    elif self._status == '04':pyt
       status_message = 'CAM_CHECKSUM_ERROR'
     elif self._status == '05':
       status_message = 'CAM_UNDEFINED_PROCESS_ERROR'
@@ -280,6 +292,10 @@ class fromCam:
       end_index = self._argument_length
     return self._argument[start_index : end_index]
 
+  def send_image_to_PIC(self, int(image_num))
+    f = open("pi_img_" + str(image_num) + '.bmp', 'r')
+    f.close()
+    
   
 
 def main():

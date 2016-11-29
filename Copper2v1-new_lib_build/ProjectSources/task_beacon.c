@@ -76,22 +76,22 @@ void task_beacon(void) {
   static char temp[100];
   static char temp2[101];
     while(1) {
-       while (!received) {
+      while (!received) {
       //dprintf("task listen waiting for something on radio\r\n");
-      i = 0;
-      while(csk_uart0_count() > 0) {
+        i = 0;
+        while(csk_uart0_count() > 0) {
           Nop();Nop();Nop();Nop();
-        //dprintf("task listen got something on radio\r\n");
-        temp[i] = csk_uart0_getchar();
-         // csk_uart0_putchar(csk_uart0_getchar());
-        received = 1;
-        i++;
-      }
-          temp[i+1] = '\0';
-          sprintf(temp2, temp);
-          csk_uart0_puts(temp2);
-          Nop();Nop();Nop();Nop();
-          OS_Delay(50);
+          //dprintf("task listen got something on radio\r\n");
+          temp[i] = csk_uart0_getchar();
+           // csk_uart0_putchar(csk_uart0_getchar());
+          received = 1;
+          i++;
+        }
+        temp[i+1] = '\0';
+        sprintf(temp2, temp);
+        csk_uart0_puts(temp2);
+        Nop();Nop();Nop();Nop();
+        OS_Delay(50);
       }
       received = 0;
       OS_Delay(50);

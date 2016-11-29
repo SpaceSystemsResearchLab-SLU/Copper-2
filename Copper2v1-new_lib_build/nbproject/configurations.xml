@@ -5,61 +5,61 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="CSK PIC24" projectFiles="true">
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_hw.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_io.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_led.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_mhx.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_power.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_rand.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_sd.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_uart.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_usb.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_wdt.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/inc/effs_thin_mmc_drv_spi1.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_hw.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_io.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_led.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_mhx.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_power.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_rand.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_sd.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_uart.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_usb.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/csk_wdt.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/inc/effs_thin_mmc_drv_spi1.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="EFFS-THIN" projectFiles="true">
         <logicalFolder name="f2" displayName="fat_sthin" projectFiles="true">
-          <itemPath>../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/fat_sthin/fat_sthin.h</itemPath>
+          <itemPath>../../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/fat_sthin/fat_sthin.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="fat_thin" projectFiles="true">
-          <itemPath>../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/fat_thin/fat_thin.h</itemPath>
+          <itemPath>../../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/fat_thin/fat_thin.h</itemPath>
         </logicalFolder>
-        <itemPath>../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/csk_effs_thin-1.h</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/thin_usr.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/csk_effs_thin-1.h</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/HCC-Embedded/EFFS-THIN/src/thin_usr.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f6"
                      displayName="Microchip PIC24F Peripheral Libraries"
                      projectFiles="true">
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/GenericTypeDefs.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_periph_features.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_plib.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PPS.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/PwrMgnt.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/Rtcc.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/adc.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/comparator.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/crc.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/ctmu.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/dma.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/dpslp.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/ecrc.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/epmp.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/i2c.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/incap.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/mcpwm.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/outcompare.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/pmp.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/ports.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/spi.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/sram.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/timer.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/uart.h</itemPath>
-        <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F/wdt.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/GenericTypeDefs.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_periph_features.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PIC24F_plib.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PPS.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/PwrMgnt.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/Rtcc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/adc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/comparator.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/crc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/ctmu.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/dma.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/dpslp.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/ecrc.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/epmp.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/i2c.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/incap.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/mcpwm.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/outcompare.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/pmp.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/ports.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/spi.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/sram.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/timer.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/uart.h</itemPath>
+        <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/peripheral_24F/wdt.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="PIC24 Libraries" projectFiles="true">
-        <itemPath>../../../../Pumpkin/Library/PIC24/Inc/pic24_uart.h</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Inc/pic24_uart_msg.h</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Inc/pic24_uart_msg_ts.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Inc/pic24_uart.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Inc/pic24_uart_msg.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Inc/pic24_uart_msg_ts.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="Project" projectFiles="true">
         <itemPath>ProjectHeaders/config.h</itemPath>
@@ -79,65 +79,65 @@
       </logicalFolder>
       <logicalFolder name="f4" displayName="Salvo" projectFiles="true">
         <logicalFolder name="f1" displayName="MCC30" projectFiles="true">
-          <itemPath>../../../../Pumpkin/Salvo/Inc/MCC30/salvoportmcc30.h</itemPath>
+          <itemPath>../../../../../Pumpkin/Salvo/Inc/MCC30/salvoportmcc30.h</itemPath>
         </logicalFolder>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvomem.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvo.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvoadc.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvocri.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvoctx.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvodef.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvofpt.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvolbo.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvolib.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvoloc.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvolvl.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvomac.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvomcg.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvompt.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvoocp.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvoprg.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvopsh.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvoscb.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvoscg.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvostr.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvotyp.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvover.h</itemPath>
-        <itemPath>../../../../Pumpkin/Salvo/Inc/salvowar.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvo.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvoadc.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvocri.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvoctx.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvodef.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvofpt.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvolbo.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvolib.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvoloc.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvolvl.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvomac.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvomcg.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvomem.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvompt.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvoocp.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvoprg.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvopsh.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvoscb.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvoscg.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvostr.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvotyp.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvover.h</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Inc/salvowar.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-      <itemPath>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/PIC24F/gld/p24FJ256GA110.gld</itemPath>
+      <itemPath>C:/work/CDH/Microchip/xc16/v1.26/support/PIC24F/gld/p24FJ256GA110.gld</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f3" displayName="CSK PIC24" projectFiles="true">
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_led.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_mhx.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_power.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_rand.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_sd.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_usb.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_wdt.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/effs_thin_mmc_drv_spi1.c</itemPath>
-        <itemPath>../../../../Pumpkin/CubeSatKit/PIC24/src/csk_io.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_io.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_led.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_mhx.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_power.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_rand.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_sd.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_usb.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/csk_wdt.c</itemPath>
+        <itemPath>../../../../../Pumpkin/CubeSatKit/PIC24/src/effs_thin_mmc_drv_spi1.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="PIC24" projectFiles="true">
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart1.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart1_msg.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart1_msg_ts.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart2.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart2_msg.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart2_msg_ts.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart3.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart3_msg.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart3_msg_ts.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart4.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart4_msg.c</itemPath>
-        <itemPath>../../../../Pumpkin/Library/PIC24/Src/pic24_uart4_msg_ts.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart1.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart1_msg.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart1_msg_ts.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart2.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart2_msg.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart2_msg_ts.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart3.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart3_msg.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart3_msg_ts.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart4.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart4_msg.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Library/PIC24/Src/pic24_uart4_msg_ts.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Project" projectFiles="true">
         <itemPath>ProjectSources/main.c</itemPath>
@@ -152,9 +152,9 @@
       </logicalFolder>
       <logicalFolder name="f1" displayName="Salvo" projectFiles="true">
         <logicalFolder name="f1" displayName="MCC30" projectFiles="true">
-          <itemPath>../../../../Pumpkin/Salvo/Src/MCC30/salvoportmcc30-lm.s</itemPath>
+          <itemPath>../../../../../Pumpkin/Salvo/Src/MCC30/salvoportmcc30-lm.s</itemPath>
         </logicalFolder>
-        <itemPath>../../../../Pumpkin/Salvo/Src/salvomem.c</itemPath>
+        <itemPath>../../../../../Pumpkin/Salvo/Src/salvomem.c</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -164,12 +164,17 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>ProjectHeaders</Elem>
-    <Elem>ProjectSources</Elem>
-    <Elem>../../../../Pumpkin/Salvo/Inc/MCC30</Elem>
-    <Elem>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/PIC24F/gld</Elem>
-    <Elem>../../../../Program Files (x86)/Microchip/xc16/v1.26/support/peripheral_24F</Elem>
-    <Elem>../../../../Pumpkin/Salvo/Src/MCC30</Elem>
+    <Elem>C:\work\CDH\Production_Projects\Copper-2\Copper2v1-new_lib_build\ProjectHeaders</Elem>
+    <Elem>C:\work\CDH\Production_Projects\Copper-2\Copper2v1-new_lib_build\ProjectSources</Elem>
+    <Elem>C:\Pumpkin\CubeSatKit\PIC24\inc</Elem>
+    <Elem>C:\Pumpkin\CubeSatKit\HCC-Embedded\EFFS-THIN</Elem>
+    <Elem>C:\Pumpkin\Library\PIC24\Inc</Elem>
+    <Elem>C:\Pumpkin\Salvo\Inc</Elem>
+    <Elem>C:\Pumpkin\CubeSatKit\PIC24\src</Elem>
+    <Elem>C:\Pumpkin\Library\PIC24\Src</Elem>
+    <Elem>C:\Pumpkin\Salvo\Src</Elem>
+    <Elem>C:\work\CDH\Microchip\xc16\v1.26\support\peripheral_24F</Elem>
+    <Elem>C:\work\CDH\Microchip\xc16\v1.26\support\PIC24F\gld</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -187,7 +192,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>../../../../Pumpkin/Salvo/Lib/MCC30-v3/libsalvolmcc30lit.a</linkerLibFileItem>
+            <linkerLibFileItem>../../../../../Pumpkin/Salvo/Lib/MCC30-v3/libsalvolmcc30lit.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -317,7 +322,7 @@
       </C30-LD>
       <C30Global>
         <property key="common-include-directories"
-                  value="ProjectHeaders;..\..\..\..\Pumpkin\CubeSatKit\PIC24\inc;..\..\..\..\Pumpkin\Library\PIC24\Inc;..\..\..\..\Pumpkin\Salvo\Inc;..\..\..\..\Pumpkin\Salvo\Inc\MCC30"/>
+                  value="ProjectHeaders;..\..\..\..\..\Pumpkin\CubeSatKit\PIC24\inc;..\..\..\..\..\Pumpkin\Library\PIC24\Inc;..\..\..\..\..\Pumpkin\Salvo\Inc;..\..\..\..\..\Pumpkin\Salvo\Inc\MCC30"/>
         <property key="dual-boot-partition" value="0"/>
         <property key="fast-math" value="false"/>
         <property key="generic-16-bit" value="false"/>
@@ -448,6 +453,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>../../../../../Pumpkin/Salvo/Lib/MCC30-v3/libsalvolmcc30lit.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>

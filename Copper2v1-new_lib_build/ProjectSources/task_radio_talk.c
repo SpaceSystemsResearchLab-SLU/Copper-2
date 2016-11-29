@@ -69,6 +69,7 @@ extern void print_radio_config() {
     dprintf("%02x", radio_config[i]);
   }
   dprintf("\r\n");
+  Nop();Nop();Nop();Nop();
 }
 
 unsigned int calc_fletcher_chksum(unsigned char * payload, int payload_size) {
@@ -136,19 +137,22 @@ void fill_out_radio_tx_packet(RADIO_TX_PACKET* packet,
 
   if (payload_size) {
     memcpy(&packet->payload, payload, payload_size);
+    // I think that packet_array only exists to service this checksum (MAS)
     memcpy((packet_array+8), payload, payload_size);
     chksum = calc_fletcher_chksum(packet_array, (8 + payload_size));
     int tempchksuma = chksum & 0xFF00;
     unsigned char temp = tempchksuma >> 8;
     packet->payload_chksum_a = (chksum & 0xFF00) >> 8;
     packet->payload_chksum_b = (chksum & 0xFF);
+Nop();Nop();Nop();Nop(); //debug
   }
 }
 
 void send_packet_to_radio(RADIO_TX_PACKET* packet) {
   static int i;
   static char message[265];
-
+ Nop();Nop();Nop();Nop(); //debug
+ 
   // send header to radio
   csk_uart1_putchar((packet->header.sync_chars & 0xFF00) >> 8);
   csk_uart1_putchar(packet->header.sync_chars & 0xFF);
@@ -168,8 +172,44 @@ void send_packet_to_radio(RADIO_TX_PACKET* packet) {
 
     csk_uart1_putchar(packet->payload_chksum_a);
     csk_uart1_putchar(packet->payload_chksum_b);
-  }
+   }
 
+  /*
+  // debug ...
+  csk_uart0_putchar((packet->header.sync_chars & 0xFF00) >> 8);
+  csk_uart0_putchar(packet->header.sync_chars & 0xFF);
+  csk_uart0_putchar((packet->header.command_type & 0xFF00) >> 8);
+  csk_uart0_putchar(packet->header.command_type & 0xFF);
+  csk_uart0_putchar((packet->header.payload_size & 0xFF00) >> 8);
+  csk_uart0_putchar(packet->header.payload_size & 0xFF);
+  csk_uart0_putchar(packet->header.header_chksum_a);
+  csk_uart0_putchar(packet->header.header_chksum_b);
+
+  // if we have a packet, send that too (w/ packet checksum)
+  if (packet->header.payload_size) {
+    for (i; i < packet->header.payload_size; i++) {
+      csk_uart0_putchar(packet->payload[i]);
+    }
+    i = 0;
+
+    csk_uart0_putchar(packet->payload_chksum_a);
+    csk_uart0_putchar(packet->payload_chksum_b);
+   }
+  // end debug
+   */
+}
+
+extern void printnames() {
+  static RADIO_TX_PACKET_HEADER header;
+  static RADIO_TX_PACKET packet;
+  static char* payload = "Nick\nFred";
+
+  fill_out_radio_tx_packet(&packet,
+            &header,
+            TRANSMIT_DATA,
+            9,
+            payload);
+    send_packet_to_radio(&packet);
 }
 
 void task_radio_talk(void) {
@@ -178,6 +218,7 @@ void task_radio_talk(void) {
   static int i;
   static RADIO_TX_PACKET_HEADER header;
   static RADIO_TX_PACKET packet;
+  static RADIO_CONFIGURATION_TYPE radio_config;
   static char* msgqpayload;
   static char beacon_header[65] = {1};
   //static EPS_DATA epsdata;
@@ -185,6 +226,54 @@ void task_radio_talk(void) {
   static unsigned int ADCData[NUM_ADC_CHANNELS]={0};
   static unsigned int count;
   static char temp2[101];
+  int j;
+
+  // begin radio config -- see radio.h for further explanations
+  radio_config.interface_baud_rate = HE_UART_BAUD_RATE_9600;
+  radio_config.tx_power_amp_level = 0x87;
+  radio_config.rx_rf_baud_rate = HE_RF_BAUD_RATE_9600;
+  radio_config.tx_rf_baud_rate = HE_RF_BAUD_RATE_9600;
+  radio_config.rx_modulation = HE_RF_MODULATION_GFSK;
+  radio_config.tx_modulation = HE_RF_MODULATION_GFSK;
+  radio_config.rx_freq = ONE_FORTY_FIVE_ZERO_ZERO_ZERO_KHZ;
+  radio_config.tx_freq = FOUR_THIRTY_SEVEN_TWO_FOUR_EIGHT_KHZ;
+  radio_config.source[0] = CALL0;
+  radio_config.source[1] = CALL1;
+  radio_config.source[2] = CALL2;
+  radio_config.source[3] = CALL3;
+  radio_config.source[4] = CALL4;
+  radio_config.source[5] = CALL5;
+  radio_config.destination[0] = GROUND0;
+  radio_config.destination[1] = GROUND1;
+  radio_config.destination[2] = GROUND2;
+  radio_config.destination[3] = GROUND3;
+  radio_config.destination[4] = GROUND4;
+  radio_config.destination[5] = GROUND5;
+  radio_config.tx_preamble = 0x0005;
+  radio_config.tx_postamble = 0x0000;
+  radio_config.function_config = 0x0000;
+  radio_config.function_config2 = 0x0000;
+ 
+  fill_out_radio_tx_packet(&packet,
+            &header,
+            SET_TRANSCEIVER_CONFIG,
+            HE_CONFIG_LEN,
+            &radio_config);
+   send_packet_to_radio(&packet);
+   
+// debug ...
+/*
+   fill_out_radio_tx_packet(&packet,
+            &header,
+            GET_TRANSCEIVER_CONFIG,
+            0,
+            0);
+    send_packet_to_radio(&packet);
+ */
+// ... end debug
+//dprintf("%02X", &header);
+// end radio config
+Nop();Nop();Nop();Nop(); //debug
 
    // ATMEGA EPS SPI settings
   TRISE|=BIT9;
@@ -197,8 +286,10 @@ void task_radio_talk(void) {
   //csk_io39_high();  // H2.9 == PI1_IO
 
   while (1) {
+    OS_Delay(250); // this allows time for radio config above to settle
+    
     // wait to make sure task_radio_listen isn't receiving anything
-    // OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
+    //OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
     //dprintf("task talk has the semaphore\r\n");
 
     /*if (OSMsgQCount(RADIOMSGQP)) {
@@ -225,7 +316,6 @@ void task_radio_talk(void) {
   //received = 0;
 **/
       
-
   CS1_LOW;
   // Calling an OS_Delay here is ok as this function is inline and we will still be in the
   // stack frame of the task function.
@@ -270,19 +360,45 @@ void task_radio_talk(void) {
     //OS_Delay(10);
 
   //  read_eps_values(beacon_header);
+    /* Commented out for debug: 20161114 -- DJU */
     fill_out_radio_tx_packet(&packet,
             &header,
             TRANSMIT_DATA,
             65,
             beacon_header);
     send_packet_to_radio(&packet);
-    
-    Nop();Nop();Nop();Nop();
+    OS_Delay(250);
+    OS_Delay(250);
+    OS_Delay(250);
+   // OS_Delay(250);
+   
+// debug ...
+/*
+   fill_out_radio_tx_packet(&packet,
+            &header,
+            GET_TRANSCEIVER_CONFIG,
+            0,
+            0);
+    send_packet_to_radio(&packet);
+*/
+ 
+/*
+    for (j=0; j<8;j++){
+      dprintf("%02X", &header);
+    }
+    dprintf("\r\n");
+    for (j=0; j<MAX_RADIO_PACKET_LENGTH;j++){
+      dprintf("%02X", &packet);
+    }
+*/
+Nop();Nop();Nop();Nop(); //debug
 
-    OS_Delay(250);
-    OS_Delay(250);
-    OS_Delay(250);
-    OS_Delay(250);
+    // debug conditional
+   // if (csk_uart1_count()) {
+   //   Nop();Nop();Nop();Nop();Nop();Nop();Nop();Nop();
+   // }
+
+    
   //} //end while(1) -- inner
 
 
@@ -292,7 +408,7 @@ void task_radio_talk(void) {
   //}
 
   // tell task_radio_listen that we're done transmitting
-  // OSSignalBinSem(BINSEM_RADIO_CLEAR);
- // OS_Delay(50);
+  //OSSignalBinSem(BINSEM_RADIO_CLEAR);
+    OS_Delay(20);
   } //end while(1) main
 }
