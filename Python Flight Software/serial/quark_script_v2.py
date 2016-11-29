@@ -47,6 +47,7 @@ class Quark:
       return True
     else:
       print "No response from cam."
+      return False
 
   
   def simple_read(self):
@@ -173,7 +174,7 @@ class Quark:
 
   # make sure the status message is okay
   def verify_image_valid(self, resp):
-      if resp._status != '00':
+      if ( (resp._status != '00') || resp == '' ):
           return False
       return True
 
