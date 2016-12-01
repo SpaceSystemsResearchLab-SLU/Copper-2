@@ -7,7 +7,7 @@ def main():
 
   if len(sys.argv) != 2:
       print "Specify baud on command line!! ex: 921600 or 115200"
-    return
+      return
 
   #gpio = serial.Serial("/dev/ttyAMA0", int(sys.argv[1]))
   gpio = serial.Serial("/dev/ttyUSB2", int(sys.argv[1]))
