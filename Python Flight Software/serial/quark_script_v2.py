@@ -25,8 +25,8 @@ def tohexstr(intval):
   else:
     data = format(intval, 'x')
     if len(data)%2 == 1:
-    data = '0' + data
-    return data
+        data = '0' + data
+        return data
 
 # These 3 functions are now accounted for inside the Quark class.
 
@@ -50,6 +50,7 @@ def tohexstr(intval):
 
 class Quark:
   def __init__(self):
+    self.response = '' 
     self.serial_connection = serial.Serial("/dev/ttyUSB0", 921600, timeout=0.5)
     self.serial_connection.flushInput()\
 
@@ -195,35 +196,35 @@ class Quark:
           return int(response.get_argument(4,7), 16)
 
   
-  def check_numSnaps(self, max_count = self.get_max_quark_Snap_Count()):
-     return (self.parse_numSnaps_Response() <= max_count) 
+  def check_numSnaps(self):
+     return (self.parse_numSnaps_Response() <= self.get_max_quark_Snap_Count()) 
 
   # make sure the status message is okay
   def verify_image_valid(self, resp):
-      if ( (resp._status != '00') || resp == '' ):
+      if ( (resp._status != '00') or resp == '' ):
           return False
       return True
 
   # get the number of images, stored in a flat-file
-  def get_number_of_Images(self):_in
-      f = open('num_images.txt','r')
-      numImages = f.readline()
-      f.close()
-      return int(numImages)
+  def get_number_of_Images(self):
+    f = open('num_images.txt','r')
+    numImages = f.readline()
+    f.close()
+    return int(numImages)
     
   def get_images_in_directory(self):
-      int count = 0
-      files = os.listdir('.')
-      for name in files
-          if name.endswith(".bmp")
-              count += 1
-      return count           
+    count = 0
+    files = os.listdir('.')
+    for name in files:
+        if name.endswith(".bmp"):
+            count += 1
+    return count           
 
   def get_max_quark_Snap_Count(self):
-      f = open('maxSnapCount.txt','r')
-      maxImages = f.readline()
-      f.close()
-      return int(maxImages)
+    f = open('maxSnapCount.txt','r')
+    maxImages = f.readline()
+    f.close()
+    return int(maxImages)
 
   def increment_number_of_Images(self):
     f = open('num_images.txt','r+')
@@ -234,7 +235,11 @@ class Quark:
     f.close()
       
   def check_number_of_images(self):
-      return bool(get_number_of_Images() == get_images_in_directory())
+    return bool(get_number_of_Images() == get_images_in_directory())
+
+  def compare_snaps_max(self):
+      if self.get_images_in_directory() == self.get_max_quark_Snap_Count():
+          self.snap_erase()
 
 class fromCam:
   def __init__(self, response):
@@ -271,7 +276,7 @@ class fromCam:
       status_message = 'CAM_NOT_READY'
     elif self._status == '03':
       status_message = 'CAM_RANGE_ERROR'
-    elif self._status == '04':pyt
+    elif self._status == '04':
       status_message = 'CAM_CHECKSUM_ERROR'
     elif self._status == '05':
       status_message = 'CAM_UNDEFINED_PROCESS_ERROR'
@@ -296,11 +301,15 @@ class fromCam:
       end_index = self._argument_length
     return self._argument[start_index : end_index]
 
-  def send_image_to_PIC(self, int(image_num))
+  def send_image_to_PIC(self, image_num):
     f = open("pi_img_" + str(image_num) + '.bmp', 'r')
+    gpio = serial.Serial("/dev/ttyUSB2", 115200)  
+    gpio.write(f)
     f.close()
     
-  
+ # def send_image_to_PIC_thread(self, image_num): 
+ #    send_image_thread = Threading.thread(target=send_image_to_PIC(image_num))
+ #    send_image_thread.start()
 
 def main():
   camera = Quark()
