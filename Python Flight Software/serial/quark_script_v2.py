@@ -349,4 +349,3 @@ def snap_erase():                           # Deletes the snap in given address
   # ERASE_MEMORY_BLOCK command(#212) with flash 
   # block calculated from find_address() as argument
 
-
