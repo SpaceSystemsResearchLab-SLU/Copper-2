@@ -234,7 +234,16 @@ class Quark:
     f.close()
       
   def check_number_of_images(self):
-      return bool(get_number_of_Images() == get_images_in_directory())
+    return bool(get_number_of_Images() == get_images_in_directory())
+  
+  # Checks whether the number of snaps in quark less than max, erases some if not
+  def compare_snaps_max(self): # Will need to run in main prior to take picture
+    if self.get_images_in_directory() == self.get_max_quark_Snap_Count():
+      self.snap_erase() # Erase function still very much work in progress, calling once but will probably do more in final version
+    
+      
+    
+    
 
 class fromCam:
   def __init__(self, response):
