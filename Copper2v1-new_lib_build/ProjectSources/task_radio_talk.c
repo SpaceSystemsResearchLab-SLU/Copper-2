@@ -212,9 +212,7 @@ extern void printnames() {
     send_packet_to_radio(&packet);
 }
 
-void task_radio_talk(void) {
- 
-  
+void task_radio_talk(void) { 
   static int i;
   static RADIO_TX_PACKET_HEADER header;
   static RADIO_TX_PACKET packet;
@@ -251,7 +249,7 @@ void task_radio_talk(void) {
   radio_config.destination[5] = GROUND5;
   radio_config.tx_preamble = 0x0005;
   radio_config.tx_postamble = 0x0000;
-  radio_config.function_config = 0x0000;
+  radio_config.function_config = 0x0000; // 0x0000 = default
   radio_config.function_config2 = 0x0000;
  
   fill_out_radio_tx_packet(&packet,
@@ -261,20 +259,6 @@ void task_radio_talk(void) {
             &radio_config);
    send_packet_to_radio(&packet);
    
-// debug ...
-/*
-   fill_out_radio_tx_packet(&packet,
-            &header,
-            GET_TRANSCEIVER_CONFIG,
-            0,
-            0);
-    send_packet_to_radio(&packet);
- */
-// ... end debug
-//dprintf("%02X", &header);
-// end radio config
-Nop();Nop();Nop();Nop(); //debug
-
    // ATMEGA EPS SPI settings
   TRISE|=BIT9;
   SCLK_LOW;
@@ -295,26 +279,6 @@ Nop();Nop();Nop();Nop(); //debug
     /*if (OSMsgQCount(RADIOMSGQP)) {
       msgqpayload = (char*)OSReadMsgQ(RADIOMSGQP);
       }*/
-  
-/**
-  //while (!received) {
-      //dprintf("task listen waiting for something on radio\r\n");
-      i = 0;
-      while(csk_uart0_count() > 0) {
-          Nop();Nop();Nop();Nop();
-        //dprintf("task listen got something on radio\r\n");
-        temp[i] = csk_uart0_getchar();
-         // csk_uart0_putchar(csk_uart0_getchar());
-       // received = 1;
-        i++;
-      }
-      temp[i+1] = '\0';
-      sprintf(temp2, temp);
-      csk_uart0_puts(temp2);
-      Nop();Nop();Nop();Nop();
- // }
-  //received = 0;
-**/
       
   CS1_LOW;
   // Calling an OS_Delay here is ok as this function is inline and we will still be in the
@@ -350,62 +314,22 @@ Nop();Nop();Nop();Nop(); //debug
     }
   }
   CS2_HIGH;
-
+  Nop();Nop();Nop();Nop();Nop(); //debug
   sprintf(beacon_header, "%03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X", ADCData[0], ADCData[1], ADCData[2], ADCData[3], ADCData[4],
       ADCData[5], ADCData[6], ADCData[7], ADCData[8], ADCData[9], ADCData[10], ADCData[11],
       ADCData[12], ADCData[13], ADCData[14], ADCData[15]);
 
-    // DEBUG: REMOVE: for beacon testing 
-    //while (1) {
-    //OS_Delay(10);
-
-  //  read_eps_values(beacon_header);
-    /* Commented out for debug: 20161114 -- DJU */
+   // read_eps_values(beacon_header);
     fill_out_radio_tx_packet(&packet,
             &header,
             TRANSMIT_DATA,
             65,
             beacon_header);
     send_packet_to_radio(&packet);
-    OS_Delay(250);
-    OS_Delay(250);
-    OS_Delay(250);
    // OS_Delay(250);
-   
-// debug ...
-/*
-   fill_out_radio_tx_packet(&packet,
-            &header,
-            GET_TRANSCEIVER_CONFIG,
-            0,
-            0);
-    send_packet_to_radio(&packet);
-*/
- 
-/*
-    for (j=0; j<8;j++){
-      dprintf("%02X", &header);
-    }
-    dprintf("\r\n");
-    for (j=0; j<MAX_RADIO_PACKET_LENGTH;j++){
-      dprintf("%02X", &packet);
-    }
-*/
-Nop();Nop();Nop();Nop(); //debug
-
-    // debug conditional
-   // if (csk_uart1_count()) {
-   //   Nop();Nop();Nop();Nop();Nop();Nop();Nop();Nop();
-   // }
-
-    
-  //} //end while(1) -- inner
-
-
-  //while(1) {
-  //send_packet_to_radio(&packet);
-  //OS_Delay(250);
-  //}
+  //  OS_Delay(250);
+   // OS_Delay(250);
+   // OS_Delay(250);
 
   // tell task_radio_listen that we're done transmitting
   //OSSignalBinSem(BINSEM_RADIO_CLEAR);

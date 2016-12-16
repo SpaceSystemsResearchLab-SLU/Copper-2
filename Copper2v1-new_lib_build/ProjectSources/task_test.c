@@ -14,123 +14,45 @@
 void task_test(void) {
 
 static int received = 0;
-static char temp[100];
-static int i;
+//static char tx_test[] = {"The quick brown fox jumps over the lazy dog!\r\n"};
+static char rx_test[256];
+static char TO_PI_HDR[] = "$$$";
+static char cmd[]="PITAKEIMG";
+static char tmp[100];
+static int i=0;
 rtccTimeDate init_rtcc_time;
 
-//  while(1) {
-//    Nop();Nop();Nop();Nop();Nop();
-/**
-    dprintf("mon: %02x\r\n", init_rtcc_time.f.mon);
-    dprintf("mday: %02x\r\n", init_rtcc_time.f.mday);
-    dprintf("year: %02x\r\n", init_rtcc_time.f.year);
-    dprintf("hour: %02x\r\n", init_rtcc_time.f.hour);
-    dprintf("min: %02x\r\n", init_rtcc_time.f.min);
-    dprintf("sec: %02x\r\n", init_rtcc_time.f.sec);
-    dprintf("wday: %02x\r\n", init_rtcc_time.f.wday);
- **/
- //    Nop();Nop();Nop();Nop();Nop();
-     
-//    OS_Delay(50);
- // } // end while(1)
-//}
-  //csk_io39_high();   // Turn Pi ON!!!
-  /**
-  while (!received) {
-      //dprintf("task listen waiting for something on radio\r\n");
-      i = 0;
-      while(csk_uart0_count() > 0) {
+  while(1) {
+    while(csk_uart2_count() > 0) {
+         // Nop();Nop();Nop();Nop();
         //dprintf("task listen got something on radio\r\n");
-        temp[i] = csk_uart0_getchar();
-        received = 1;
+        //csk_uart2_putchar(csk_uart2_getchar());
+         rx_test[i] = csk_uart2_getchar();
+         //csk_uart2_putchar(tmp);
+         //csk_uart0_putchar(tmp);
+         // csk_uart0_putchar(rx_test[i]);
+       // received = 1;
         i++;
       }
-      temp[i+1] = '\0';
-      OS_Delay(50);
-  }
-**/
-  
-
-  // ATMEGA EPS SPI settings
-  TRISE|=BIT9;
-  SCLK_LOW;
-  CS1_HIGH;
-  CS2_HIGH;
-  // END ATMEGA EPS SPI settings
-
-  while(1) {
-/*    i = 0;
-    while(csk_uart0_count() > 0) {
-      temp[i] = csk_uart0_getchar();
-      i++;
-    }
-    i = 0;
-
-    Nop();
-    Nop();
-    Nop();
-    Nop();
-    if (!strcmp(temp, "PON\n")) {
-        csk_io34_high();
-        dprintf("IO.34 high\r\n");
-    } else if (!strcmp(temp, "POFF\n")) {
-        csk_io34_low();
-        dprintf("IO.34 low\r\n");
-    }
-    temp[0] = '\0';
     
-      static unsigned char data;
-      static unsigned int ADCData[NUM_ADC_CHANNELS]={0};
-      static unsigned int count;
-      static char adc_hdr[65];
-
-      CS1_LOW;
-        OS_Delay(20);
-
-        for(data=0;data<8;data++) { //ADC-Reads (10-Bits)
-                ADCData[data]=0;
-                for(count=0;count<10;count++) { //Bits
-                        SCLK_HIGH;
-                        for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-                        ADCData[data]|=(MISO<<count);
-                        SCLK_LOW;
-                        for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-                }
-        }
-
-        CS1_HIGH;
-        OS_Delay(20);
-
-        CS2_LOW;
-        // Without this delay, ADC is read incorrectly
-        OS_Delay(20);
-        for(data=8;data<16;data++) { //ADC-Reads (10-Bits)
-                ADCData[data]=0;
-                for(count=0;count<10;count++) { //Bits
-                        SCLK_HIGH;
-                        for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-                        ADCData[data]|=(MISO<<count);
-                        SCLK_LOW;
-                        for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-                }
-        }
-
-                sprintf(adc_hdr, "%03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X", ADCData[0], ADCData[1], ADCData[2], ADCData[3], ADCData[4],
-                  ADCData[5], ADCData[6], ADCData[7], ADCData[8], ADCData[9], ADCData[10], ADCData[11],
-                  ADCData[12], ADCData[13], ADCData[14], ADCData[15]);
-
-				CS2_HIGH;
-
-                                dprintf("adc_hdr: %s\r\n", adc_hdr);
-
-      csk_io34_high();
-      csk_io35_high();
-      csk_io39_high();
-      OS_Delay(100);*/
-      csk_io34_low();
-      csk_io35_low();
-      csk_io39_low();
-
+    i=0;
+    //temp[i+1] = '\0';
+      //sprintf(temp2, temp);
+    //while(i<100000) { csk_uart2_putchar('U'); i++;}
+    //sprintf(tmp, "$$$9PITAKEIMG");
+    sprintf(tmp, "%s%d%s", TO_PI_HDR, strlen(cmd), cmd);
+    csk_uart2_puts(tmp);
+    csk_uart0_puts(tmp);
+    Nop();Nop();Nop();Nop();Nop(); //debug
+    /* for testing...
+    if (received == 1) {
+       Nop();Nop();Nop();Nop();
+      csk_uart2_puts(rx_test);
+      csk_uart0_puts(rx_test);
+      received = 0;
+    }
+     * ...end test */
+      // csk_uart0_puts(temp2);
     OS_Delay(100);
   }
 }
