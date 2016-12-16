@@ -5,6 +5,7 @@ from time import sleep
 import crc16
 import string
 import sys
+import os, os.path
 
 def tohex(intval):
   if (intval == 0):
@@ -24,13 +25,39 @@ def tohexstr(intval):
   else:
     data = format(intval, 'x')
     if len(data)%2 == 1:
-    data = '0' + data
-    return data
+        data = '0' + data
+        return data
+
+# These 3 functions are now accounted for inside the Quark class.
+
+#def get_number_of_Images():
+#    numfile = open('num_images.txt', 'r+')
+#    img_num = int(numfile.read())
+#    return img_num
+
+#def get_images_in_directory():
+#    for item in os.listdir('.'):
+#        count = 0
+#        if item.find('.bmp'):
+#            count += 1
+#    return count
+
+#def check_number_of_images():
+#    if get_number_of_Images() == get_images_in_directory():
+#        return True
+#    else:
+#        return False
 
 class Quark:
   def __init__(self):
+    self.response = '' 
     self.serial_connection = serial.Serial("/dev/ttyUSB0", 921600, timeout=0.5)
-    self.serial_connection.flushInput()
+    self.serial_connection.flushInput()\
+
+  def increment_number_of_images():
+    img_num = get_number_of_images()
+    numwrite = open('num_images.txt','w')
+    numwrite.write(str(img_num))
 
   def nop(self):
     self._send("6e0000000000", "")
@@ -41,12 +68,14 @@ class Quark:
     self._get_and_check_response()
 
   def _get_and_check_response(self):
+    sleep(0.01) 
     response = self.serial_connection.read(self.serial_connection.inWaiting())
-    if response: #Something wrong here: infinite no response
+    if response:
       self.response = fromCam(response)
       return True
     else:
       print "No response from cam."
+      return False
 
   
   def simple_read(self):
@@ -160,53 +189,84 @@ class Quark:
 
   # get the number of snaps stored on camera
   def parse_numSnaps_Response(self):
-      self._send("630000d60004", "fffe0013")
+      self._send("6e0000d60004", "fffe0013")
       if (_get_and_check_response):
-          # could be bytes 0-3, we'll find out when we test
           #currentNumSnaps = int(response.get_argument(4,7), 16)
           #return currentNumSnaps
           return int(response.get_argument(4,7), 16)
 
   
-  def check_numSnaps(self, max_count = self.get_max_quark_Snap_Count()):
-     return (self.parse_numSnaps_Response() <= max_count) 
+  def check_numSnaps(self):
+     return bool(self.parse_numSnaps_Response() <= self.get_max_quark_Snap_Count()) 
 
   # make sure the status message is okay
   def verify_image_valid(self, resp):
-      if resp._status != '00':
+      if ( (resp._status != '00') or resp == '' ):
           return False
       return True
 
   # get the number of images, stored in a flat-file
-  def get_number_of_Images(self):_in
-      f = open('numIm.txt','r')
-      numImages = f.readline()
-      f.close()
-      return int(numImages)
+  def get_number_of_Images(self):
+    f = open('num_images.txt','r')
+    numImages = f.readline()
+    f.close()
+    return int(numImages)
     
   def get_images_in_directory(self):
-      int count = 0
-      files = os.listdir()
-      for name in files
-          if name.endswith(".bmp")
-              count += 1
-      return count           
+    count = 0
+    files = os.listdir('.')
+    for name in files:
+        if name.endswith(".bmp"):
+            count += 1
+    return count           
 
   def get_max_quark_Snap_Count(self):
-      f = open('maxSnapcount.txt','r')
-      maxImages = f.readline()
-      f.close()
-      return int(maxImages)
+    f = open('maxSnapCount.txt','r')
+    maxImages = f.readline()
+    f.close()
+    return int(maxImages)
 
   def increment_number_of_Images(self):
-      f = open('numIm.txt','r+')
-      images = int(f.readline()) + 1
-      f.write(images)
-      f.close()
+    f = open('num_images.txt','r+')
+    images = int(f.readline()) + 1
+    f.seek(0)
+    f.truncate() # Clears the file so we can update the number
+    f.write(str(images))
+    f.close()
       
   def check_number_of_images(self):
-      return bool(get_number_of_Images() == get_images_in_directory())
+    return bool(self.get_number_of_Images() == self.get_images_in_directory())
 
+  # PROTOTYPING CODE FOR ERASING PREVIOUS SNAPSHOTS
+  def find_address(self):
+    self.size_location = []
+    num_snaps = self.parse_numSnaps_Response()    
+    for i in range(1, num_snaps+1):           # Compiles a list of addresses to delete
+      self.size_location.append(camera._sizeaddresssnapbynumber(i)) 
+                                            #GET_MEMORY_ADDRESS command(#214) in Flir IDD also appears to apply, not sure if it was used previously
+
+  def snap_erase(self):                           # Deletes the snap in given address
+    for item in self.size_location:
+      self._send('0xD4(' + item + ')') 
+    self.mem_status()
+    # ERASE_MEMORY_BLOCK command(#212) with flash 
+    # block calculated from find_address() as argument
+  
+  # Returns the status of memory-altering commands
+  def mem_status(self):
+    self._send('0xC4')
+    self._get_and_chack_response()
+    if self.response == '0xFFFF':
+      print('erase error')
+    elif self.response == '0xFFFE':
+      print('write error')
+        
+  # Checks whether the number of snaps in quark less than max, erases some if not
+  def compare_snaps_max(self): # Will need to run in main prior to take picture
+    if self.get_images_in_directory() == self.get_max_quark_Snap_Count():
+      self.snap_erase()# Erase function still very much work in progress, calling once but will probably do more in final version
+    
+      
 class fromCam:
   def __init__(self, response):
     # break each part of the camera response into parts outlined in quark software idd
@@ -242,7 +302,7 @@ class fromCam:
       status_message = 'CAM_NOT_READY'
     elif self._status == '03':
       status_message = 'CAM_RANGE_ERROR'
-    elif self._status == '04':pyt
+    elif self._status == '04':
       status_message = 'CAM_CHECKSUM_ERROR'
     elif self._status == '05':
       status_message = 'CAM_UNDEFINED_PROCESS_ERROR'
@@ -267,11 +327,15 @@ class fromCam:
       end_index = self._argument_length
     return self._argument[start_index : end_index]
 
-  def send_image_to_PIC(self, int(image_num))
+  def send_image_to_PIC(self, image_num):
     f = open("pi_img_" + str(image_num) + '.bmp', 'r')
+    gpio = serial.Serial("/dev/ttyUSB2", 115200)  
+    gpio.write(f)
     f.close()
     
-  
+ # def send_image_to_PIC_thread(self, image_num): 
+ #    send_image_thread = Threading.thread(target=send_image_to_PIC(image_num))
+ #    send_image_thread.start()
 
 def main():
   camera = Quark()
@@ -291,48 +355,6 @@ def main():
   print "response.get_argument(): " + str(binascii.b2a_hex(camera.response.get_argument()) )
 
 main()
-
-# PROTOTYPING CODE FOR ERASING PREVIOUS SNAPSHOTS
-def find_address():
-  size_location = []
-
-  self._send('D6FFFE0013', '')              # Prompt Camera for num. snapshots
-  raw_data = self.simple_read()             # Read response from camera (HEX)
-  num_snaps = int('0x' + num_snaps[4:])     # Convert hex to int 
-                                            # will work.
-
-  for i in range(1, num_snaps+1):           # Compiles a list of addresses to delete
-    size_location.append(camera._sizeaddresssnapbynumber(i)) 
-                                            #GET_MEMORY_ADDRESS command(#214) in Flir IDD also appears to apply, not sure if it was used previously
-
-
-def snap_erase():                           # Deletes the snap in given address
-  for item in size_location:
-    self._send('0xD4(' + item + ')') 
-  # ERASE_MEMORY_BLOCK command(#212) with flash 
-  # block calculated from find_address() as argument
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
