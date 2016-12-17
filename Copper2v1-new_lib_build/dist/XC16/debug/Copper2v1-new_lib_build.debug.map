@@ -54,11 +54,11 @@ Command:
   build/XC16/debug/_ext/1246406289/salvoportmcc30-lm.o \
   build/XC16/debug/_ext/55259478/salvomem.o \
   ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a \
-  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00001c10.00 \
-  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00001c10.01 \
-  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00001c10.02 \
-  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00001c10.03 \
-  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00001c10.04 \
+  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00000350.00 \
+  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00000350.01 \
+  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00000350.02 \
+  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00000350.03 \
+  -TC:\\Users\\CDH\\AppData\\Local\\Temp\\tmp00000350.04 \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
   --defsym=__DEBUG=1 \
@@ -188,12 +188,16 @@ c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(memcpy.XXo)
                               build/XC16/debug/ProjectSources/messagequeues.o (memcpy)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf.XXo)
                               build/XC16/debug/ProjectSources/task_beacon.o (sprintf)
+c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf_cdnopsuxX.XXo)
+                              build/XC16/debug/ProjectSources/task_test.o (_sprintf_cdnopsuxX)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strtok.XXo)
                               build/XC16/debug/ProjectSources/init.o (strtok)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopuxX.XXo)
                               c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf_cdnopuxX.XXo) (__Printf_cdnopuxX)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo)
                               c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(vsprintf.XXo) (_Printf)
+c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopsuxX.XXo)
+                              c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf_cdnopsuxX.XXo) (__Printf_cdnopsuxX)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strspn.XXo)
                               c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strtok.XXo) (strspn)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strcspn.XXo)
@@ -208,6 +212,8 @@ c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputtxt.XXo)
                               c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopuxX.XXo) (_Puttxt)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld.XXo)
                               c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo) (_Putfld)
+c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld_cdnopsuxX.XXo)
+                              c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopsuxX.XXo) (__Putfld_cdnopsuxX)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xlitob.XXo)
                               c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld_cdnopuxX.XXo) (_Litob)
 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldtob.XXo)
@@ -280,13 +286,13 @@ Program Memory  [Origin = 0x200, Length = 0x2a9f8]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200              0x214c          0x31f2  (12786)
-.const                      0x234c               0x326           0x4b9  (1209)
-.text                       0x2672              0x1e6e          0x2da5  (11685)
-.dinit                      0x44e0               0x14a           0x1ef  (495)
-.text                       0x462a               0x99a           0xe67  (3687)
+.text                        0x200              0x2192          0x325b  (12891)
+.const                      0x2392               0x32e           0x4c5  (1221)
+.text                       0x26c0              0x1e5c          0x2d8a  (11658)
+.dinit                      0x451c               0x15a           0x207  (519)
+.text                       0x4676               0x9d0           0xeb8  (3768)
 
-                 Total program memory used (bytes):         0x74a6  (29862) 11%
+                 Total program memory used (bytes):         0x7569  (30057) 11%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0xfc]
@@ -312,16 +318,16 @@ reserve_data_0x820           0x820                 0x2             0x2  (2)
 reserve_data_0x822           0x822                 0x2             0x2  (2)
 reserve_data_0x824           0x824                 0x2             0x2  (2)
 reserve_data_0x826           0x826                0x2a            0x2a  (42)
-.bss                         0x850                   0           0xc38  (3128)
-.data                       0x1488                   0            0x7a  (122)
-.bss                        0x1502                   0            0xcc  (204)
-.data                       0x15ce                   0            0x9a  (154)
-.bss                        0x1668                   0             0x4  (4)
-.data                       0x166c                   0             0x6  (6)
-.bss                        0x1672                   0             0x4  (4)
-.data                       0x1676                   0             0x2  (2)
+.bss                         0x850                   0           0xf4a  (3914)
+.data                       0x179a                   0            0x7a  (122)
+.bss                        0x1814                   0            0x64  (100)
+.data                       0x1878                   0            0xa8  (168)
+.bss                        0x1920                   0             0x4  (4)
+.data                       0x1924                   0             0x6  (6)
+.bss                        0x192a                   0             0x4  (4)
+.data                       0x192e                   0             0x2  (2)
 
-                 Total data memory used (bytes):          0xe78  (3704) 22%
+                 Total data memory used (bytes):         0x1130  (4400) 26%
 
 
 Dynamic Memory Usage
@@ -329,772 +335,778 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1678                              0x3188  (12680)
+stack                       0x1930                              0x2ed0  (11984)
 
-                 Maximum dynamic memory (bytes):         0x3188  (12680)
+                 Maximum dynamic memory (bytes):         0x2ed0  (11984)
 
 
 External Symbols in Data Memory (by address):
 
                     0x08b4                  _radio_configuration
-                    0x0f48                  _rx2Count
-                    0x0f4a                  _rx2InP
-                    0x0f4c                  _rx2OutP
-                    0x0f4e                  _rx2Buff
-                    0x0fce                  _tx2Count
-                    0x0fd0                  _tx2InP
-                    0x0fd2                  _tx2OutP
-                    0x0fd4                  _tx2Buff
-                    0x1054                  _OScTcbP
-                    0x1056                  _OStcbArea
-                    0x110c                  _OSeligQP
-                    0x110e                  _OSecbArea
-                    0x112c                  _OSsigQinP
-                    0x112e                  _OSsigQoutP
-                    0x1130                  _OSefcbArea
-                    0x1136                  _OSmqcbArea
-                    0x1140                  _OSdelayQP
-                    0x1142                  _OStimerTicks
-                    0x1146                  _OSlostTicks
-                    0x1148                  _OSframeP
-                    0x12e4                  _rx1Count
-                    0x12e6                  _rx1InP
-                    0x12e8                  _rx1OutP
-                    0x12ea                  _rx1Buff
-                    0x132a                  _tx1Count
-                    0x132c                  _tx1InP
-                    0x132e                  _tx1OutP
-                    0x1330                  _tx1Buff
-                    0x1370                  _rx3Count
-                    0x1372                  _rx3InP
-                    0x1374                  _rx3OutP
-                    0x1376                  _rx3Buff
-                    0x13b6                  _tx3Count
-                    0x13b8                  _tx3InP
-                    0x13ba                  _tx3OutP
-                    0x13bc                  _tx3Buff
-                    0x13fc                  _rx4Count
-                    0x13fe                  _rx4InP
-                    0x1400                  _rx4OutP
-                    0x1402                  _rx4Buff
-                    0x1442                  _tx4Count
-                    0x1444                  _tx4InP
-                    0x1446                  _tx4OutP
-                    0x1448                  _tx4Buff
-                    0x1668                  _baudrate
-                    0x1670                  _seed
-                    0x1672                  _csk_status
+                    0x0dd2                  _rx3Count
+                    0x0dd4                  _rx3InP
+                    0x0dd6                  _rx3OutP
+                    0x0dd8                  _rx3Buff
+                    0x0ed8                  _tx3Count
+                    0x0eda                  _tx3InP
+                    0x0edc                  _tx3OutP
+                    0x0ede                  _tx3Buff
+                    0x12bc                  _OScTcbP
+                    0x12be                  _OStcbArea
+                    0x139e                  _OSeligQP
+                    0x13a0                  _OSecbArea
+                    0x13be                  _OSsigQinP
+                    0x13c0                  _OSsigQoutP
+                    0x13c2                  _OSefcbArea
+                    0x13c8                  _OSmqcbArea
+                    0x13d2                  _OSdelayQP
+                    0x13d4                  _OStimerTicks
+                    0x13d8                  _OSlostTicks
+                    0x13da                  _OSframeP
+                    0x13de                  _rx2Count
+                    0x13e0                  _rx2InP
+                    0x13e2                  _rx2OutP
+                    0x13e4                  _rx2Buff
+                    0x1464                  _tx2Count
+                    0x1466                  _tx2InP
+                    0x1468                  _tx2OutP
+                    0x146a                  _tx2Buff
+                    0x1682                  _rx1Count
+                    0x1684                  _rx1InP
+                    0x1686                  _rx1OutP
+                    0x1688                  _rx1Buff
+                    0x16c8                  _tx1Count
+                    0x16ca                  _tx1InP
+                    0x16cc                  _tx1OutP
+                    0x16ce                  _tx1Buff
+                    0x170e                  _rx4Count
+                    0x1710                  _rx4InP
+                    0x1712                  _rx4OutP
+                    0x1714                  _rx4Buff
+                    0x1754                  _tx4Count
+                    0x1756                  _tx4InP
+                    0x1758                  _tx4OutP
+                    0x175a                  _tx4Buff
+                    0x1920                  _baudrate
+                    0x1928                  _seed
+                    0x192a                  _csk_status
 
 External Symbols in Data Memory (by name):
 
-                    0x1054                  _OScTcbP
-                    0x1140                  _OSdelayQP
-                    0x110e                  _OSecbArea
-                    0x1130                  _OSefcbArea
-                    0x110c                  _OSeligQP
-                    0x1148                  _OSframeP
-                    0x1146                  _OSlostTicks
-                    0x1136                  _OSmqcbArea
-                    0x112c                  _OSsigQinP
-                    0x112e                  _OSsigQoutP
-                    0x1056                  _OStcbArea
-                    0x1142                  _OStimerTicks
-                    0x1668                  _baudrate
-                    0x1672                  _csk_status
+                    0x12bc                  _OScTcbP
+                    0x13d2                  _OSdelayQP
+                    0x13a0                  _OSecbArea
+                    0x13c2                  _OSefcbArea
+                    0x139e                  _OSeligQP
+                    0x13da                  _OSframeP
+                    0x13d8                  _OSlostTicks
+                    0x13c8                  _OSmqcbArea
+                    0x13be                  _OSsigQinP
+                    0x13c0                  _OSsigQoutP
+                    0x12be                  _OStcbArea
+                    0x13d4                  _OStimerTicks
+                    0x1920                  _baudrate
+                    0x192a                  _csk_status
                     0x08b4                  _radio_configuration
-                    0x12ea                  _rx1Buff
-                    0x12e4                  _rx1Count
-                    0x12e6                  _rx1InP
-                    0x12e8                  _rx1OutP
-                    0x0f4e                  _rx2Buff
-                    0x0f48                  _rx2Count
-                    0x0f4a                  _rx2InP
-                    0x0f4c                  _rx2OutP
-                    0x1376                  _rx3Buff
-                    0x1370                  _rx3Count
-                    0x1372                  _rx3InP
-                    0x1374                  _rx3OutP
-                    0x1402                  _rx4Buff
-                    0x13fc                  _rx4Count
-                    0x13fe                  _rx4InP
-                    0x1400                  _rx4OutP
-                    0x1670                  _seed
-                    0x1330                  _tx1Buff
-                    0x132a                  _tx1Count
-                    0x132c                  _tx1InP
-                    0x132e                  _tx1OutP
-                    0x0fd4                  _tx2Buff
-                    0x0fce                  _tx2Count
-                    0x0fd0                  _tx2InP
-                    0x0fd2                  _tx2OutP
-                    0x13bc                  _tx3Buff
-                    0x13b6                  _tx3Count
-                    0x13b8                  _tx3InP
-                    0x13ba                  _tx3OutP
-                    0x1448                  _tx4Buff
-                    0x1442                  _tx4Count
-                    0x1444                  _tx4InP
-                    0x1446                  _tx4OutP
+                    0x1688                  _rx1Buff
+                    0x1682                  _rx1Count
+                    0x1684                  _rx1InP
+                    0x1686                  _rx1OutP
+                    0x13e4                  _rx2Buff
+                    0x13de                  _rx2Count
+                    0x13e0                  _rx2InP
+                    0x13e2                  _rx2OutP
+                    0x0dd8                  _rx3Buff
+                    0x0dd2                  _rx3Count
+                    0x0dd4                  _rx3InP
+                    0x0dd6                  _rx3OutP
+                    0x1714                  _rx4Buff
+                    0x170e                  _rx4Count
+                    0x1710                  _rx4InP
+                    0x1712                  _rx4OutP
+                    0x1928                  _seed
+                    0x16ce                  _tx1Buff
+                    0x16c8                  _tx1Count
+                    0x16ca                  _tx1InP
+                    0x16cc                  _tx1OutP
+                    0x146a                  _tx2Buff
+                    0x1464                  _tx2Count
+                    0x1466                  _tx2InP
+                    0x1468                  _tx2OutP
+                    0x0ede                  _tx3Buff
+                    0x0ed8                  _tx3Count
+                    0x0eda                  _tx3InP
+                    0x0edc                  _tx3OutP
+                    0x175a                  _tx4Buff
+                    0x1754                  _tx4Count
+                    0x1756                  _tx4InP
+                    0x1758                  _tx4OutP
 
 External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00022c                  __psv_init
-                  0x00023c                  __data_init_standard
                   0x00023c                  __data_init
+                  0x00023c                  __data_init_standard
                   0x0002bc                  __DefaultInterrupt
                   0x0002c0                  _strlen
-                  0x0002cc                  sprintf_cdnopuxX.XXo:_prout
-                  0x0002da                  __sprintf_cdnopuxX
-                  0x0002f8                  vsprintf.XXo:_prout
-                  0x000306                  _vsprintf
-                  0x000320                  _memcpy
-                  0x00032e                  sprintf.XXo:_prout
-                  0x00033c                  _sprintf
+                  0x0002cc                  vsprintf.XXo:_prout
+                  0x0002da                  _vsprintf
+                  0x0002f4                  _memcpy
+                  0x000302                  sprintf.XXo:_prout
+                  0x000310                  _sprintf
+                  0x00032e                  sprintf_cdnopsuxX.XXo:_prout
+                  0x00033c                  __sprintf_cdnopsuxX
+                  0x00033c                  __sprintf_cdnopuxX
                   0x00035a                  _strtok
-                  0x00038e                  ___Printf_cdnopuxX
-                  0x0004f2                  __Printf
+                  0x00038e                  __Printf
+                  0x0004f2                  ___Printf_cdnopuxX
+                  0x0004f2                  ___Printf_cdnopsuxX
                   0x000656                  _strspn
                   0x000676                  _strcspn
                   0x000698                  __Vacopy
                   0x00069c                  _strchr
-                  0x0006b4                  ___Putfld_cdnopuxX
-                  0x0008c4                  __Puttxt
-                  0x000a3c                  __Putfld
-                  0x000d06                  __Litob
-                  0x000f64                  __Ldtob
-                  0x001356                  _memchr
-                  0x00136a                  __LDunscale
-                  0x0013be                  __LDscale
-                  0x0014b4                  _ldiv
-                  0x0014de                  __Genld
-                  0x001742                  __Dnorm
-                  0x0017da                  _div
-                  0x0017f0                  ___extendsfdf2
-                  0x00182e                  ___umodsi3
-                  0x001834                  ___udivsi3
-                  0x001854                  ___divsi3
-                  0x0018b2                  ___udivmoddi3
-                  0x001942                  ___udivdi3
-                  0x001950                  ___umoddi3
-                  0x001958                  ___divdi3
-                  0x001986                  ___moddi3
-                  0x001a5a                  ___eqdf2
-                  0x001a5a                  ___ledf2
-                  0x001a5a                  ___ltdf2
-                  0x001a64                  ___fixdfsi
-                  0x001abc                  ___floatsidf
-                  0x001ac2                  ___subdf3
-                  0x001ac6                  ___gtdf2
-                  0x001ac6                  ___gedf2
-                  0x001ad0                  ___muldf3
-                  0x001bba                  ___divdf3
-                  0x001c6e                  ___mulp32eds3
-                  0x001c6e                  ___mulsi3
-                  0x001c6e                  ___mulp32peds3
-                  0x001c7a                  __funpack
-                  0x001ca4                  __dcompare
-                  0x001cf6                  __dunpack
-                  0x001d44                  __dunpack2
-                  0x001d66                  __dreturnNaN
-                  0x001d6c                  __dunpack2exit
-                  0x001d76                  ___floatdidf
-                  0x001d96                  ___adddf3
-                  0x001e90                  __dpack
-                  0x001ee8                  __dtype
-                  0x001f0c                  __dPropagateNaN
-                  0x001f28                  ___floatundidf
-                  0x001f7e                  _EnableWDT
-                  0x001f8e                  _ConfigIntTimer2
-                  0x001fb2                  _CloseTimer2
-                  0x001fba                  _OpenSPI1
-                  0x001fc2                  _CloseSPI1
-                  0x001fca                  _CloseUART1
-                  0x001fd6                  _ConfigIntUART1
-                  0x00201e                  _OpenUART1
-                  0x002030                  _BusyUART1
-                  0x00203a                  _WriteUART1
-                  0x002048                  _CloseUART2
-                  0x002054                  _ConfigIntUART2
-                  0x00209c                  _OpenUART2
-                  0x0020ae                  _BusyUART2
-                  0x0020b8                  _WriteUART2
-                  0x0020c6                  _CloseUART3
-                  0x0020d2                  _ConfigIntUART3
-                  0x00211a                  _OpenUART3
-                  0x00212c                  _BusyUART3
-                  0x002136                  _WriteUART3
-                  0x002144                  _CloseUART4
-                  0x002150                  _ConfigIntUART4
-                  0x002194                  _OpenUART4
-                  0x0021a6                  _BusyUART4
-                  0x0021b0                  _WriteUART4
-                  0x0021be                  _RtccReadTime_v1
-                  0x0021ec                  _OpenTimer2
-                  0x0021f4                  _ConfigIntCN
-                  0x002212                  _RtccInitClock_v1
-                  0x002234                  _RtccWriteTime_v1
-                  0x0022e4                  _ReadUART1
-                  0x0022f6                  _ReadUART2
-                  0x002308                  _ReadUART3
-                  0x00231a                  _RtccWrOn_v1
-                  0x0025be                  _prescalars
-                  0x0025d2                  _baudrates
-                  0x002672                  _write_radio_config_to_array
-                  0x002834                  _print_radio_config
-                  0x002876                  _calc_fletcher_chksum
-                  0x0028d6                  _fill_out_radio_tx_header
-                  0x00294c                  _fill_out_radio_tx_packet
-                  0x0029fe                  _send_packet_to_radio
-                  0x002aac                  _printnames
-                  0x002ac4                  _task_radio_talk
-                  0x002d98                  _init
-                  0x002e76                  _getBCDfromstring
-                  0x002ff8                  _init_Rtcc
-                  0x0031f8                  __CNInterrupt
-                  0x003200                  __T2Interrupt
-                  0x003220                  __U1TXInterrupt
-                  0x00323e                  __U1RXInterrupt
-                  0x003262                  __U2TXInterrupt
-                  0x003280                  __U2RXInterrupt
-                  0x0032a4                  __U3TXInterrupt
-                  0x0032c2                  __U3RXInterrupt
-                  0x0032e6                  _csk_io0_high
-                  0x0032f4                  _csk_io0_low
-                  0x003302                  _csk_io1_high
-                  0x003310                  _csk_io1_low
-                  0x00331e                  _csk_io2_high
-                  0x00332c                  _csk_io2_low
-                  0x00333a                  _csk_io3_high
-                  0x003348                  _csk_io3_low
-                  0x003356                  _csk_io4_high
-                  0x003362                  _csk_io4_low
-                  0x003370                  _csk_io5_high
-                  0x00337c                  _csk_io5_low
-                  0x00338a                  _csk_io6_high
-                  0x003398                  _csk_io6_low
-                  0x0033a6                  _csk_io7_high
-                  0x0033b2                  _csk_io7_low
-                  0x0033c0                  _csk_io8_high
-                  0x0033ce                  _csk_io8_low
-                  0x0033dc                  _csk_io9_high
-                  0x0033ea                  _csk_io9_low
-                  0x0033f8                  _csk_io10_high
-                  0x003406                  _csk_io10_low
-                  0x003414                  _csk_io11_high
-                  0x003422                  _csk_io11_low
-                  0x003430                  _csk_io12_high
-                  0x00343e                  _csk_io12_low
-                  0x00344c                  _csk_io13_high
-                  0x00345a                  _csk_io13_low
-                  0x003468                  _csk_io14_high
-                  0x003476                  _csk_io14_low
-                  0x003484                  _csk_io15_high
-                  0x003492                  _csk_io15_low
-                  0x0034a0                  _csk_io16_high
-                  0x0034ae                  _csk_io16_low
-                  0x0034bc                  _csk_io17_high
-                  0x0034c8                  _csk_io17_low
-                  0x0034d6                  _csk_io18_high
-                  0x0034e4                  _csk_io18_low
-                  0x0034f2                  _csk_io19_high
-                  0x0034fe                  _csk_io19_low
-                  0x00350c                  _csk_io20_high
-                  0x003518                  _csk_io20_low
-                  0x003526                  _csk_io21_high
-                  0x003532                  _csk_io21_low
-                  0x003540                  _csk_io22_high
-                  0x00354e                  _csk_io22_low
-                  0x00355c                  _csk_io23_high
-                  0x00356a                  _csk_io23_low
-                  0x003578                  _csk_io24_high
-                  0x003584                  _csk_io24_low
-                  0x003592                  _csk_io25_high
-                  0x00359e                  _csk_io25_low
-                  0x0035ac                  _csk_io26_high
-                  0x0035b8                  _csk_io26_low
-                  0x0035c6                  _csk_io27_high
-                  0x0035d2                  _csk_io27_low
-                  0x0035e0                  _csk_io28_high
-                  0x0035ee                  _csk_io28_low
-                  0x0035fc                  _csk_io29_high
-                  0x00360a                  _csk_io29_low
-                  0x003618                  _csk_io30_high
-                  0x003626                  _csk_io30_low
-                  0x003634                  _csk_io31_high
-                  0x003642                  _csk_io31_low
-                  0x003650                  _csk_io32_high
-                  0x00365e                  _csk_io32_low
-                  0x00366c                  _csk_io33_high
-                  0x003678                  _csk_io33_low
-                  0x003686                  _csk_io34_high
-                  0x003692                  _csk_io34_low
-                  0x0036a0                  _csk_io35_high
-                  0x0036ac                  _csk_io35_low
-                  0x0036ba                  _csk_io36_high
-                  0x0036c6                  _csk_io36_low
-                  0x0036d4                  _csk_io37_high
-                  0x0036e0                  _csk_io37_low
-                  0x0036ee                  _csk_io38_high
-                  0x0036fc                  _csk_io38_low
-                  0x00370a                  _csk_io39_high
-                  0x003718                  _csk_io39_low
-                  0x003726                  _csk_io40_high
-                  0x003734                  _csk_io40_low
-                  0x003742                  _csk_io41_high
-                  0x003750                  _csk_io41_low
-                  0x00375e                  _csk_io42_high
-                  0x00376c                  _csk_io42_low
-                  0x00377a                  _csk_io43_high
-                  0x003788                  _csk_io43_low
-                  0x003796                  _csk_io44_high
-                  0x0037a4                  _csk_io44_low
-                  0x0037b2                  _csk_io45_high
-                  0x0037c0                  _csk_io45_low
-                  0x0037ce                  _csk_io46_high
-                  0x0037dc                  _csk_io46_low
-                  0x0037ea                  _csk_io47_high
-                  0x0037f8                  _csk_io47_low
-                  0x003806                  _fill_out_radio_config
-                  0x0038ba                  _task_radio_listen
-                  0x003ab0                  _uart1_open
-                  0x003aea                  _uart1_close
-                  0x003af4                  _uart1_peek_rx
-                  0x003b36                  _uart1_rx_count
-                  0x003b3e                  _uart1_tx_free
-                  0x003b4a                  _uart1_getchar
-                  0x003b82                  _uart1_get_byte
-                  0x003bbc                  _uart1_putchar
-                  0x003bf8                  _uart1_puts
-                  0x003c16                  _uart1_outchar
-                  0x003c54                  _uart1_inchar
-                  0x003c84                  _uart2_open
-                  0x003cbe                  _uart2_close
-                  0x003cc8                  _uart2_peek_rx
-                  0x003d0a                  _uart2_rx_count
-                  0x003d12                  _uart2_tx_free
-                  0x003d1e                  _uart2_getchar
-                  0x003d56                  _uart2_get_byte
-                  0x003d90                  _uart2_putchar
-                  0x003dcc                  _uart2_puts
-                  0x003dea                  _uart2_outchar
-                  0x003e28                  _uart2_inchar
-                  0x003e58                  _uart3_open
-                  0x003e92                  _uart3_close
-                  0x003e9c                  _uart3_peek_rx
-                  0x003ede                  _uart3_rx_count
-                  0x003ee6                  _uart3_tx_free
-                  0x003ef2                  _uart3_getchar
-                  0x003f2a                  _uart3_get_byte
-                  0x003f64                  _uart3_putchar
-                  0x003fa0                  _uart3_puts
-                  0x003fbe                  _uart3_outchar
-                  0x003ffc                  _uart3_inchar
-                  0x00402c                  _uart4_open
-                  0x004066                  _uart4_close
-                  0x004070                  _uart4_peek_rx
-                  0x0040b2                  _uart4_rx_count
-                  0x0040ba                  _uart4_tx_free
-                  0x0040c6                  _uart4_getchar
-                  0x0040fe                  _uart4_get_byte
-                  0x004138                  _uart4_putchar
-                  0x004174                  _uart4_puts
-                  0x004192                  _uart4_outchar
-                  0x0041d0                  _uart4_inchar
-                  0x004200                  _OSSched
-                  0x004384                  _spi_cs_lo
-                  0x004392                  _spi_cs_hi
-                  0x0043a0                  _ConfigureSPI1
-                  0x0043c2                  _spi_tx1
-                  0x0043de                  _spi_tx512
-                  0x0043fe                  _spi_rx1
-                  0x00440c                  _spi_rx512
-                  0x00442c                  _spi_init
-                  0x00449c                  _spi_set_baudrate
-                  0x0044d6                  _spi_get_baudrate
-                  0x00462a                  _OSInsPrioQ
-                  0x00469e                  _OSInsDelayQ
-                  0x00473c                  _OSDelPrioQ
-                  0x0047ac                  _OSDelDelayQ
-                  0x004822                  _OSCreateTask
-                  0x004884                  _OSInitPrioTask
-                  0x0048b4                  _csk_mhx_open
-                  0x0048e0                  _csk_mhx_close
-                  0x004908                  _csk_mhx_pwr_on
-                  0x00491e                  _csk_mhx_pwr_off
-                  0x004932                  _task_beacon
-                  0x0049ae                  _csk_power_shutdown
-                  0x004a20                  _OSDelay
-                  0x004a8c                  _write_msgqmessage_to_OStypeMsgP
-                  0x004aec                  _csk_usb_open
-                  0x004b18                  _csk_usb_close
-                  0x004b40                  _csk_usb_present
-                  0x004b48                  _OSDispatch
-                  0x004b70                  _OSCtxSw
-                  0x004b90                  _OSReturn
-                  0x004b9e                  _OSDethunkTFP
-                  0x004ba2                  _csk_sd_open
-                  0x004bb8                  _csk_sd_close
-                  0x004bce                  _csk_sd_pwr_on
-                  0x004be4                  _csk_sd_pwr_off
-                  0x004bf8                  _csk_led_status_open
-                  0x004c0e                  _csk_led_status_close
-                  0x004c24                  _csk_led_status_on
-                  0x004c32                  _csk_led_status_off
-                  0x004c40                  _uart1_msg_ts
-                  0x004c88                  _uart2_msg_ts
-                  0x004cd0                  _uart3_msg_ts
-                  0x004d18                  _uart4_msg_ts
-                  0x004d60                  __dprintf
-                  0x004d7a                  _dnprintf
-                  0x004da0                  _task_scheduler
-                  0x004dda                  _task_test
-                  0x004e0a                  _OSTimer
-                  0x004e3a                  _uart1_msg
-                  0x004e68                  _uart2_msg
-                  0x004e96                  _uart3_msg
-                  0x004ec4                  _uart4_msg
-                  0x004ef2                  _OSGetTicks
-                  0x004f08                  _OSSetTicks
-                  0x004f1e                  _csk_rand
-                  0x004f46                  _main
-                  0x004f6c                  _OSInit
-                  0x004f92                  _csk_wdt_force
-                  0x004f9a                  _csk_wdt_off
-                  0x004fa6                  _OSDisableHook
-                  0x004fae                  _OSEnableHook
-                  0x004fb6                  _OSClrWDTHook
-                  0x004fbe                  _OSIdlingHook
+                  0x0006b4                  __Puttxt
+                  0x00082c                  __Putfld
+                  0x000af6                  ___Putfld_cdnopsuxX
+                  0x000af6                  ___Putfld_cdnopuxX
+                  0x000d4c                  __Litob
+                  0x000faa                  __Ldtob
+                  0x00139c                  _memchr
+                  0x0013b0                  __LDunscale
+                  0x001404                  __LDscale
+                  0x0014fa                  _ldiv
+                  0x001524                  __Genld
+                  0x001788                  __Dnorm
+                  0x001820                  _div
+                  0x001836                  ___extendsfdf2
+                  0x001874                  ___umodsi3
+                  0x00187a                  ___udivsi3
+                  0x00189a                  ___divsi3
+                  0x0018f8                  ___udivmoddi3
+                  0x001988                  ___udivdi3
+                  0x001996                  ___umoddi3
+                  0x00199e                  ___divdi3
+                  0x0019cc                  ___moddi3
+                  0x001aa0                  ___eqdf2
+                  0x001aa0                  ___ltdf2
+                  0x001aa0                  ___ledf2
+                  0x001aaa                  ___fixdfsi
+                  0x001b02                  ___floatsidf
+                  0x001b08                  ___subdf3
+                  0x001b0c                  ___gedf2
+                  0x001b0c                  ___gtdf2
+                  0x001b16                  ___muldf3
+                  0x001c00                  ___divdf3
+                  0x001cb4                  ___mulp32eds3
+                  0x001cb4                  ___mulp32peds3
+                  0x001cb4                  ___mulsi3
+                  0x001cc0                  __funpack
+                  0x001cea                  __dcompare
+                  0x001d3c                  __dunpack
+                  0x001d8a                  __dunpack2
+                  0x001dac                  __dreturnNaN
+                  0x001db2                  __dunpack2exit
+                  0x001dbc                  ___floatdidf
+                  0x001ddc                  ___adddf3
+                  0x001ed6                  __dpack
+                  0x001f2e                  __dtype
+                  0x001f52                  __dPropagateNaN
+                  0x001f6e                  ___floatundidf
+                  0x001fc4                  _EnableWDT
+                  0x001fd4                  _ConfigIntTimer2
+                  0x001ff8                  _CloseTimer2
+                  0x002000                  _OpenSPI1
+                  0x002008                  _CloseSPI1
+                  0x002010                  _CloseUART1
+                  0x00201c                  _ConfigIntUART1
+                  0x002064                  _OpenUART1
+                  0x002076                  _BusyUART1
+                  0x002080                  _WriteUART1
+                  0x00208e                  _CloseUART2
+                  0x00209a                  _ConfigIntUART2
+                  0x0020e2                  _OpenUART2
+                  0x0020f4                  _BusyUART2
+                  0x0020fe                  _WriteUART2
+                  0x00210c                  _CloseUART3
+                  0x002118                  _ConfigIntUART3
+                  0x002160                  _OpenUART3
+                  0x002172                  _BusyUART3
+                  0x00217c                  _WriteUART3
+                  0x00218a                  _CloseUART4
+                  0x002196                  _ConfigIntUART4
+                  0x0021da                  _OpenUART4
+                  0x0021ec                  _BusyUART4
+                  0x0021f6                  _WriteUART4
+                  0x002204                  _RtccReadTime_v1
+                  0x002232                  _OpenTimer2
+                  0x00223a                  _ConfigIntCN
+                  0x002258                  _RtccInitClock_v1
+                  0x00227a                  _RtccWriteTime_v1
+                  0x00232a                  _ReadUART1
+                  0x00233c                  _ReadUART2
+                  0x00234e                  _ReadUART3
+                  0x002360                  _RtccWrOn_v1
+                  0x002604                  _prescalars
+                  0x002618                  _baudrates
+                  0x0026c0                  _write_radio_config_to_array
+                  0x002882                  _print_radio_config
+                  0x0028c4                  _calc_fletcher_chksum
+                  0x002924                  _fill_out_radio_tx_header
+                  0x00299a                  _fill_out_radio_tx_packet
+                  0x002a4c                  _send_packet_to_radio
+                  0x002afa                  _printnames
+                  0x002b12                  _task_radio_talk
+                  0x002dd4                  _init
+                  0x002e9a                  _getBCDfromstring
+                  0x00301c                  _init_Rtcc
+                  0x00321c                  __CNInterrupt
+                  0x003224                  __T2Interrupt
+                  0x003244                  __U1TXInterrupt
+                  0x003262                  __U1RXInterrupt
+                  0x003286                  __U2TXInterrupt
+                  0x0032a4                  __U2RXInterrupt
+                  0x0032c8                  __U3TXInterrupt
+                  0x0032e6                  __U3RXInterrupt
+                  0x00330a                  _csk_io0_high
+                  0x003318                  _csk_io0_low
+                  0x003326                  _csk_io1_high
+                  0x003334                  _csk_io1_low
+                  0x003342                  _csk_io2_high
+                  0x003350                  _csk_io2_low
+                  0x00335e                  _csk_io3_high
+                  0x00336c                  _csk_io3_low
+                  0x00337a                  _csk_io4_high
+                  0x003386                  _csk_io4_low
+                  0x003394                  _csk_io5_high
+                  0x0033a0                  _csk_io5_low
+                  0x0033ae                  _csk_io6_high
+                  0x0033bc                  _csk_io6_low
+                  0x0033ca                  _csk_io7_high
+                  0x0033d6                  _csk_io7_low
+                  0x0033e4                  _csk_io8_high
+                  0x0033f2                  _csk_io8_low
+                  0x003400                  _csk_io9_high
+                  0x00340e                  _csk_io9_low
+                  0x00341c                  _csk_io10_high
+                  0x00342a                  _csk_io10_low
+                  0x003438                  _csk_io11_high
+                  0x003446                  _csk_io11_low
+                  0x003454                  _csk_io12_high
+                  0x003462                  _csk_io12_low
+                  0x003470                  _csk_io13_high
+                  0x00347e                  _csk_io13_low
+                  0x00348c                  _csk_io14_high
+                  0x00349a                  _csk_io14_low
+                  0x0034a8                  _csk_io15_high
+                  0x0034b6                  _csk_io15_low
+                  0x0034c4                  _csk_io16_high
+                  0x0034d2                  _csk_io16_low
+                  0x0034e0                  _csk_io17_high
+                  0x0034ec                  _csk_io17_low
+                  0x0034fa                  _csk_io18_high
+                  0x003508                  _csk_io18_low
+                  0x003516                  _csk_io19_high
+                  0x003522                  _csk_io19_low
+                  0x003530                  _csk_io20_high
+                  0x00353c                  _csk_io20_low
+                  0x00354a                  _csk_io21_high
+                  0x003556                  _csk_io21_low
+                  0x003564                  _csk_io22_high
+                  0x003572                  _csk_io22_low
+                  0x003580                  _csk_io23_high
+                  0x00358e                  _csk_io23_low
+                  0x00359c                  _csk_io24_high
+                  0x0035a8                  _csk_io24_low
+                  0x0035b6                  _csk_io25_high
+                  0x0035c2                  _csk_io25_low
+                  0x0035d0                  _csk_io26_high
+                  0x0035dc                  _csk_io26_low
+                  0x0035ea                  _csk_io27_high
+                  0x0035f6                  _csk_io27_low
+                  0x003604                  _csk_io28_high
+                  0x003612                  _csk_io28_low
+                  0x003620                  _csk_io29_high
+                  0x00362e                  _csk_io29_low
+                  0x00363c                  _csk_io30_high
+                  0x00364a                  _csk_io30_low
+                  0x003658                  _csk_io31_high
+                  0x003666                  _csk_io31_low
+                  0x003674                  _csk_io32_high
+                  0x003682                  _csk_io32_low
+                  0x003690                  _csk_io33_high
+                  0x00369c                  _csk_io33_low
+                  0x0036aa                  _csk_io34_high
+                  0x0036b6                  _csk_io34_low
+                  0x0036c4                  _csk_io35_high
+                  0x0036d0                  _csk_io35_low
+                  0x0036de                  _csk_io36_high
+                  0x0036ea                  _csk_io36_low
+                  0x0036f8                  _csk_io37_high
+                  0x003704                  _csk_io37_low
+                  0x003712                  _csk_io38_high
+                  0x003720                  _csk_io38_low
+                  0x00372e                  _csk_io39_high
+                  0x00373c                  _csk_io39_low
+                  0x00374a                  _csk_io40_high
+                  0x003758                  _csk_io40_low
+                  0x003766                  _csk_io41_high
+                  0x003774                  _csk_io41_low
+                  0x003782                  _csk_io42_high
+                  0x003790                  _csk_io42_low
+                  0x00379e                  _csk_io43_high
+                  0x0037ac                  _csk_io43_low
+                  0x0037ba                  _csk_io44_high
+                  0x0037c8                  _csk_io44_low
+                  0x0037d6                  _csk_io45_high
+                  0x0037e4                  _csk_io45_low
+                  0x0037f2                  _csk_io46_high
+                  0x003800                  _csk_io46_low
+                  0x00380e                  _csk_io47_high
+                  0x00381c                  _csk_io47_low
+                  0x00382a                  _fill_out_radio_config
+                  0x0038de                  _task_radio_listen
+                  0x003aec                  _uart1_open
+                  0x003b26                  _uart1_close
+                  0x003b30                  _uart1_peek_rx
+                  0x003b72                  _uart1_rx_count
+                  0x003b7a                  _uart1_tx_free
+                  0x003b86                  _uart1_getchar
+                  0x003bbe                  _uart1_get_byte
+                  0x003bf8                  _uart1_putchar
+                  0x003c34                  _uart1_puts
+                  0x003c52                  _uart1_outchar
+                  0x003c90                  _uart1_inchar
+                  0x003cc0                  _uart2_open
+                  0x003cfa                  _uart2_close
+                  0x003d04                  _uart2_peek_rx
+                  0x003d46                  _uart2_rx_count
+                  0x003d4e                  _uart2_tx_free
+                  0x003d5a                  _uart2_getchar
+                  0x003d92                  _uart2_get_byte
+                  0x003dcc                  _uart2_putchar
+                  0x003e08                  _uart2_puts
+                  0x003e26                  _uart2_outchar
+                  0x003e64                  _uart2_inchar
+                  0x003e94                  _uart3_open
+                  0x003ece                  _uart3_close
+                  0x003ed8                  _uart3_peek_rx
+                  0x003f1a                  _uart3_rx_count
+                  0x003f22                  _uart3_tx_free
+                  0x003f2e                  _uart3_getchar
+                  0x003f66                  _uart3_get_byte
+                  0x003fa0                  _uart3_putchar
+                  0x003fdc                  _uart3_puts
+                  0x003ffa                  _uart3_outchar
+                  0x004038                  _uart3_inchar
+                  0x004068                  _uart4_open
+                  0x0040a2                  _uart4_close
+                  0x0040ac                  _uart4_peek_rx
+                  0x0040ee                  _uart4_rx_count
+                  0x0040f6                  _uart4_tx_free
+                  0x004102                  _uart4_getchar
+                  0x00413a                  _uart4_get_byte
+                  0x004174                  _uart4_putchar
+                  0x0041b0                  _uart4_puts
+                  0x0041ce                  _uart4_outchar
+                  0x00420c                  _uart4_inchar
+                  0x00423c                  _OSSched
+                  0x0043c0                  _spi_cs_lo
+                  0x0043ce                  _spi_cs_hi
+                  0x0043dc                  _ConfigureSPI1
+                  0x0043fe                  _spi_tx1
+                  0x00441a                  _spi_tx512
+                  0x00443a                  _spi_rx1
+                  0x004448                  _spi_rx512
+                  0x004468                  _spi_init
+                  0x0044d8                  _spi_set_baudrate
+                  0x004512                  _spi_get_baudrate
+                  0x004676                  _OSInsPrioQ
+                  0x0046ea                  _OSInsDelayQ
+                  0x004788                  _OSDelPrioQ
+                  0x0047f8                  _OSDelDelayQ
+                  0x00486e                  _OSCreateTask
+                  0x0048d0                  _OSInitPrioTask
+                  0x004900                  _csk_mhx_open
+                  0x00492c                  _csk_mhx_close
+                  0x004954                  _csk_mhx_pwr_on
+                  0x00496a                  _csk_mhx_pwr_off
+                  0x00497e                  _task_beacon
+                  0x0049fa                  _csk_power_shutdown
+                  0x004a6c                  _OSDelay
+                  0x004ad8                  _task_test
+                  0x004b3e                  _write_msgqmessage_to_OStypeMsgP
+                  0x004b9e                  _csk_usb_open
+                  0x004bca                  _csk_usb_close
+                  0x004bf2                  _csk_usb_present
+                  0x004bfa                  _OSDispatch
+                  0x004c22                  _OSCtxSw
+                  0x004c42                  _OSReturn
+                  0x004c50                  _OSDethunkTFP
+                  0x004c54                  _csk_sd_open
+                  0x004c6a                  _csk_sd_close
+                  0x004c80                  _csk_sd_pwr_on
+                  0x004c96                  _csk_sd_pwr_off
+                  0x004caa                  _csk_led_status_open
+                  0x004cc0                  _csk_led_status_close
+                  0x004cd6                  _csk_led_status_on
+                  0x004ce4                  _csk_led_status_off
+                  0x004cf2                  _uart1_msg_ts
+                  0x004d3a                  _uart2_msg_ts
+                  0x004d82                  _uart3_msg_ts
+                  0x004dca                  _uart4_msg_ts
+                  0x004e12                  __dprintf
+                  0x004e2c                  _dnprintf
+                  0x004e52                  _task_scheduler
+                  0x004e8c                  _OSTimer
+                  0x004ebc                  _uart1_msg
+                  0x004eea                  _uart2_msg
+                  0x004f18                  _uart3_msg
+                  0x004f46                  _uart4_msg
+                  0x004f74                  _OSGetTicks
+                  0x004f8a                  _OSSetTicks
+                  0x004fa0                  _csk_rand
+                  0x004fc8                  _main
+                  0x004fee                  _OSInit
+                  0x005014                  _csk_wdt_force
+                  0x00501c                  _csk_wdt_off
+                  0x005028                  _OSDisableHook
+                  0x005030                  _OSEnableHook
+                  0x005038                  _OSClrWDTHook
+                  0x005040                  _OSIdlingHook
 
 External Symbols in Program Memory (by name):
 
-                  0x002030                  _BusyUART1
-                  0x0020ae                  _BusyUART2
-                  0x00212c                  _BusyUART3
-                  0x0021a6                  _BusyUART4
-                  0x001fc2                  _CloseSPI1
-                  0x001fb2                  _CloseTimer2
-                  0x001fca                  _CloseUART1
-                  0x002048                  _CloseUART2
-                  0x0020c6                  _CloseUART3
-                  0x002144                  _CloseUART4
-                  0x0021f4                  _ConfigIntCN
-                  0x001f8e                  _ConfigIntTimer2
-                  0x001fd6                  _ConfigIntUART1
-                  0x002054                  _ConfigIntUART2
-                  0x0020d2                  _ConfigIntUART3
-                  0x002150                  _ConfigIntUART4
-                  0x0043a0                  _ConfigureSPI1
-                  0x001f7e                  _EnableWDT
-                  0x004fb6                  _OSClrWDTHook
-                  0x004822                  _OSCreateTask
-                  0x004b70                  _OSCtxSw
-                  0x0047ac                  _OSDelDelayQ
-                  0x00473c                  _OSDelPrioQ
-                  0x004a20                  _OSDelay
-                  0x004b9e                  _OSDethunkTFP
-                  0x004fa6                  _OSDisableHook
-                  0x004b48                  _OSDispatch
-                  0x004fae                  _OSEnableHook
-                  0x004ef2                  _OSGetTicks
-                  0x004fbe                  _OSIdlingHook
-                  0x004f6c                  _OSInit
-                  0x004884                  _OSInitPrioTask
-                  0x00469e                  _OSInsDelayQ
-                  0x00462a                  _OSInsPrioQ
-                  0x004b90                  _OSReturn
-                  0x004200                  _OSSched
-                  0x004f08                  _OSSetTicks
-                  0x004e0a                  _OSTimer
-                  0x001fba                  _OpenSPI1
-                  0x0021ec                  _OpenTimer2
-                  0x00201e                  _OpenUART1
-                  0x00209c                  _OpenUART2
-                  0x00211a                  _OpenUART3
-                  0x002194                  _OpenUART4
-                  0x0022e4                  _ReadUART1
-                  0x0022f6                  _ReadUART2
-                  0x002308                  _ReadUART3
-                  0x002212                  _RtccInitClock_v1
-                  0x0021be                  _RtccReadTime_v1
-                  0x00231a                  _RtccWrOn_v1
-                  0x002234                  _RtccWriteTime_v1
-                  0x00203a                  _WriteUART1
-                  0x0020b8                  _WriteUART2
-                  0x002136                  _WriteUART3
-                  0x0021b0                  _WriteUART4
-                  0x0031f8                  __CNInterrupt
+                  0x002076                  _BusyUART1
+                  0x0020f4                  _BusyUART2
+                  0x002172                  _BusyUART3
+                  0x0021ec                  _BusyUART4
+                  0x002008                  _CloseSPI1
+                  0x001ff8                  _CloseTimer2
+                  0x002010                  _CloseUART1
+                  0x00208e                  _CloseUART2
+                  0x00210c                  _CloseUART3
+                  0x00218a                  _CloseUART4
+                  0x00223a                  _ConfigIntCN
+                  0x001fd4                  _ConfigIntTimer2
+                  0x00201c                  _ConfigIntUART1
+                  0x00209a                  _ConfigIntUART2
+                  0x002118                  _ConfigIntUART3
+                  0x002196                  _ConfigIntUART4
+                  0x0043dc                  _ConfigureSPI1
+                  0x001fc4                  _EnableWDT
+                  0x005038                  _OSClrWDTHook
+                  0x00486e                  _OSCreateTask
+                  0x004c22                  _OSCtxSw
+                  0x0047f8                  _OSDelDelayQ
+                  0x004788                  _OSDelPrioQ
+                  0x004a6c                  _OSDelay
+                  0x004c50                  _OSDethunkTFP
+                  0x005028                  _OSDisableHook
+                  0x004bfa                  _OSDispatch
+                  0x005030                  _OSEnableHook
+                  0x004f74                  _OSGetTicks
+                  0x005040                  _OSIdlingHook
+                  0x004fee                  _OSInit
+                  0x0048d0                  _OSInitPrioTask
+                  0x0046ea                  _OSInsDelayQ
+                  0x004676                  _OSInsPrioQ
+                  0x004c42                  _OSReturn
+                  0x00423c                  _OSSched
+                  0x004f8a                  _OSSetTicks
+                  0x004e8c                  _OSTimer
+                  0x002000                  _OpenSPI1
+                  0x002232                  _OpenTimer2
+                  0x002064                  _OpenUART1
+                  0x0020e2                  _OpenUART2
+                  0x002160                  _OpenUART3
+                  0x0021da                  _OpenUART4
+                  0x00232a                  _ReadUART1
+                  0x00233c                  _ReadUART2
+                  0x00234e                  _ReadUART3
+                  0x002258                  _RtccInitClock_v1
+                  0x002204                  _RtccReadTime_v1
+                  0x002360                  _RtccWrOn_v1
+                  0x00227a                  _RtccWriteTime_v1
+                  0x002080                  _WriteUART1
+                  0x0020fe                  _WriteUART2
+                  0x00217c                  _WriteUART3
+                  0x0021f6                  _WriteUART4
+                  0x00321c                  __CNInterrupt
                   0x0002bc                  __DefaultInterrupt
-                  0x001742                  __Dnorm
-                  0x0014de                  __Genld
-                  0x0013be                  __LDscale
-                  0x00136a                  __LDunscale
-                  0x000f64                  __Ldtob
-                  0x000d06                  __Litob
-                  0x0004f2                  __Printf
-                  0x000a3c                  __Putfld
-                  0x0008c4                  __Puttxt
-                  0x003200                  __T2Interrupt
-                  0x00323e                  __U1RXInterrupt
-                  0x003220                  __U1TXInterrupt
-                  0x003280                  __U2RXInterrupt
-                  0x003262                  __U2TXInterrupt
-                  0x0032c2                  __U3RXInterrupt
-                  0x0032a4                  __U3TXInterrupt
+                  0x001788                  __Dnorm
+                  0x001524                  __Genld
+                  0x001404                  __LDscale
+                  0x0013b0                  __LDunscale
+                  0x000faa                  __Ldtob
+                  0x000d4c                  __Litob
+                  0x00038e                  __Printf
+                  0x00082c                  __Putfld
+                  0x0006b4                  __Puttxt
+                  0x003224                  __T2Interrupt
+                  0x003262                  __U1RXInterrupt
+                  0x003244                  __U1TXInterrupt
+                  0x0032a4                  __U2RXInterrupt
+                  0x003286                  __U2TXInterrupt
+                  0x0032e6                  __U3RXInterrupt
+                  0x0032c8                  __U3TXInterrupt
                   0x000698                  __Vacopy
-                  0x00038e                  ___Printf_cdnopuxX
-                  0x0006b4                  ___Putfld_cdnopuxX
-                  0x001d96                  ___adddf3
-                  0x001bba                  ___divdf3
-                  0x001958                  ___divdi3
-                  0x001854                  ___divsi3
-                  0x001a5a                  ___eqdf2
-                  0x0017f0                  ___extendsfdf2
-                  0x001a64                  ___fixdfsi
-                  0x001d76                  ___floatdidf
-                  0x001abc                  ___floatsidf
-                  0x001f28                  ___floatundidf
-                  0x001ac6                  ___gedf2
-                  0x001ac6                  ___gtdf2
-                  0x001a5a                  ___ledf2
-                  0x001a5a                  ___ltdf2
-                  0x001986                  ___moddi3
-                  0x001ad0                  ___muldf3
-                  0x001c6e                  ___mulp32eds3
-                  0x001c6e                  ___mulp32peds3
-                  0x001c6e                  ___mulsi3
-                  0x001ac2                  ___subdf3
-                  0x001942                  ___udivdi3
-                  0x0018b2                  ___udivmoddi3
-                  0x001834                  ___udivsi3
-                  0x001950                  ___umoddi3
-                  0x00182e                  ___umodsi3
-                  0x001f0c                  __dPropagateNaN
+                  0x0004f2                  ___Printf_cdnopsuxX
+                  0x0004f2                  ___Printf_cdnopuxX
+                  0x000af6                  ___Putfld_cdnopsuxX
+                  0x000af6                  ___Putfld_cdnopuxX
+                  0x001ddc                  ___adddf3
+                  0x001c00                  ___divdf3
+                  0x00199e                  ___divdi3
+                  0x00189a                  ___divsi3
+                  0x001aa0                  ___eqdf2
+                  0x001836                  ___extendsfdf2
+                  0x001aaa                  ___fixdfsi
+                  0x001dbc                  ___floatdidf
+                  0x001b02                  ___floatsidf
+                  0x001f6e                  ___floatundidf
+                  0x001b0c                  ___gedf2
+                  0x001b0c                  ___gtdf2
+                  0x001aa0                  ___ledf2
+                  0x001aa0                  ___ltdf2
+                  0x0019cc                  ___moddi3
+                  0x001b16                  ___muldf3
+                  0x001cb4                  ___mulp32eds3
+                  0x001cb4                  ___mulp32peds3
+                  0x001cb4                  ___mulsi3
+                  0x001b08                  ___subdf3
+                  0x001988                  ___udivdi3
+                  0x0018f8                  ___udivmoddi3
+                  0x00187a                  ___udivsi3
+                  0x001996                  ___umoddi3
+                  0x001874                  ___umodsi3
+                  0x001f52                  __dPropagateNaN
                   0x00023c                  __data_init
                   0x00023c                  __data_init_standard
-                  0x001ca4                  __dcompare
-                  0x001e90                  __dpack
-                  0x004d60                  __dprintf
-                  0x001d66                  __dreturnNaN
-                  0x001ee8                  __dtype
-                  0x001cf6                  __dunpack
-                  0x001d44                  __dunpack2
-                  0x001d6c                  __dunpack2exit
-                  0x001c7a                  __funpack
+                  0x001cea                  __dcompare
+                  0x001ed6                  __dpack
+                  0x004e12                  __dprintf
+                  0x001dac                  __dreturnNaN
+                  0x001f2e                  __dtype
+                  0x001d3c                  __dunpack
+                  0x001d8a                  __dunpack2
+                  0x001db2                  __dunpack2exit
+                  0x001cc0                  __funpack
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0002da                  __sprintf_cdnopuxX
-                  0x0025d2                  _baudrates
-                  0x002876                  _calc_fletcher_chksum
-                  0x0032e6                  _csk_io0_high
-                  0x0032f4                  _csk_io0_low
-                  0x0033f8                  _csk_io10_high
-                  0x003406                  _csk_io10_low
-                  0x003414                  _csk_io11_high
-                  0x003422                  _csk_io11_low
-                  0x003430                  _csk_io12_high
-                  0x00343e                  _csk_io12_low
-                  0x00344c                  _csk_io13_high
-                  0x00345a                  _csk_io13_low
-                  0x003468                  _csk_io14_high
-                  0x003476                  _csk_io14_low
-                  0x003484                  _csk_io15_high
-                  0x003492                  _csk_io15_low
-                  0x0034a0                  _csk_io16_high
-                  0x0034ae                  _csk_io16_low
-                  0x0034bc                  _csk_io17_high
-                  0x0034c8                  _csk_io17_low
-                  0x0034d6                  _csk_io18_high
-                  0x0034e4                  _csk_io18_low
-                  0x0034f2                  _csk_io19_high
-                  0x0034fe                  _csk_io19_low
-                  0x003302                  _csk_io1_high
-                  0x003310                  _csk_io1_low
-                  0x00350c                  _csk_io20_high
-                  0x003518                  _csk_io20_low
-                  0x003526                  _csk_io21_high
-                  0x003532                  _csk_io21_low
-                  0x003540                  _csk_io22_high
-                  0x00354e                  _csk_io22_low
-                  0x00355c                  _csk_io23_high
-                  0x00356a                  _csk_io23_low
-                  0x003578                  _csk_io24_high
-                  0x003584                  _csk_io24_low
-                  0x003592                  _csk_io25_high
-                  0x00359e                  _csk_io25_low
-                  0x0035ac                  _csk_io26_high
-                  0x0035b8                  _csk_io26_low
-                  0x0035c6                  _csk_io27_high
-                  0x0035d2                  _csk_io27_low
-                  0x0035e0                  _csk_io28_high
-                  0x0035ee                  _csk_io28_low
-                  0x0035fc                  _csk_io29_high
-                  0x00360a                  _csk_io29_low
-                  0x00331e                  _csk_io2_high
-                  0x00332c                  _csk_io2_low
-                  0x003618                  _csk_io30_high
-                  0x003626                  _csk_io30_low
-                  0x003634                  _csk_io31_high
-                  0x003642                  _csk_io31_low
-                  0x003650                  _csk_io32_high
-                  0x00365e                  _csk_io32_low
-                  0x00366c                  _csk_io33_high
-                  0x003678                  _csk_io33_low
-                  0x003686                  _csk_io34_high
-                  0x003692                  _csk_io34_low
-                  0x0036a0                  _csk_io35_high
-                  0x0036ac                  _csk_io35_low
-                  0x0036ba                  _csk_io36_high
-                  0x0036c6                  _csk_io36_low
-                  0x0036d4                  _csk_io37_high
-                  0x0036e0                  _csk_io37_low
-                  0x0036ee                  _csk_io38_high
-                  0x0036fc                  _csk_io38_low
-                  0x00370a                  _csk_io39_high
-                  0x003718                  _csk_io39_low
-                  0x00333a                  _csk_io3_high
-                  0x003348                  _csk_io3_low
-                  0x003726                  _csk_io40_high
-                  0x003734                  _csk_io40_low
-                  0x003742                  _csk_io41_high
-                  0x003750                  _csk_io41_low
-                  0x00375e                  _csk_io42_high
-                  0x00376c                  _csk_io42_low
-                  0x00377a                  _csk_io43_high
-                  0x003788                  _csk_io43_low
-                  0x003796                  _csk_io44_high
-                  0x0037a4                  _csk_io44_low
-                  0x0037b2                  _csk_io45_high
-                  0x0037c0                  _csk_io45_low
-                  0x0037ce                  _csk_io46_high
-                  0x0037dc                  _csk_io46_low
-                  0x0037ea                  _csk_io47_high
-                  0x0037f8                  _csk_io47_low
-                  0x003356                  _csk_io4_high
-                  0x003362                  _csk_io4_low
-                  0x003370                  _csk_io5_high
-                  0x00337c                  _csk_io5_low
-                  0x00338a                  _csk_io6_high
-                  0x003398                  _csk_io6_low
-                  0x0033a6                  _csk_io7_high
-                  0x0033b2                  _csk_io7_low
-                  0x0033c0                  _csk_io8_high
-                  0x0033ce                  _csk_io8_low
-                  0x0033dc                  _csk_io9_high
-                  0x0033ea                  _csk_io9_low
-                  0x004c0e                  _csk_led_status_close
-                  0x004c32                  _csk_led_status_off
-                  0x004c24                  _csk_led_status_on
-                  0x004bf8                  _csk_led_status_open
-                  0x0048e0                  _csk_mhx_close
-                  0x0048b4                  _csk_mhx_open
-                  0x00491e                  _csk_mhx_pwr_off
-                  0x004908                  _csk_mhx_pwr_on
-                  0x0049ae                  _csk_power_shutdown
-                  0x004f1e                  _csk_rand
-                  0x004bb8                  _csk_sd_close
-                  0x004ba2                  _csk_sd_open
-                  0x004be4                  _csk_sd_pwr_off
-                  0x004bce                  _csk_sd_pwr_on
-                  0x004b18                  _csk_usb_close
-                  0x004aec                  _csk_usb_open
-                  0x004b40                  _csk_usb_present
-                  0x004f92                  _csk_wdt_force
-                  0x004f9a                  _csk_wdt_off
-                  0x0017da                  _div
-                  0x004d7a                  _dnprintf
-                  0x003806                  _fill_out_radio_config
-                  0x0028d6                  _fill_out_radio_tx_header
-                  0x00294c                  _fill_out_radio_tx_packet
-                  0x002e76                  _getBCDfromstring
-                  0x002d98                  _init
-                  0x002ff8                  _init_Rtcc
-                  0x0014b4                  _ldiv
-                  0x004f46                  _main
-                  0x001356                  _memchr
-                  0x000320                  _memcpy
-                  0x0025be                  _prescalars
-                  0x002834                  _print_radio_config
-                  0x002aac                  _printnames
-                  0x0029fe                  _send_packet_to_radio
-                  0x004392                  _spi_cs_hi
-                  0x004384                  _spi_cs_lo
-                  0x0044d6                  _spi_get_baudrate
-                  0x00442c                  _spi_init
-                  0x0043fe                  _spi_rx1
-                  0x00440c                  _spi_rx512
-                  0x00449c                  _spi_set_baudrate
-                  0x0043c2                  _spi_tx1
-                  0x0043de                  _spi_tx512
-                  0x00033c                  _sprintf
+                  0x00033c                  __sprintf_cdnopsuxX
+                  0x00033c                  __sprintf_cdnopuxX
+                  0x002618                  _baudrates
+                  0x0028c4                  _calc_fletcher_chksum
+                  0x00330a                  _csk_io0_high
+                  0x003318                  _csk_io0_low
+                  0x00341c                  _csk_io10_high
+                  0x00342a                  _csk_io10_low
+                  0x003438                  _csk_io11_high
+                  0x003446                  _csk_io11_low
+                  0x003454                  _csk_io12_high
+                  0x003462                  _csk_io12_low
+                  0x003470                  _csk_io13_high
+                  0x00347e                  _csk_io13_low
+                  0x00348c                  _csk_io14_high
+                  0x00349a                  _csk_io14_low
+                  0x0034a8                  _csk_io15_high
+                  0x0034b6                  _csk_io15_low
+                  0x0034c4                  _csk_io16_high
+                  0x0034d2                  _csk_io16_low
+                  0x0034e0                  _csk_io17_high
+                  0x0034ec                  _csk_io17_low
+                  0x0034fa                  _csk_io18_high
+                  0x003508                  _csk_io18_low
+                  0x003516                  _csk_io19_high
+                  0x003522                  _csk_io19_low
+                  0x003326                  _csk_io1_high
+                  0x003334                  _csk_io1_low
+                  0x003530                  _csk_io20_high
+                  0x00353c                  _csk_io20_low
+                  0x00354a                  _csk_io21_high
+                  0x003556                  _csk_io21_low
+                  0x003564                  _csk_io22_high
+                  0x003572                  _csk_io22_low
+                  0x003580                  _csk_io23_high
+                  0x00358e                  _csk_io23_low
+                  0x00359c                  _csk_io24_high
+                  0x0035a8                  _csk_io24_low
+                  0x0035b6                  _csk_io25_high
+                  0x0035c2                  _csk_io25_low
+                  0x0035d0                  _csk_io26_high
+                  0x0035dc                  _csk_io26_low
+                  0x0035ea                  _csk_io27_high
+                  0x0035f6                  _csk_io27_low
+                  0x003604                  _csk_io28_high
+                  0x003612                  _csk_io28_low
+                  0x003620                  _csk_io29_high
+                  0x00362e                  _csk_io29_low
+                  0x003342                  _csk_io2_high
+                  0x003350                  _csk_io2_low
+                  0x00363c                  _csk_io30_high
+                  0x00364a                  _csk_io30_low
+                  0x003658                  _csk_io31_high
+                  0x003666                  _csk_io31_low
+                  0x003674                  _csk_io32_high
+                  0x003682                  _csk_io32_low
+                  0x003690                  _csk_io33_high
+                  0x00369c                  _csk_io33_low
+                  0x0036aa                  _csk_io34_high
+                  0x0036b6                  _csk_io34_low
+                  0x0036c4                  _csk_io35_high
+                  0x0036d0                  _csk_io35_low
+                  0x0036de                  _csk_io36_high
+                  0x0036ea                  _csk_io36_low
+                  0x0036f8                  _csk_io37_high
+                  0x003704                  _csk_io37_low
+                  0x003712                  _csk_io38_high
+                  0x003720                  _csk_io38_low
+                  0x00372e                  _csk_io39_high
+                  0x00373c                  _csk_io39_low
+                  0x00335e                  _csk_io3_high
+                  0x00336c                  _csk_io3_low
+                  0x00374a                  _csk_io40_high
+                  0x003758                  _csk_io40_low
+                  0x003766                  _csk_io41_high
+                  0x003774                  _csk_io41_low
+                  0x003782                  _csk_io42_high
+                  0x003790                  _csk_io42_low
+                  0x00379e                  _csk_io43_high
+                  0x0037ac                  _csk_io43_low
+                  0x0037ba                  _csk_io44_high
+                  0x0037c8                  _csk_io44_low
+                  0x0037d6                  _csk_io45_high
+                  0x0037e4                  _csk_io45_low
+                  0x0037f2                  _csk_io46_high
+                  0x003800                  _csk_io46_low
+                  0x00380e                  _csk_io47_high
+                  0x00381c                  _csk_io47_low
+                  0x00337a                  _csk_io4_high
+                  0x003386                  _csk_io4_low
+                  0x003394                  _csk_io5_high
+                  0x0033a0                  _csk_io5_low
+                  0x0033ae                  _csk_io6_high
+                  0x0033bc                  _csk_io6_low
+                  0x0033ca                  _csk_io7_high
+                  0x0033d6                  _csk_io7_low
+                  0x0033e4                  _csk_io8_high
+                  0x0033f2                  _csk_io8_low
+                  0x003400                  _csk_io9_high
+                  0x00340e                  _csk_io9_low
+                  0x004cc0                  _csk_led_status_close
+                  0x004ce4                  _csk_led_status_off
+                  0x004cd6                  _csk_led_status_on
+                  0x004caa                  _csk_led_status_open
+                  0x00492c                  _csk_mhx_close
+                  0x004900                  _csk_mhx_open
+                  0x00496a                  _csk_mhx_pwr_off
+                  0x004954                  _csk_mhx_pwr_on
+                  0x0049fa                  _csk_power_shutdown
+                  0x004fa0                  _csk_rand
+                  0x004c6a                  _csk_sd_close
+                  0x004c54                  _csk_sd_open
+                  0x004c96                  _csk_sd_pwr_off
+                  0x004c80                  _csk_sd_pwr_on
+                  0x004bca                  _csk_usb_close
+                  0x004b9e                  _csk_usb_open
+                  0x004bf2                  _csk_usb_present
+                  0x005014                  _csk_wdt_force
+                  0x00501c                  _csk_wdt_off
+                  0x001820                  _div
+                  0x004e2c                  _dnprintf
+                  0x00382a                  _fill_out_radio_config
+                  0x002924                  _fill_out_radio_tx_header
+                  0x00299a                  _fill_out_radio_tx_packet
+                  0x002e9a                  _getBCDfromstring
+                  0x002dd4                  _init
+                  0x00301c                  _init_Rtcc
+                  0x0014fa                  _ldiv
+                  0x004fc8                  _main
+                  0x00139c                  _memchr
+                  0x0002f4                  _memcpy
+                  0x002604                  _prescalars
+                  0x002882                  _print_radio_config
+                  0x002afa                  _printnames
+                  0x002a4c                  _send_packet_to_radio
+                  0x0043ce                  _spi_cs_hi
+                  0x0043c0                  _spi_cs_lo
+                  0x004512                  _spi_get_baudrate
+                  0x004468                  _spi_init
+                  0x00443a                  _spi_rx1
+                  0x004448                  _spi_rx512
+                  0x0044d8                  _spi_set_baudrate
+                  0x0043fe                  _spi_tx1
+                  0x00441a                  _spi_tx512
+                  0x000310                  _sprintf
                   0x00069c                  _strchr
                   0x000676                  _strcspn
                   0x0002c0                  _strlen
                   0x000656                  _strspn
                   0x00035a                  _strtok
-                  0x004932                  _task_beacon
-                  0x0038ba                  _task_radio_listen
-                  0x002ac4                  _task_radio_talk
-                  0x004da0                  _task_scheduler
-                  0x004dda                  _task_test
-                  0x003aea                  _uart1_close
-                  0x003b82                  _uart1_get_byte
-                  0x003b4a                  _uart1_getchar
-                  0x003c54                  _uart1_inchar
-                  0x004e3a                  _uart1_msg
-                  0x004c40                  _uart1_msg_ts
-                  0x003ab0                  _uart1_open
-                  0x003c16                  _uart1_outchar
-                  0x003af4                  _uart1_peek_rx
-                  0x003bbc                  _uart1_putchar
-                  0x003bf8                  _uart1_puts
-                  0x003b36                  _uart1_rx_count
-                  0x003b3e                  _uart1_tx_free
-                  0x003cbe                  _uart2_close
-                  0x003d56                  _uart2_get_byte
-                  0x003d1e                  _uart2_getchar
-                  0x003e28                  _uart2_inchar
-                  0x004e68                  _uart2_msg
-                  0x004c88                  _uart2_msg_ts
-                  0x003c84                  _uart2_open
-                  0x003dea                  _uart2_outchar
-                  0x003cc8                  _uart2_peek_rx
-                  0x003d90                  _uart2_putchar
-                  0x003dcc                  _uart2_puts
-                  0x003d0a                  _uart2_rx_count
-                  0x003d12                  _uart2_tx_free
-                  0x003e92                  _uart3_close
-                  0x003f2a                  _uart3_get_byte
-                  0x003ef2                  _uart3_getchar
-                  0x003ffc                  _uart3_inchar
-                  0x004e96                  _uart3_msg
-                  0x004cd0                  _uart3_msg_ts
-                  0x003e58                  _uart3_open
-                  0x003fbe                  _uart3_outchar
-                  0x003e9c                  _uart3_peek_rx
-                  0x003f64                  _uart3_putchar
-                  0x003fa0                  _uart3_puts
-                  0x003ede                  _uart3_rx_count
-                  0x003ee6                  _uart3_tx_free
-                  0x004066                  _uart4_close
-                  0x0040fe                  _uart4_get_byte
-                  0x0040c6                  _uart4_getchar
-                  0x0041d0                  _uart4_inchar
-                  0x004ec4                  _uart4_msg
-                  0x004d18                  _uart4_msg_ts
-                  0x00402c                  _uart4_open
-                  0x004192                  _uart4_outchar
-                  0x004070                  _uart4_peek_rx
-                  0x004138                  _uart4_putchar
-                  0x004174                  _uart4_puts
-                  0x0040b2                  _uart4_rx_count
-                  0x0040ba                  _uart4_tx_free
-                  0x000306                  _vsprintf
-                  0x004a8c                  _write_msgqmessage_to_OStypeMsgP
-                  0x002672                  _write_radio_config_to_array
-                  0x00032e                  sprintf.XXo:_prout
-                  0x0002cc                  sprintf_cdnopuxX.XXo:_prout
-                  0x0002f8                  vsprintf.XXo:_prout
+                  0x00497e                  _task_beacon
+                  0x0038de                  _task_radio_listen
+                  0x002b12                  _task_radio_talk
+                  0x004e52                  _task_scheduler
+                  0x004ad8                  _task_test
+                  0x003b26                  _uart1_close
+                  0x003bbe                  _uart1_get_byte
+                  0x003b86                  _uart1_getchar
+                  0x003c90                  _uart1_inchar
+                  0x004ebc                  _uart1_msg
+                  0x004cf2                  _uart1_msg_ts
+                  0x003aec                  _uart1_open
+                  0x003c52                  _uart1_outchar
+                  0x003b30                  _uart1_peek_rx
+                  0x003bf8                  _uart1_putchar
+                  0x003c34                  _uart1_puts
+                  0x003b72                  _uart1_rx_count
+                  0x003b7a                  _uart1_tx_free
+                  0x003cfa                  _uart2_close
+                  0x003d92                  _uart2_get_byte
+                  0x003d5a                  _uart2_getchar
+                  0x003e64                  _uart2_inchar
+                  0x004eea                  _uart2_msg
+                  0x004d3a                  _uart2_msg_ts
+                  0x003cc0                  _uart2_open
+                  0x003e26                  _uart2_outchar
+                  0x003d04                  _uart2_peek_rx
+                  0x003dcc                  _uart2_putchar
+                  0x003e08                  _uart2_puts
+                  0x003d46                  _uart2_rx_count
+                  0x003d4e                  _uart2_tx_free
+                  0x003ece                  _uart3_close
+                  0x003f66                  _uart3_get_byte
+                  0x003f2e                  _uart3_getchar
+                  0x004038                  _uart3_inchar
+                  0x004f18                  _uart3_msg
+                  0x004d82                  _uart3_msg_ts
+                  0x003e94                  _uart3_open
+                  0x003ffa                  _uart3_outchar
+                  0x003ed8                  _uart3_peek_rx
+                  0x003fa0                  _uart3_putchar
+                  0x003fdc                  _uart3_puts
+                  0x003f1a                  _uart3_rx_count
+                  0x003f22                  _uart3_tx_free
+                  0x0040a2                  _uart4_close
+                  0x00413a                  _uart4_get_byte
+                  0x004102                  _uart4_getchar
+                  0x00420c                  _uart4_inchar
+                  0x004f46                  _uart4_msg
+                  0x004dca                  _uart4_msg_ts
+                  0x004068                  _uart4_open
+                  0x0041ce                  _uart4_outchar
+                  0x0040ac                  _uart4_peek_rx
+                  0x004174                  _uart4_putchar
+                  0x0041b0                  _uart4_puts
+                  0x0040ee                  _uart4_rx_count
+                  0x0040f6                  _uart4_tx_free
+                  0x0002da                  _vsprintf
+                  0x004b3e                  _write_msgqmessage_to_OStypeMsgP
+                  0x0026c0                  _write_radio_config_to_array
+                  0x000302                  sprintf.XXo:_prout
+                  0x00032e                  sprintf_cdnopsuxX.XXo:_prout
+                  0x0002cc                  vsprintf.XXo:_prout
 
 Memory Configuration
 
@@ -1192,7 +1204,7 @@ LOAD c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libfx-coff.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200       0x214c
+.text             0x000200       0x2192
  *(.init)
  .init            0x000200         0x3c c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-coff.a(crt0_standard.o)
                   0x000200                  _resetPRI
@@ -1210,23 +1222,25 @@ LOAD c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libfx-coff.a
  *(.libc)
  .libc            0x0002c0          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strlen.XXo)
                   0x0002c0                  strlen
- .libc            0x0002cc         0x2c c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf_cdnopuxX.XXo)
-                  0x0002cc                  sprintf_cdnopuxX.XXo:_prout
-                  0x0002da                  _sprintf_cdnopuxX
- .libc            0x0002f8         0x28 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(vsprintf.XXo)
-                  0x0002f8                  vsprintf.XXo:_prout
-                  0x000306                  vsprintf
- .libc            0x000320          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(memcpy.XXo)
-                  0x000320                  memcpy
- .libc            0x00032e         0x2c c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf.XXo)
-                  0x00032e                  sprintf.XXo:_prout
-                  0x00033c                  sprintf
+ .libc            0x0002cc         0x28 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(vsprintf.XXo)
+                  0x0002cc                  vsprintf.XXo:_prout
+                  0x0002da                  vsprintf
+ .libc            0x0002f4          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(memcpy.XXo)
+                  0x0002f4                  memcpy
+ .libc            0x000302         0x2c c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf.XXo)
+                  0x000302                  sprintf.XXo:_prout
+                  0x000310                  sprintf
+ .libc            0x00032e         0x2c c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf_cdnopsuxX.XXo)
+                  0x00032e                  sprintf_cdnopsuxX.XXo:_prout
+                  0x00033c                  _sprintf_cdnopuxX
+                  0x00033c                  _sprintf_cdnopsuxX
  .libc            0x00035a         0x34 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strtok.XXo)
                   0x00035a                  strtok
- .libc            0x00038e        0x164 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopuxX.XXo)
-                  0x00038e                  __Printf_cdnopuxX
- .libc            0x0004f2        0x164 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo)
-                  0x0004f2                  _Printf
+ .libc            0x00038e        0x164 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo)
+                  0x00038e                  _Printf
+ .libc            0x0004f2        0x164 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopsuxX.XXo)
+                  0x0004f2                  __Printf_cdnopuxX
+                  0x0004f2                  __Printf_cdnopsuxX
  .libc            0x000656         0x20 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strspn.XXo)
                   0x000656                  strspn
  .libc            0x000676         0x22 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strcspn.XXo)
@@ -1235,158 +1249,159 @@ LOAD c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libfx-coff.a
                   0x000698                  _Vacopy
  .libc            0x00069c         0x18 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strchr.XXo)
                   0x00069c                  strchr
- .libc            0x0006b4        0x210 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld_cdnopuxX.XXo)
-                  0x0006b4                  __Putfld_cdnopuxX
- .libc            0x0008c4        0x178 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputtxt.XXo)
-                  0x0008c4                  _Puttxt
- .libc            0x000a3c        0x2ca c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld.XXo)
-                  0x000a3c                  _Putfld
- .libc            0x000d06        0x25e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xlitob.XXo)
-                  0x000d06                  _Litob
- .libc            0x000f64        0x3f2 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldtob.XXo)
-                  0x000f64                  _Ldtob
- .libc            0x001356         0x14 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(memchr.XXo)
-                  0x001356                  memchr
- .libc            0x00136a         0x54 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldunsca.XXo)
-                  0x00136a                  _LDunscale
- .libc            0x0013be         0xf6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldscale.XXo)
-                  0x0013be                  _LDscale
- .libc            0x0014b4         0x2a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(ldiv.XXo)
-                  0x0014b4                  ldiv
- .libc            0x0014de        0x264 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xgenld.XXo)
-                  0x0014de                  _Genld
- .libc            0x001742         0x98 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xdnorm.XXo)
-                  0x001742                  _Dnorm
- .libc            0x0017da         0x16 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(div.XXo)
-                  0x0017da                  div
+ .libc            0x0006b4        0x178 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputtxt.XXo)
+                  0x0006b4                  _Puttxt
+ .libc            0x00082c        0x2ca c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld.XXo)
+                  0x00082c                  _Putfld
+ .libc            0x000af6        0x256 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld_cdnopsuxX.XXo)
+                  0x000af6                  __Putfld_cdnopsuxX
+                  0x000af6                  __Putfld_cdnopuxX
+ .libc            0x000d4c        0x25e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xlitob.XXo)
+                  0x000d4c                  _Litob
+ .libc            0x000faa        0x3f2 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldtob.XXo)
+                  0x000faa                  _Ldtob
+ .libc            0x00139c         0x14 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(memchr.XXo)
+                  0x00139c                  memchr
+ .libc            0x0013b0         0x54 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldunsca.XXo)
+                  0x0013b0                  _LDunscale
+ .libc            0x001404         0xf6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldscale.XXo)
+                  0x001404                  _LDscale
+ .libc            0x0014fa         0x2a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(ldiv.XXo)
+                  0x0014fa                  ldiv
+ .libc            0x001524        0x264 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xgenld.XXo)
+                  0x001524                  _Genld
+ .libc            0x001788         0x98 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xdnorm.XXo)
+                  0x001788                  _Dnorm
+ .libc            0x001820         0x16 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(div.XXo)
+                  0x001820                  div
  *(.libm)
- .libm            0x0017f0         0x3e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(extendsfdf.o)
-                  0x0017f0                  __extendsfdf2
- .libm            0x00182e          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(umodsi3.o)
-                  0x00182e                  __umodsi3
- .libm            0x001834         0x20 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(udivsi3.o)
-                  0x001834                  __udivsi3
- .libm            0x001854         0x1e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(divsi3.o)
-                  0x001854                  __divsi3
- .libm            0x001872        0x1e8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(divmoddi3.o)
-                  0x0018b2                  __udivmoddi3
-                  0x001942                  __udivdi3
-                  0x001950                  __umoddi3
-                  0x001958                  __divdi3
-                  0x001986                  __moddi3
- .libm            0x001a5a          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(deqltle.o)
-                  0x001a5a                  __eqdf2
-                  0x001a5a                  __ltdf2
-                  0x001a5a                  __ledf2
- .libm            0x001a64         0x58 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(fixdfsi.o)
-                  0x001a64                  __fixdfsi
- .libm            0x001abc          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(floatsidf.o)
-                  0x001abc                  __floatsidf
- .libm            0x001ac2          0x4 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(subdf3.o)
-                  0x001ac2                  __subdf3
- .libm            0x001ac6          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dgtge.o)
-                  0x001ac6                  __gtdf2
-                  0x001ac6                  __gedf2
- .libm            0x001ad0         0xea c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(muldf3.o)
-                  0x001ad0                  __muldf3
- .libm            0x001bba         0xb4 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(divdf3.o)
-                  0x001bba                  __divdf3
- .libm            0x001c6e          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(mulsi3.o)
-                  0x001c6e                  __mulp32peds3
-                  0x001c6e                  __mulsi3
-                  0x001c6e                  __mulp32eds3
- .libm            0x001c7a         0x2a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(funpack.o)
-                  0x001c7a                  _funpack
- .libm            0x001ca4         0x52 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dcompare.o)
-                  0x001ca4                  _dcompare
- .libm            0x001cf6         0x4e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dunpack.o)
-                  0x001cf6                  _dunpack
- .libm            0x001d44         0x32 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dunpack2.o)
-                  0x001d44                  _dunpack2
-                  0x001d66                  _dreturnNaN
-                  0x001d6c                  _dunpack2exit
- .libm            0x001d76         0x20 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(floatdidf.o)
-                  0x001d76                  __floatdidf
- .libm            0x001d96         0xfa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(adddf3.o)
-                  0x001d96                  __adddf3
- .libm            0x001e90         0x58 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dpack.o)
-                  0x001e90                  _dpack
- .libm            0x001ee8         0x24 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dtype.o)
-                  0x001ee8                  _dtype
- .libm            0x001f0c         0x1c c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dpropagateNaN.o)
-                  0x001f0c                  _dPropagateNaN
- .libm            0x001f28         0x56 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(floatundidf.o)
-                  0x001f28                  __floatundidf
+ .libm            0x001836         0x3e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(extendsfdf.o)
+                  0x001836                  __extendsfdf2
+ .libm            0x001874          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(umodsi3.o)
+                  0x001874                  __umodsi3
+ .libm            0x00187a         0x20 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(udivsi3.o)
+                  0x00187a                  __udivsi3
+ .libm            0x00189a         0x1e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(divsi3.o)
+                  0x00189a                  __divsi3
+ .libm            0x0018b8        0x1e8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(divmoddi3.o)
+                  0x0018f8                  __udivmoddi3
+                  0x001988                  __udivdi3
+                  0x001996                  __umoddi3
+                  0x00199e                  __divdi3
+                  0x0019cc                  __moddi3
+ .libm            0x001aa0          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(deqltle.o)
+                  0x001aa0                  __eqdf2
+                  0x001aa0                  __ltdf2
+                  0x001aa0                  __ledf2
+ .libm            0x001aaa         0x58 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(fixdfsi.o)
+                  0x001aaa                  __fixdfsi
+ .libm            0x001b02          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(floatsidf.o)
+                  0x001b02                  __floatsidf
+ .libm            0x001b08          0x4 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(subdf3.o)
+                  0x001b08                  __subdf3
+ .libm            0x001b0c          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dgtge.o)
+                  0x001b0c                  __gtdf2
+                  0x001b0c                  __gedf2
+ .libm            0x001b16         0xea c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(muldf3.o)
+                  0x001b16                  __muldf3
+ .libm            0x001c00         0xb4 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(divdf3.o)
+                  0x001c00                  __divdf3
+ .libm            0x001cb4          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(mulsi3.o)
+                  0x001cb4                  __mulp32peds3
+                  0x001cb4                  __mulsi3
+                  0x001cb4                  __mulp32eds3
+ .libm            0x001cc0         0x2a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(funpack.o)
+                  0x001cc0                  _funpack
+ .libm            0x001cea         0x52 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dcompare.o)
+                  0x001cea                  _dcompare
+ .libm            0x001d3c         0x4e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dunpack.o)
+                  0x001d3c                  _dunpack
+ .libm            0x001d8a         0x32 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dunpack2.o)
+                  0x001d8a                  _dunpack2
+                  0x001dac                  _dreturnNaN
+                  0x001db2                  _dunpack2exit
+ .libm            0x001dbc         0x20 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(floatdidf.o)
+                  0x001dbc                  __floatdidf
+ .libm            0x001ddc         0xfa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(adddf3.o)
+                  0x001ddc                  __adddf3
+ .libm            0x001ed6         0x58 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dpack.o)
+                  0x001ed6                  _dpack
+ .libm            0x001f2e         0x24 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dtype.o)
+                  0x001f2e                  _dtype
+ .libm            0x001f52         0x1c c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(dpropagateNaN.o)
+                  0x001f52                  _dPropagateNaN
+ .libm            0x001f6e         0x56 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(floatundidf.o)
+                  0x001f6e                  __floatundidf
  *(.libdsp)
  *(.lib*)
- .libperi         0x001f7e         0x10 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(EnableWDT.o)
-                  0x001f7e                  EnableWDT
- .libperi         0x001f8e         0x24 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntTimer2.o)
-                  0x001f8e                  ConfigIntTimer2
- .libperi         0x001fb2          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseTimer2.o)
-                  0x001fb2                  CloseTimer2
- .libperi         0x001fba          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenSPI1.o)
-                  0x001fba                  OpenSPI1
- .libperi         0x001fc2          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseSPI1.o)
-                  0x001fc2                  CloseSPI1
- .libperi         0x001fca          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART1.o)
-                  0x001fca                  CloseUART1
- .libperi         0x001fd6         0x48 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART1.o)
-                  0x001fd6                  ConfigIntUART1
- .libperi         0x00201e         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART1.o)
-                  0x00201e                  OpenUART1
- .libperi         0x002030          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART1.o)
-                  0x002030                  BusyUART1
- .libperi         0x00203a          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART1.o)
-                  0x00203a                  WriteUART1
- .libperi         0x002048          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART2.o)
-                  0x002048                  CloseUART2
- .libperi         0x002054         0x48 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART2.o)
-                  0x002054                  ConfigIntUART2
- .libperi         0x00209c         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART2.o)
-                  0x00209c                  OpenUART2
- .libperi         0x0020ae          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART2.o)
-                  0x0020ae                  BusyUART2
- .libperi         0x0020b8          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART2.o)
-                  0x0020b8                  WriteUART2
- .libperi         0x0020c6          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART3.o)
-                  0x0020c6                  CloseUART3
- .libperi         0x0020d2         0x48 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART3.o)
-                  0x0020d2                  ConfigIntUART3
- .libperi         0x00211a         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART3.o)
-                  0x00211a                  OpenUART3
- .libperi         0x00212c          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART3.o)
-                  0x00212c                  BusyUART3
- .libperi         0x002136          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART3.o)
-                  0x002136                  WriteUART3
- .libperi         0x002144          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART4.o)
-                  0x002144                  CloseUART4
- .libperi         0x002150         0x44 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART4.o)
-                  0x002150                  ConfigIntUART4
- .libperi         0x002194         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART4.o)
-                  0x002194                  OpenUART4
- .libperi         0x0021a6          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART4.o)
-                  0x0021a6                  BusyUART4
- .libperi         0x0021b0          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART4.o)
-                  0x0021b0                  WriteUART4
- .libperi         0x0021be         0x2e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RtccReadTime_v1.o)
-                  0x0021be                  RtccReadTime_v1
- .libperi         0x0021ec          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenTimer2.o)
-                  0x0021ec                  OpenTimer2
- .libperi         0x0021f4         0x1e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntCN.o)
-                  0x0021f4                  ConfigIntCN
- .libperi         0x002212         0x22 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RTCCInitClock_v1.o)
-                  0x002212                  RtccInitClock_v1
- .libperi         0x002234         0xb0 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RtccWriteTime_v1.o)
-                  0x002234                  RtccWriteTime_v1
- .libperi         0x0022e4         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART1.o)
-                  0x0022e4                  ReadUART1
- .libperi         0x0022f6         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART2.o)
-                  0x0022f6                  ReadUART2
- .libperi         0x002308         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART3.o)
-                  0x002308                  ReadUART3
- .libperi         0x00231a         0x32 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RtccWrOn_v1.o)
-                  0x00231a                  RtccWrOn_v1
+ .libperi         0x001fc4         0x10 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(EnableWDT.o)
+                  0x001fc4                  EnableWDT
+ .libperi         0x001fd4         0x24 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntTimer2.o)
+                  0x001fd4                  ConfigIntTimer2
+ .libperi         0x001ff8          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseTimer2.o)
+                  0x001ff8                  CloseTimer2
+ .libperi         0x002000          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenSPI1.o)
+                  0x002000                  OpenSPI1
+ .libperi         0x002008          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseSPI1.o)
+                  0x002008                  CloseSPI1
+ .libperi         0x002010          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART1.o)
+                  0x002010                  CloseUART1
+ .libperi         0x00201c         0x48 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART1.o)
+                  0x00201c                  ConfigIntUART1
+ .libperi         0x002064         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART1.o)
+                  0x002064                  OpenUART1
+ .libperi         0x002076          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART1.o)
+                  0x002076                  BusyUART1
+ .libperi         0x002080          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART1.o)
+                  0x002080                  WriteUART1
+ .libperi         0x00208e          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART2.o)
+                  0x00208e                  CloseUART2
+ .libperi         0x00209a         0x48 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART2.o)
+                  0x00209a                  ConfigIntUART2
+ .libperi         0x0020e2         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART2.o)
+                  0x0020e2                  OpenUART2
+ .libperi         0x0020f4          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART2.o)
+                  0x0020f4                  BusyUART2
+ .libperi         0x0020fe          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART2.o)
+                  0x0020fe                  WriteUART2
+ .libperi         0x00210c          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART3.o)
+                  0x00210c                  CloseUART3
+ .libperi         0x002118         0x48 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART3.o)
+                  0x002118                  ConfigIntUART3
+ .libperi         0x002160         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART3.o)
+                  0x002160                  OpenUART3
+ .libperi         0x002172          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART3.o)
+                  0x002172                  BusyUART3
+ .libperi         0x00217c          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART3.o)
+                  0x00217c                  WriteUART3
+ .libperi         0x00218a          0xc c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(CloseUART4.o)
+                  0x00218a                  CloseUART4
+ .libperi         0x002196         0x44 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntUART4.o)
+                  0x002196                  ConfigIntUART4
+ .libperi         0x0021da         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenUART4.o)
+                  0x0021da                  OpenUART4
+ .libperi         0x0021ec          0xa c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(BusyUART4.o)
+                  0x0021ec                  BusyUART4
+ .libperi         0x0021f6          0xe c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(WriteUART4.o)
+                  0x0021f6                  WriteUART4
+ .libperi         0x002204         0x2e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RtccReadTime_v1.o)
+                  0x002204                  RtccReadTime_v1
+ .libperi         0x002232          0x8 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(OpenTimer2.o)
+                  0x002232                  OpenTimer2
+ .libperi         0x00223a         0x1e c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ConfigIntCN.o)
+                  0x00223a                  ConfigIntCN
+ .libperi         0x002258         0x22 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RTCCInitClock_v1.o)
+                  0x002258                  RtccInitClock_v1
+ .libperi         0x00227a         0xb0 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RtccWriteTime_v1.o)
+                  0x00227a                  RtccWriteTime_v1
+ .libperi         0x00232a         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART1.o)
+                  0x00232a                  ReadUART1
+ .libperi         0x00233c         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART2.o)
+                  0x00233c                  ReadUART2
+ .libperi         0x00234e         0x12 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(ReadUART3.o)
+                  0x00234e                  ReadUART3
+ .libperi         0x002360         0x32 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-coff.a(RtccWrOn_v1.o)
+                  0x002360                  RtccWrOn_v1
 
 usercode
  *(usercode)
@@ -2598,19 +2613,19 @@ __c30_signature
  __c30_signature
                   0x0001d4          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strlen.XXo)
  __c30_signature
-                  0x0001da          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf_cdnopuxX.XXo)
+                  0x0001da          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(vsprintf.XXo)
  __c30_signature
-                  0x0001e0          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(vsprintf.XXo)
+                  0x0001e0          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(memcpy.XXo)
  __c30_signature
-                  0x0001e6          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(memcpy.XXo)
+                  0x0001e6          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf.XXo)
  __c30_signature
-                  0x0001ec          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf.XXo)
+                  0x0001ec          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(sprintf_cdnopsuxX.XXo)
  __c30_signature
                   0x0001f2          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strtok.XXo)
  __c30_signature
-                  0x0001f8          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopuxX.XXo)
+                  0x0001f8          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo)
  __c30_signature
-                  0x0001fe          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo)
+                  0x0001fe          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopsuxX.XXo)
  __c30_signature
                   0x000204          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strspn.XXo)
  __c30_signature
@@ -2620,11 +2635,11 @@ __c30_signature
  __c30_signature
                   0x000216          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strchr.XXo)
  __c30_signature
-                  0x00021c          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld_cdnopuxX.XXo)
+                  0x00021c          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputtxt.XXo)
  __c30_signature
-                  0x000222          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputtxt.XXo)
+                  0x000222          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld.XXo)
  __c30_signature
-                  0x000228          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld.XXo)
+                  0x000228          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xputfld_cdnopsuxX.XXo)
  __c30_signature
                   0x00022e          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xlitob.XXo)
  __c30_signature
@@ -2690,91 +2705,92 @@ __c30_signature
  __c30_signature
                   0x0002e8          0x6 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\libm-coff.a(floatundidf.o)
 
-.bss                0x0850        0xc38
+.bss                0x0850        0xf4a
  .bss               0x0850        0x582 build/XC16/debug/ProjectSources/task_radio_talk.o
                     0x08b4                  radio_configuration
- .bss               0x0dd2        0x176 build/XC16/debug/ProjectSources/task_radio_listen.o
- .bss               0x0f48        0x10c build/XC16/debug/_ext/807317143/pic24_uart2.o
-                    0x0f48                  rx2Count
-                    0x0f4a                  rx2InP
-                    0x0f4c                  rx2OutP
-                    0x0f4e                  rx2Buff
-                    0x0fce                  tx2Count
-                    0x0fd0                  tx2InP
-                    0x0fd2                  tx2OutP
-                    0x0fd4                  tx2Buff
- .bss               0x1054         0xf8 build/XC16/debug/_ext/55259478/salvomem.o
-                    0x1054                  OScTcbP
-                    0x1056                  OStcbArea
-                    0x110c                  OSeligQP
-                    0x110e                  OSecbArea
-                    0x112c                  OSsigQinP
-                    0x112e                  OSsigQoutP
-                    0x1130                  OSefcbArea
-                    0x1136                  OSmqcbArea
-                    0x1140                  OSdelayQP
-                    0x1142                  OStimerTicks
-                    0x1146                  OSlostTicks
-                    0x1148                  OSframeP
- .bss               0x114c         0xce build/XC16/debug/ProjectSources/task_beacon.o
- .bss               0x121a         0xca build/XC16/debug/ProjectSources/debug_functions.o
- .bss               0x12e4         0x8c build/XC16/debug/_ext/807317143/pic24_uart1.o
-                    0x12e4                  rx1Count
-                    0x12e6                  rx1InP
-                    0x12e8                  rx1OutP
-                    0x12ea                  rx1Buff
-                    0x132a                  tx1Count
-                    0x132c                  tx1InP
-                    0x132e                  tx1OutP
-                    0x1330                  tx1Buff
- .bss               0x1370         0x8c build/XC16/debug/_ext/807317143/pic24_uart3.o
-                    0x1370                  rx3Count
-                    0x1372                  rx3InP
-                    0x1374                  rx3OutP
-                    0x1376                  rx3Buff
-                    0x13b6                  tx3Count
-                    0x13b8                  tx3InP
-                    0x13ba                  tx3OutP
-                    0x13bc                  tx3Buff
- .bss               0x13fc         0x8c build/XC16/debug/_ext/807317143/pic24_uart4.o
-                    0x13fc                  rx4Count
-                    0x13fe                  rx4InP
-                    0x1400                  rx4OutP
-                    0x1402                  rx4Buff
-                    0x1442                  tx4Count
-                    0x1444                  tx4InP
-                    0x1446                  tx4OutP
-                    0x1448                  tx4Buff
+ .bss               0x0dd2        0x20c build/XC16/debug/_ext/807317143/pic24_uart3.o
+                    0x0dd2                  rx3Count
+                    0x0dd4                  rx3InP
+                    0x0dd6                  rx3OutP
+                    0x0dd8                  rx3Buff
+                    0x0ed8                  tx3Count
+                    0x0eda                  tx3InP
+                    0x0edc                  tx3OutP
+                    0x0ede                  tx3Buff
+ .bss               0x0fde        0x176 build/XC16/debug/ProjectSources/task_radio_listen.o
+ .bss               0x1154        0x168 build/XC16/debug/ProjectSources/task_test.o
+ .bss               0x12bc        0x122 build/XC16/debug/_ext/55259478/salvomem.o
+                    0x12bc                  OScTcbP
+                    0x12be                  OStcbArea
+                    0x139e                  OSeligQP
+                    0x13a0                  OSecbArea
+                    0x13be                  OSsigQinP
+                    0x13c0                  OSsigQoutP
+                    0x13c2                  OSefcbArea
+                    0x13c8                  OSmqcbArea
+                    0x13d2                  OSdelayQP
+                    0x13d4                  OStimerTicks
+                    0x13d8                  OSlostTicks
+                    0x13da                  OSframeP
+ .bss               0x13de        0x10c build/XC16/debug/_ext/807317143/pic24_uart2.o
+                    0x13de                  rx2Count
+                    0x13e0                  rx2InP
+                    0x13e2                  rx2OutP
+                    0x13e4                  rx2Buff
+                    0x1464                  tx2Count
+                    0x1466                  tx2InP
+                    0x1468                  tx2OutP
+                    0x146a                  tx2Buff
+ .bss               0x14ea         0xce build/XC16/debug/ProjectSources/task_beacon.o
+ .bss               0x15b8         0xca build/XC16/debug/ProjectSources/debug_functions.o
+ .bss               0x1682         0x8c build/XC16/debug/_ext/807317143/pic24_uart1.o
+                    0x1682                  rx1Count
+                    0x1684                  rx1InP
+                    0x1686                  rx1OutP
+                    0x1688                  rx1Buff
+                    0x16c8                  tx1Count
+                    0x16ca                  tx1InP
+                    0x16cc                  tx1OutP
+                    0x16ce                  tx1Buff
+ .bss               0x170e         0x8c build/XC16/debug/_ext/807317143/pic24_uart4.o
+                    0x170e                  rx4Count
+                    0x1710                  rx4InP
+                    0x1712                  rx4OutP
+                    0x1714                  rx4Buff
+                    0x1754                  tx4Count
+                    0x1756                  tx4InP
+                    0x1758                  tx4OutP
+                    0x175a                  tx4Buff
 
-.data               0x1488         0x7a
- .data              0x1488         0x7a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldtob.XXo)
+.data               0x179a         0x7a
+ .data              0x179a         0x7a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xldtob.XXo)
 
-.bss                0x1502         0xcc
- .bss               0x1502         0x68 build/XC16/debug/ProjectSources/task_test.o
- .bss               0x156a         0x64 build/XC16/debug/ProjectSources/task_scheduler.o
+.bss                0x1814         0x64
+ .bss               0x1814         0x64 build/XC16/debug/ProjectSources/task_scheduler.o
 
-.data               0x15ce         0x9a
- .data              0x15ce         0x44 build/XC16/debug/ProjectSources/task_radio_talk.o
- .data              0x1612         0x22 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xlitob.XXo)
- .data              0x1634         0x1a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopuxX.XXo)
- .data              0x164e         0x1a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo)
+.data               0x1878         0xa8
+ .data              0x1878         0x44 build/XC16/debug/ProjectSources/task_radio_talk.o
+ .data              0x18bc         0x22 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xlitob.XXo)
+ .data              0x18de         0x1a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf.XXo)
+ .data              0x18f8         0x1a c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xprintf_cdnopsuxX.XXo)
+ .data              0x1912          0xe build/XC16/debug/ProjectSources/task_test.o
 
-.bss                0x1668          0x4
- .bss               0x1668          0x4 build/XC16/debug/_ext/22001101/effs_thin_mmc_drv_spi1.o
-                    0x1668                  baudrate
+.bss                0x1920          0x4
+ .bss               0x1920          0x4 build/XC16/debug/_ext/22001101/effs_thin_mmc_drv_spi1.o
+                    0x1920                  baudrate
 
-.data               0x166c          0x6
- .data              0x166c          0x4 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strtok.XXo)
- .data              0x1670          0x2 build/XC16/debug/_ext/22001101/csk_rand.o
-                    0x1670                  seed
+.data               0x1924          0x6
+ .data              0x1924          0x4 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(strtok.XXo)
+ .data              0x1928          0x2 build/XC16/debug/_ext/22001101/csk_rand.o
+                    0x1928                  seed
 
-.bss                0x1672          0x4
- .bss               0x1672          0x2 build/XC16/debug/ProjectSources/main.o
-                    0x1672                  csk_status
- .bss               0x1674          0x2 build/XC16/debug/ProjectSources/init.o
+.bss                0x192a          0x4
+ .bss               0x192a          0x2 build/XC16/debug/ProjectSources/main.o
+                    0x192a                  csk_status
+ .bss               0x192c          0x2 build/XC16/debug/ProjectSources/init.o
 
-.data               0x1676          0x2
- .data              0x1676          0x2 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xgenld.XXo)
+.data               0x192e          0x2
+ .data              0x192e          0x2 c:/work/cdh/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-coff.a(xgenld.XXo)
 
 .ivt._CNInterrupt
                   0x00003a          0x2
@@ -2816,294 +2832,295 @@ __c30_signature
  .ivt._U3RXInterrupt
                   0x0000b8          0x2 build/XC16/debug/ProjectSources/init.o
 
-.const              0xa34c        0x326 load address 0x00234c  
- .const             0xa34c        0x154 build/XC16/debug/ProjectSources/task_radio_listen.o
- .const             0xa4a0         0xbc build/XC16/debug/ProjectSources/init.o
- .const             0xa55c         0x62 build/XC16/debug/ProjectSources/task_radio_talk.o
- .const             0xa5be         0x3c build/XC16/debug/_ext/22001101/effs_thin_mmc_drv_spi1.o
-                    0xa5be                  prescalars
-                    0xa5d2                  baudrates
- .const             0xa5fa         0x24 build/XC16/debug/ProjectSources/task_scheduler.o
- .const             0xa61e          0xe build/XC16/debug/_ext/807317143/pic24_uart1_msg_ts.o
- .const             0xa62c          0xe build/XC16/debug/_ext/807317143/pic24_uart2_msg_ts.o
- .const             0xa63a          0xe build/XC16/debug/_ext/807317143/pic24_uart3_msg_ts.o
- .const             0xa648          0xe build/XC16/debug/_ext/807317143/pic24_uart4_msg_ts.o
- .const             0xa656          0xc build/XC16/debug/ProjectSources/messagequeues.o
- .const             0xa662          0x4 build/XC16/debug/_ext/807317143/pic24_uart1_msg.o
- .const             0xa666          0x4 build/XC16/debug/_ext/807317143/pic24_uart2_msg.o
- .const             0xa66a          0x4 build/XC16/debug/_ext/807317143/pic24_uart3_msg.o
- .const             0xa66e          0x4 build/XC16/debug/_ext/807317143/pic24_uart4_msg.o
+.const              0xa392        0x32e load address 0x002392  
+ .const             0xa392        0x154 build/XC16/debug/ProjectSources/task_radio_listen.o
+ .const             0xa4e6         0xbc build/XC16/debug/ProjectSources/init.o
+ .const             0xa5a2         0x62 build/XC16/debug/ProjectSources/task_radio_talk.o
+ .const             0xa604         0x3c build/XC16/debug/_ext/22001101/effs_thin_mmc_drv_spi1.o
+                    0xa604                  prescalars
+                    0xa618                  baudrates
+ .const             0xa640         0x24 build/XC16/debug/ProjectSources/task_scheduler.o
+ .const             0xa664          0xe build/XC16/debug/_ext/807317143/pic24_uart1_msg_ts.o
+ .const             0xa672          0xe build/XC16/debug/_ext/807317143/pic24_uart2_msg_ts.o
+ .const             0xa680          0xe build/XC16/debug/_ext/807317143/pic24_uart3_msg_ts.o
+ .const             0xa68e          0xe build/XC16/debug/_ext/807317143/pic24_uart4_msg_ts.o
+ .const             0xa69c          0xc build/XC16/debug/ProjectSources/messagequeues.o
+ .const             0xa6a8          0x8 build/XC16/debug/ProjectSources/task_test.o
+ .const             0xa6b0          0x4 build/XC16/debug/_ext/807317143/pic24_uart1_msg.o
+ .const             0xa6b4          0x4 build/XC16/debug/_ext/807317143/pic24_uart2_msg.o
+ .const             0xa6b8          0x4 build/XC16/debug/_ext/807317143/pic24_uart3_msg.o
+ .const             0xa6bc          0x4 build/XC16/debug/_ext/807317143/pic24_uart4_msg.o
 
-.text             0x002672       0x1e6e
- .text            0x002672        0x726 build/XC16/debug/ProjectSources/task_radio_talk.o
-                  0x002672                  write_radio_config_to_array
-                  0x002834                  print_radio_config
-                  0x002876                  calc_fletcher_chksum
-                  0x0028d6                  fill_out_radio_tx_header
-                  0x00294c                  fill_out_radio_tx_packet
-                  0x0029fe                  send_packet_to_radio
-                  0x002aac                  printnames
-                  0x002ac4                  task_radio_talk
- .text            0x002d98        0x54e build/XC16/debug/ProjectSources/init.o
-                  0x002d98                  init
-                  0x002e76                  getBCDfromstring
-                  0x002ff8                  init_Rtcc
-                  0x0031f8                  _CNInterrupt
-                  0x003200                  _T2Interrupt
-                  0x003220                  _U1TXInterrupt
-                  0x00323e                  _U1RXInterrupt
-                  0x003262                  _U2TXInterrupt
-                  0x003280                  _U2RXInterrupt
-                  0x0032a4                  _U3TXInterrupt
-                  0x0032c2                  _U3RXInterrupt
- .text            0x0032e6        0x520 build/XC16/debug/_ext/22001101/csk_io.o
-                  0x0032e6                  csk_io0_high
-                  0x0032f4                  csk_io0_low
-                  0x003302                  csk_io1_high
-                  0x003310                  csk_io1_low
-                  0x00331e                  csk_io2_high
-                  0x00332c                  csk_io2_low
-                  0x00333a                  csk_io3_high
-                  0x003348                  csk_io3_low
-                  0x003356                  csk_io4_high
-                  0x003362                  csk_io4_low
-                  0x003370                  csk_io5_high
-                  0x00337c                  csk_io5_low
-                  0x00338a                  csk_io6_high
-                  0x003398                  csk_io6_low
-                  0x0033a6                  csk_io7_high
-                  0x0033b2                  csk_io7_low
-                  0x0033c0                  csk_io8_high
-                  0x0033ce                  csk_io8_low
-                  0x0033dc                  csk_io9_high
-                  0x0033ea                  csk_io9_low
-                  0x0033f8                  csk_io10_high
-                  0x003406                  csk_io10_low
-                  0x003414                  csk_io11_high
-                  0x003422                  csk_io11_low
-                  0x003430                  csk_io12_high
-                  0x00343e                  csk_io12_low
-                  0x00344c                  csk_io13_high
-                  0x00345a                  csk_io13_low
-                  0x003468                  csk_io14_high
-                  0x003476                  csk_io14_low
-                  0x003484                  csk_io15_high
-                  0x003492                  csk_io15_low
-                  0x0034a0                  csk_io16_high
-                  0x0034ae                  csk_io16_low
-                  0x0034bc                  csk_io17_high
-                  0x0034c8                  csk_io17_low
-                  0x0034d6                  csk_io18_high
-                  0x0034e4                  csk_io18_low
-                  0x0034f2                  csk_io19_high
-                  0x0034fe                  csk_io19_low
-                  0x00350c                  csk_io20_high
-                  0x003518                  csk_io20_low
-                  0x003526                  csk_io21_high
-                  0x003532                  csk_io21_low
-                  0x003540                  csk_io22_high
-                  0x00354e                  csk_io22_low
-                  0x00355c                  csk_io23_high
-                  0x00356a                  csk_io23_low
-                  0x003578                  csk_io24_high
-                  0x003584                  csk_io24_low
-                  0x003592                  csk_io25_high
-                  0x00359e                  csk_io25_low
-                  0x0035ac                  csk_io26_high
-                  0x0035b8                  csk_io26_low
-                  0x0035c6                  csk_io27_high
-                  0x0035d2                  csk_io27_low
-                  0x0035e0                  csk_io28_high
-                  0x0035ee                  csk_io28_low
-                  0x0035fc                  csk_io29_high
-                  0x00360a                  csk_io29_low
-                  0x003618                  csk_io30_high
-                  0x003626                  csk_io30_low
-                  0x003634                  csk_io31_high
-                  0x003642                  csk_io31_low
-                  0x003650                  csk_io32_high
-                  0x00365e                  csk_io32_low
-                  0x00366c                  csk_io33_high
-                  0x003678                  csk_io33_low
-                  0x003686                  csk_io34_high
-                  0x003692                  csk_io34_low
-                  0x0036a0                  csk_io35_high
-                  0x0036ac                  csk_io35_low
-                  0x0036ba                  csk_io36_high
-                  0x0036c6                  csk_io36_low
-                  0x0036d4                  csk_io37_high
-                  0x0036e0                  csk_io37_low
-                  0x0036ee                  csk_io38_high
-                  0x0036fc                  csk_io38_low
-                  0x00370a                  csk_io39_high
-                  0x003718                  csk_io39_low
-                  0x003726                  csk_io40_high
-                  0x003734                  csk_io40_low
-                  0x003742                  csk_io41_high
-                  0x003750                  csk_io41_low
-                  0x00375e                  csk_io42_high
-                  0x00376c                  csk_io42_low
-                  0x00377a                  csk_io43_high
-                  0x003788                  csk_io43_low
-                  0x003796                  csk_io44_high
-                  0x0037a4                  csk_io44_low
-                  0x0037b2                  csk_io45_high
-                  0x0037c0                  csk_io45_low
-                  0x0037ce                  csk_io46_high
-                  0x0037dc                  csk_io46_low
-                  0x0037ea                  csk_io47_high
-                  0x0037f8                  csk_io47_low
- .text            0x003806        0x2aa build/XC16/debug/ProjectSources/task_radio_listen.o
-                  0x003806                  fill_out_radio_config
-                  0x0038ba                  task_radio_listen
- .text            0x003ab0        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart1.o
-                  0x003ab0                  uart1_open
-                  0x003aea                  uart1_close
-                  0x003af4                  uart1_peek_rx
-                  0x003b36                  uart1_rx_count
-                  0x003b3e                  uart1_tx_free
-                  0x003b4a                  uart1_getchar
-                  0x003b82                  uart1_get_byte
-                  0x003bbc                  uart1_putchar
-                  0x003bf8                  uart1_puts
-                  0x003c16                  uart1_outchar
-                  0x003c54                  uart1_inchar
- .text            0x003c84        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart2.o
-                  0x003c84                  uart2_open
-                  0x003cbe                  uart2_close
-                  0x003cc8                  uart2_peek_rx
-                  0x003d0a                  uart2_rx_count
-                  0x003d12                  uart2_tx_free
-                  0x003d1e                  uart2_getchar
-                  0x003d56                  uart2_get_byte
-                  0x003d90                  uart2_putchar
-                  0x003dcc                  uart2_puts
-                  0x003dea                  uart2_outchar
-                  0x003e28                  uart2_inchar
- .text            0x003e58        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart3.o
-                  0x003e58                  uart3_open
-                  0x003e92                  uart3_close
-                  0x003e9c                  uart3_peek_rx
-                  0x003ede                  uart3_rx_count
-                  0x003ee6                  uart3_tx_free
-                  0x003ef2                  uart3_getchar
-                  0x003f2a                  uart3_get_byte
-                  0x003f64                  uart3_putchar
-                  0x003fa0                  uart3_puts
-                  0x003fbe                  uart3_outchar
-                  0x003ffc                  uart3_inchar
- .text            0x00402c        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart4.o
-                  0x00402c                  uart4_open
-                  0x004066                  uart4_close
-                  0x004070                  uart4_peek_rx
-                  0x0040b2                  uart4_rx_count
-                  0x0040ba                  uart4_tx_free
-                  0x0040c6                  uart4_getchar
-                  0x0040fe                  uart4_get_byte
-                  0x004138                  uart4_putchar
-                  0x004174                  uart4_puts
-                  0x004192                  uart4_outchar
-                  0x0041d0                  uart4_inchar
- .text            0x004200        0x184 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvosched.o)
-                  0x004200                  OSSched
- .text            0x004384        0x15c build/XC16/debug/_ext/22001101/effs_thin_mmc_drv_spi1.o
-                  0x004384                  spi_cs_lo
-                  0x004392                  spi_cs_hi
-                  0x0043a0                  ConfigureSPI1
-                  0x0043c2                  spi_tx1
-                  0x0043de                  spi_tx512
-                  0x0043fe                  spi_rx1
-                  0x00440c                  spi_rx512
-                  0x00442c                  spi_init
-                  0x00449c                  spi_set_baudrate
-                  0x0044d6                  spi_get_baudrate
+.text             0x0026c0       0x1e5c
+ .text            0x0026c0        0x714 build/XC16/debug/ProjectSources/task_radio_talk.o
+                  0x0026c0                  write_radio_config_to_array
+                  0x002882                  print_radio_config
+                  0x0028c4                  calc_fletcher_chksum
+                  0x002924                  fill_out_radio_tx_header
+                  0x00299a                  fill_out_radio_tx_packet
+                  0x002a4c                  send_packet_to_radio
+                  0x002afa                  printnames
+                  0x002b12                  task_radio_talk
+ .text            0x002dd4        0x536 build/XC16/debug/ProjectSources/init.o
+                  0x002dd4                  init
+                  0x002e9a                  getBCDfromstring
+                  0x00301c                  init_Rtcc
+                  0x00321c                  _CNInterrupt
+                  0x003224                  _T2Interrupt
+                  0x003244                  _U1TXInterrupt
+                  0x003262                  _U1RXInterrupt
+                  0x003286                  _U2TXInterrupt
+                  0x0032a4                  _U2RXInterrupt
+                  0x0032c8                  _U3TXInterrupt
+                  0x0032e6                  _U3RXInterrupt
+ .text            0x00330a        0x520 build/XC16/debug/_ext/22001101/csk_io.o
+                  0x00330a                  csk_io0_high
+                  0x003318                  csk_io0_low
+                  0x003326                  csk_io1_high
+                  0x003334                  csk_io1_low
+                  0x003342                  csk_io2_high
+                  0x003350                  csk_io2_low
+                  0x00335e                  csk_io3_high
+                  0x00336c                  csk_io3_low
+                  0x00337a                  csk_io4_high
+                  0x003386                  csk_io4_low
+                  0x003394                  csk_io5_high
+                  0x0033a0                  csk_io5_low
+                  0x0033ae                  csk_io6_high
+                  0x0033bc                  csk_io6_low
+                  0x0033ca                  csk_io7_high
+                  0x0033d6                  csk_io7_low
+                  0x0033e4                  csk_io8_high
+                  0x0033f2                  csk_io8_low
+                  0x003400                  csk_io9_high
+                  0x00340e                  csk_io9_low
+                  0x00341c                  csk_io10_high
+                  0x00342a                  csk_io10_low
+                  0x003438                  csk_io11_high
+                  0x003446                  csk_io11_low
+                  0x003454                  csk_io12_high
+                  0x003462                  csk_io12_low
+                  0x003470                  csk_io13_high
+                  0x00347e                  csk_io13_low
+                  0x00348c                  csk_io14_high
+                  0x00349a                  csk_io14_low
+                  0x0034a8                  csk_io15_high
+                  0x0034b6                  csk_io15_low
+                  0x0034c4                  csk_io16_high
+                  0x0034d2                  csk_io16_low
+                  0x0034e0                  csk_io17_high
+                  0x0034ec                  csk_io17_low
+                  0x0034fa                  csk_io18_high
+                  0x003508                  csk_io18_low
+                  0x003516                  csk_io19_high
+                  0x003522                  csk_io19_low
+                  0x003530                  csk_io20_high
+                  0x00353c                  csk_io20_low
+                  0x00354a                  csk_io21_high
+                  0x003556                  csk_io21_low
+                  0x003564                  csk_io22_high
+                  0x003572                  csk_io22_low
+                  0x003580                  csk_io23_high
+                  0x00358e                  csk_io23_low
+                  0x00359c                  csk_io24_high
+                  0x0035a8                  csk_io24_low
+                  0x0035b6                  csk_io25_high
+                  0x0035c2                  csk_io25_low
+                  0x0035d0                  csk_io26_high
+                  0x0035dc                  csk_io26_low
+                  0x0035ea                  csk_io27_high
+                  0x0035f6                  csk_io27_low
+                  0x003604                  csk_io28_high
+                  0x003612                  csk_io28_low
+                  0x003620                  csk_io29_high
+                  0x00362e                  csk_io29_low
+                  0x00363c                  csk_io30_high
+                  0x00364a                  csk_io30_low
+                  0x003658                  csk_io31_high
+                  0x003666                  csk_io31_low
+                  0x003674                  csk_io32_high
+                  0x003682                  csk_io32_low
+                  0x003690                  csk_io33_high
+                  0x00369c                  csk_io33_low
+                  0x0036aa                  csk_io34_high
+                  0x0036b6                  csk_io34_low
+                  0x0036c4                  csk_io35_high
+                  0x0036d0                  csk_io35_low
+                  0x0036de                  csk_io36_high
+                  0x0036ea                  csk_io36_low
+                  0x0036f8                  csk_io37_high
+                  0x003704                  csk_io37_low
+                  0x003712                  csk_io38_high
+                  0x003720                  csk_io38_low
+                  0x00372e                  csk_io39_high
+                  0x00373c                  csk_io39_low
+                  0x00374a                  csk_io40_high
+                  0x003758                  csk_io40_low
+                  0x003766                  csk_io41_high
+                  0x003774                  csk_io41_low
+                  0x003782                  csk_io42_high
+                  0x003790                  csk_io42_low
+                  0x00379e                  csk_io43_high
+                  0x0037ac                  csk_io43_low
+                  0x0037ba                  csk_io44_high
+                  0x0037c8                  csk_io44_low
+                  0x0037d6                  csk_io45_high
+                  0x0037e4                  csk_io45_low
+                  0x0037f2                  csk_io46_high
+                  0x003800                  csk_io46_low
+                  0x00380e                  csk_io47_high
+                  0x00381c                  csk_io47_low
+ .text            0x00382a        0x2c2 build/XC16/debug/ProjectSources/task_radio_listen.o
+                  0x00382a                  fill_out_radio_config
+                  0x0038de                  task_radio_listen
+ .text            0x003aec        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart1.o
+                  0x003aec                  uart1_open
+                  0x003b26                  uart1_close
+                  0x003b30                  uart1_peek_rx
+                  0x003b72                  uart1_rx_count
+                  0x003b7a                  uart1_tx_free
+                  0x003b86                  uart1_getchar
+                  0x003bbe                  uart1_get_byte
+                  0x003bf8                  uart1_putchar
+                  0x003c34                  uart1_puts
+                  0x003c52                  uart1_outchar
+                  0x003c90                  uart1_inchar
+ .text            0x003cc0        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart2.o
+                  0x003cc0                  uart2_open
+                  0x003cfa                  uart2_close
+                  0x003d04                  uart2_peek_rx
+                  0x003d46                  uart2_rx_count
+                  0x003d4e                  uart2_tx_free
+                  0x003d5a                  uart2_getchar
+                  0x003d92                  uart2_get_byte
+                  0x003dcc                  uart2_putchar
+                  0x003e08                  uart2_puts
+                  0x003e26                  uart2_outchar
+                  0x003e64                  uart2_inchar
+ .text            0x003e94        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart3.o
+                  0x003e94                  uart3_open
+                  0x003ece                  uart3_close
+                  0x003ed8                  uart3_peek_rx
+                  0x003f1a                  uart3_rx_count
+                  0x003f22                  uart3_tx_free
+                  0x003f2e                  uart3_getchar
+                  0x003f66                  uart3_get_byte
+                  0x003fa0                  uart3_putchar
+                  0x003fdc                  uart3_puts
+                  0x003ffa                  uart3_outchar
+                  0x004038                  uart3_inchar
+ .text            0x004068        0x1d4 build/XC16/debug/_ext/807317143/pic24_uart4.o
+                  0x004068                  uart4_open
+                  0x0040a2                  uart4_close
+                  0x0040ac                  uart4_peek_rx
+                  0x0040ee                  uart4_rx_count
+                  0x0040f6                  uart4_tx_free
+                  0x004102                  uart4_getchar
+                  0x00413a                  uart4_get_byte
+                  0x004174                  uart4_putchar
+                  0x0041b0                  uart4_puts
+                  0x0041ce                  uart4_outchar
+                  0x00420c                  uart4_inchar
+ .text            0x00423c        0x184 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvosched.o)
+                  0x00423c                  OSSched
+ .text            0x0043c0        0x15c build/XC16/debug/_ext/22001101/effs_thin_mmc_drv_spi1.o
+                  0x0043c0                  spi_cs_lo
+                  0x0043ce                  spi_cs_hi
+                  0x0043dc                  ConfigureSPI1
+                  0x0043fe                  spi_tx1
+                  0x00441a                  spi_tx512
+                  0x00443a                  spi_rx1
+                  0x004448                  spi_rx512
+                  0x004468                  spi_init
+                  0x0044d8                  spi_set_baudrate
+                  0x004512                  spi_get_baudrate
 
-.dinit            0x0044e0        0x14a
- .dinit           0x0044e0        0x14a data_init
+.dinit            0x00451c        0x15a
+ .dinit           0x00451c        0x15a data_init
 
-.text             0x00462a        0x99a
- .text            0x00462a        0x112 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoqins.o)
-                  0x00462a                  OSInsPrioQ
-                  0x00469e                  OSInsDelayQ
- .text            0x00473c         0xe6 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoqdel.o)
-                  0x00473c                  OSDelPrioQ
-                  0x0047ac                  OSDelDelayQ
- .text            0x004822         0x92 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoinit2.o)
-                  0x004822                  OSCreateTask
-                  0x004884                  OSInitPrioTask
- .text            0x0048b4         0x7e build/XC16/debug/_ext/22001101/csk_mhx.o
-                  0x0048b4                  csk_mhx_open
-                  0x0048e0                  csk_mhx_close
-                  0x004908                  csk_mhx_pwr_on
-                  0x00491e                  csk_mhx_pwr_off
- .text            0x004932         0x7c build/XC16/debug/ProjectSources/task_beacon.o
-                  0x004932                  task_beacon
- .text            0x0049ae         0x72 build/XC16/debug/_ext/22001101/csk_power.o
-                  0x0049ae                  csk_power_shutdown
- .text            0x004a20         0x6c ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvodelay.o)
-                  0x004a20                  OSDelay
- .text            0x004a8c         0x60 build/XC16/debug/ProjectSources/messagequeues.o
-                  0x004a8c                  write_msgqmessage_to_OStypeMsgP
- .text            0x004aec         0x5c build/XC16/debug/_ext/22001101/csk_usb.o
-                  0x004aec                  csk_usb_open
-                  0x004b18                  csk_usb_close
-                  0x004b40                  csk_usb_present
- .text            0x004b48         0x5a build/XC16/debug/_ext/1246406289/salvoportmcc30-lm.o
-                  0x004b48                  OSDispatch
-                  0x004b70                  OSCtxSw
-                  0x004b90                  OSReturn
-                  0x004b9e                  OSDethunkTFP
- .text            0x004ba2         0x56 build/XC16/debug/_ext/22001101/csk_sd.o
-                  0x004ba2                  csk_sd_open
-                  0x004bb8                  csk_sd_close
-                  0x004bce                  csk_sd_pwr_on
-                  0x004be4                  csk_sd_pwr_off
- .text            0x004bf8         0x48 build/XC16/debug/_ext/22001101/csk_led.o
-                  0x004bf8                  csk_led_status_open
-                  0x004c0e                  csk_led_status_close
-                  0x004c24                  csk_led_status_on
-                  0x004c32                  csk_led_status_off
- .text            0x004c40         0x48 build/XC16/debug/_ext/807317143/pic24_uart1_msg_ts.o
-                  0x004c40                  uart1_msg_ts
- .text            0x004c88         0x48 build/XC16/debug/_ext/807317143/pic24_uart2_msg_ts.o
-                  0x004c88                  uart2_msg_ts
- .text            0x004cd0         0x48 build/XC16/debug/_ext/807317143/pic24_uart3_msg_ts.o
-                  0x004cd0                  uart3_msg_ts
- .text            0x004d18         0x48 build/XC16/debug/_ext/807317143/pic24_uart4_msg_ts.o
-                  0x004d18                  uart4_msg_ts
- .text            0x004d60         0x40 build/XC16/debug/ProjectSources/debug_functions.o
-                  0x004d60                  _dprintf
-                  0x004d7a                  dnprintf
- .text            0x004da0         0x3a build/XC16/debug/ProjectSources/task_scheduler.o
-                  0x004da0                  task_scheduler
- .text            0x004dda         0x30 build/XC16/debug/ProjectSources/task_test.o
-                  0x004dda                  task_test
- .text            0x004e0a         0x30 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvotimer.o)
-                  0x004e0a                  OSTimer
- .text            0x004e3a         0x2e build/XC16/debug/_ext/807317143/pic24_uart1_msg.o
-                  0x004e3a                  uart1_msg
- .text            0x004e68         0x2e build/XC16/debug/_ext/807317143/pic24_uart2_msg.o
-                  0x004e68                  uart2_msg
- .text            0x004e96         0x2e build/XC16/debug/_ext/807317143/pic24_uart3_msg.o
-                  0x004e96                  uart3_msg
- .text            0x004ec4         0x2e build/XC16/debug/_ext/807317143/pic24_uart4_msg.o
-                  0x004ec4                  uart4_msg
- .text            0x004ef2         0x2c ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvotick.o)
-                  0x004ef2                  OSGetTicks
-                  0x004f08                  OSSetTicks
- .text            0x004f1e         0x28 build/XC16/debug/_ext/22001101/csk_rand.o
-                  0x004f1e                  csk_rand
- .text            0x004f46         0x26 build/XC16/debug/ProjectSources/main.o
-                  0x004f46                  main
- .text            0x004f6c         0x26 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoinit.o)
-                  0x004f6c                  OSInit
- .text            0x004f92         0x14 build/XC16/debug/_ext/22001101/csk_wdt.o
-                  0x004f92                  csk_wdt_force
-                  0x004f9a                  csk_wdt_off
- .text            0x004fa6         0x10 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvohook_interrupt.o)
-                  0x004fa6                  OSDisableHook
-                  0x004fae                  OSEnableHook
- .text            0x004fb6          0x8 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvohook_wdt.o)
-                  0x004fb6                  OSClrWDTHook
- .text            0x004fbe          0x6 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvohook_idle.o)
-                  0x004fbe                  OSIdlingHook
+.text             0x004676        0x9d0
+ .text            0x004676        0x112 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoqins.o)
+                  0x004676                  OSInsPrioQ
+                  0x0046ea                  OSInsDelayQ
+ .text            0x004788         0xe6 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoqdel.o)
+                  0x004788                  OSDelPrioQ
+                  0x0047f8                  OSDelDelayQ
+ .text            0x00486e         0x92 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoinit2.o)
+                  0x00486e                  OSCreateTask
+                  0x0048d0                  OSInitPrioTask
+ .text            0x004900         0x7e build/XC16/debug/_ext/22001101/csk_mhx.o
+                  0x004900                  csk_mhx_open
+                  0x00492c                  csk_mhx_close
+                  0x004954                  csk_mhx_pwr_on
+                  0x00496a                  csk_mhx_pwr_off
+ .text            0x00497e         0x7c build/XC16/debug/ProjectSources/task_beacon.o
+                  0x00497e                  task_beacon
+ .text            0x0049fa         0x72 build/XC16/debug/_ext/22001101/csk_power.o
+                  0x0049fa                  csk_power_shutdown
+ .text            0x004a6c         0x6c ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvodelay.o)
+                  0x004a6c                  OSDelay
+ .text            0x004ad8         0x66 build/XC16/debug/ProjectSources/task_test.o
+                  0x004ad8                  task_test
+ .text            0x004b3e         0x60 build/XC16/debug/ProjectSources/messagequeues.o
+                  0x004b3e                  write_msgqmessage_to_OStypeMsgP
+ .text            0x004b9e         0x5c build/XC16/debug/_ext/22001101/csk_usb.o
+                  0x004b9e                  csk_usb_open
+                  0x004bca                  csk_usb_close
+                  0x004bf2                  csk_usb_present
+ .text            0x004bfa         0x5a build/XC16/debug/_ext/1246406289/salvoportmcc30-lm.o
+                  0x004bfa                  OSDispatch
+                  0x004c22                  OSCtxSw
+                  0x004c42                  OSReturn
+                  0x004c50                  OSDethunkTFP
+ .text            0x004c54         0x56 build/XC16/debug/_ext/22001101/csk_sd.o
+                  0x004c54                  csk_sd_open
+                  0x004c6a                  csk_sd_close
+                  0x004c80                  csk_sd_pwr_on
+                  0x004c96                  csk_sd_pwr_off
+ .text            0x004caa         0x48 build/XC16/debug/_ext/22001101/csk_led.o
+                  0x004caa                  csk_led_status_open
+                  0x004cc0                  csk_led_status_close
+                  0x004cd6                  csk_led_status_on
+                  0x004ce4                  csk_led_status_off
+ .text            0x004cf2         0x48 build/XC16/debug/_ext/807317143/pic24_uart1_msg_ts.o
+                  0x004cf2                  uart1_msg_ts
+ .text            0x004d3a         0x48 build/XC16/debug/_ext/807317143/pic24_uart2_msg_ts.o
+                  0x004d3a                  uart2_msg_ts
+ .text            0x004d82         0x48 build/XC16/debug/_ext/807317143/pic24_uart3_msg_ts.o
+                  0x004d82                  uart3_msg_ts
+ .text            0x004dca         0x48 build/XC16/debug/_ext/807317143/pic24_uart4_msg_ts.o
+                  0x004dca                  uart4_msg_ts
+ .text            0x004e12         0x40 build/XC16/debug/ProjectSources/debug_functions.o
+                  0x004e12                  _dprintf
+                  0x004e2c                  dnprintf
+ .text            0x004e52         0x3a build/XC16/debug/ProjectSources/task_scheduler.o
+                  0x004e52                  task_scheduler
+ .text            0x004e8c         0x30 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvotimer.o)
+                  0x004e8c                  OSTimer
+ .text            0x004ebc         0x2e build/XC16/debug/_ext/807317143/pic24_uart1_msg.o
+                  0x004ebc                  uart1_msg
+ .text            0x004eea         0x2e build/XC16/debug/_ext/807317143/pic24_uart2_msg.o
+                  0x004eea                  uart2_msg
+ .text            0x004f18         0x2e build/XC16/debug/_ext/807317143/pic24_uart3_msg.o
+                  0x004f18                  uart3_msg
+ .text            0x004f46         0x2e build/XC16/debug/_ext/807317143/pic24_uart4_msg.o
+                  0x004f46                  uart4_msg
+ .text            0x004f74         0x2c ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvotick.o)
+                  0x004f74                  OSGetTicks
+                  0x004f8a                  OSSetTicks
+ .text            0x004fa0         0x28 build/XC16/debug/_ext/22001101/csk_rand.o
+                  0x004fa0                  csk_rand
+ .text            0x004fc8         0x26 build/XC16/debug/ProjectSources/main.o
+                  0x004fc8                  main
+ .text            0x004fee         0x26 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvoinit.o)
+                  0x004fee                  OSInit
+ .text            0x005014         0x14 build/XC16/debug/_ext/22001101/csk_wdt.o
+                  0x005014                  csk_wdt_force
+                  0x00501c                  csk_wdt_off
+ .text            0x005028         0x10 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvohook_interrupt.o)
+                  0x005028                  OSDisableHook
+                  0x005030                  OSEnableHook
+ .text            0x005038          0x8 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvohook_wdt.o)
+                  0x005038                  OSClrWDTHook
+ .text            0x005040          0x6 ..\..\..\..\..\Pumpkin\Salvo\Lib\MCC30-v3\libsalvolmcc30lit.a(salvohook_idle.o)
+                  0x005040                  OSIdlingHook

@@ -10,12 +10,12 @@
 #define GETCHAR_PUTCHAR_RETURN_ZERO       1           // For this project, these functions return 0
                                                       //  on error
 
-#define RX1_BUFF_SIZE                     64          // 
+#define RX1_BUFF_SIZE                     64          //
 #define TX1_BUFF_SIZE                     64         // 
 #define RX2_BUFF_SIZE                     128          //
 #define TX2_BUFF_SIZE                     128         //
-#define RX3_BUFF_SIZE                     64
-#define TX3_BUFF_SIZE                     64
+#define RX3_BUFF_SIZE                     256
+#define TX3_BUFF_SIZE                     256
 #define RX4_BUFF_SIZE                     64
 #define TX4_BUFF_SIZE                     64
 

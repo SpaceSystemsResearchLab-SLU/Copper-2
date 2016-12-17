@@ -66,7 +66,7 @@ int main() {
   */
   // Create tasks -- MAKE SURE THAT OSTASKS in salvocfg.h IS LARGE ENOUGH!
   //OSCreateTask(task_test,               TASK_TEST_P,              2);
-  OSCreateTask(task_radio_listen,       TASK_RADIO_LISTEN_P,      3);
+  OSCreateTask(task_radio_listen,       TASK_RADIO_LISTEN_P,      1);
   OSCreateTask(task_radio_talk,         TASK_RADIO_TALK_P,        1);
   //OSCreateTask(task_scheduler,          TASK_SCHEDULER_P,           4);
   //OSCreateTask(task_beacon,             TASK_BEACON_P,              2);

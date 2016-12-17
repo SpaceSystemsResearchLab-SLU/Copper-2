@@ -44,7 +44,7 @@ void task_radio_listen(void) {
   static unsigned int received;
   static int binsem;
   //static char message_to_send[MAX_OSMESSAGEARRAY_LEN];
-  MSGQMESSAGE message_to_tasktalk;
+  //MSGQMESSAGE message_to_tasktalk;
 
   //int i;
   // flush uart1
@@ -55,11 +55,13 @@ void task_radio_listen(void) {
     //OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
 // dprintf("received = %d\tuart1_count= %d\r\n", received,csk_uart1_count());
     // wait until uart has something
-    while (!csk_uart1_count()) { OS_Delay(20); }
+    while (!csk_uart1_count()) { OS_Delay(20);
+    Nop();Nop();Nop();Nop();Nop();
+    }
       //dprintf("task listen waiting for something on radio\r\n");
-Nop();Nop();Nop();Nop(); //debug
       //while(!received && (csk_uart1_count() > 0) ) {
-        while(csk_uart1_count() > 0 ) {
+      while(csk_uart1_count() > 0 ) {
+        Nop();Nop();Nop();Nop();Nop(); //debug
         //dprintf("task listen got something on radio\r\n");
         received_packet[i] = csk_uart1_getchar();
         i++;
@@ -68,13 +70,13 @@ Nop();Nop();Nop();Nop(); //debug
 //      if ((received_packet[0] == SYNC_A) && (received_packet[1] == SYNC_B)) { // 'He'
 //          received = 1;
 //     }
-//Nop();Nop();Nop();Nop(); //debug
+Nop();Nop();Nop();Nop();Nop(); //debug
 j=0;
 for (j=0; j<i;j++) {
  csk_uart0_putchar(received_packet[j]);
 }
 dprintf("\r\n");
-Nop();Nop();Nop();Nop(); //debug
+Nop();Nop();Nop();Nop();Nop(); //debug
 //dnprintf(i, received_packet);
 
       // start parsing radio response (command type bytes for responses will

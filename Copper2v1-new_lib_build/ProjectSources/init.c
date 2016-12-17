@@ -94,10 +94,10 @@ void init(void) {
   OpenTimer2(T2_ON & T2_IDLE_CON & T2_GATE_OFF & T2_PS_1_1 & T2_32BIT_MODE_OFF & T2_SOURCE_INT,
              (MAIN_XTAL_FREQ/(2*100)));        // A prescalar is not required because 8E6/200 < 16 bits.
 
-
   // Configure I/O pins for UARTs via PIC24's PPS system.
   // CSK UART0 (PIC24 UART1) TX/RX = IO.4/IO.5
   // CSK UART1 (PIC24 UART2) TX/RX = IO.6/IO.7
+  // CSK UART2 (PIC24 UART3) TX/RX = IO.17/IO.19
   // RP30/RF2 & RP10/RF4 must be configured as inputs!
   iPPSInput(IN_FN_PPS_U1RX,IN_PIN_PPS_RP30);        // uart1 (csk_uart0) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP16,OUT_FN_PPS_U1TX);     // uart1 (csk_uart0) tx pin setup
@@ -113,13 +113,14 @@ void init(void) {
   ConfigIntCN(INT_ENABLE|INT_PRI_1);
   EnableCN78;
           
-  // Init UARTs to 115200 baud 
+  // Init UARTs...
   // UARTs won't transmit until interrupts are enabled ...
-  csk_uart0_open(UART_115200_N81_MAIN); // goes to Pis
-  //csk_uart0_open(UART_9600_N81_MAIN);
+  //csk_uart0_open(UART_115200_N81_MAIN); // goes to Pi's
+ // csk_uart0_open(UART_1000000_N81_MAIN); // goes to Pi's
   // set radio uart to 9600
   csk_uart1_open(UART_9600_N81_MAIN);
-  csk_uart2_open(UART_115200_N81_MAIN);
+  //csk_uart2_open(UART_115200_N81_MAIN);
+  //csk_uart2_open(UART_1000000_N81_MAIN);
  // dprintf(STR_CRLF STR_CRLF);
  // dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
  // dprintf(STR_VERSION "." STR_CRLF);

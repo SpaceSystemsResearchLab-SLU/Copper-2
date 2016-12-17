@@ -70,7 +70,7 @@ class Quark:
   def _get_and_check_response(self):
     sleep(0.01) 
     response = self.serial_connection.read(self.serial_connection.inWaiting())
-    if response: #Something wrong here: infinite no response
+    if response:
       self.response = fromCam(response)
       return True
     else:
@@ -197,7 +197,7 @@ class Quark:
 
   
   def check_numSnaps(self):
-     return (self.parse_numSnaps_Response() <= self.get_max_quark_Snap_Count()) 
+     return bool(self.parse_numSnaps_Response() <= self.get_max_quark_Snap_Count()) 
 
   # make sure the status message is okay
   def verify_image_valid(self, resp):
@@ -235,8 +235,32 @@ class Quark:
     f.close()
       
   def check_number_of_images(self):
-    return bool(get_number_of_Images() == get_images_in_directory())
+    return bool(self.get_number_of_Images() == self.get_images_in_directory())
 
+  # PROTOTYPING CODE FOR ERASING PREVIOUS SNAPSHOTS
+  def find_address(self):
+    self.size_location = []
+    num_snaps = self.parse_numSnaps_Response()    
+    for i in range(1, num_snaps+1):           # Compiles a list of addresses to delete
+      self.size_location.append(camera._sizeaddresssnapbynumber(i)) 
+                                            #GET_MEMORY_ADDRESS command(#214) in Flir IDD also appears to apply, not sure if it was used previously
+
+  def snap_erase(self):                           # Deletes the snap in given address
+    for item in self.size_location:
+      self._send('0xD4(' + item + ')') 
+    self.mem_status()
+    # ERASE_MEMORY_BLOCK command(#212) with flash 
+    # block calculated from find_address() as argument
+  
+  # Returns the status of memory-altering commands
+  def mem_status(self):
+    self._send('0xC4')
+    self._get_and_chack_response()
+    if self.response == '0xFFFF':
+      print('erase error')
+    elif self.response == '0xFFFE':
+      print('write error')
+        
   # Checks whether the number of snaps in quark less than max, erases some if not
   def compare_snaps_max(self): # Will need to run in main prior to take picture
     if self.get_images_in_directory() == self.get_max_quark_Snap_Count():
@@ -332,20 +356,6 @@ def main():
 
 main()
 
-# PROTOTYPING CODE FOR ERASING PREVIOUS SNAPSHOTS
-def find_address():
-  size_location = []
-
-  num_snaps = self.parse_numSnaps_Response()    
-
-  for i in range(1, num_snaps+1):           # Compiles a list of addresses to delete
-    size_location.append(camera._sizeaddresssnapbynumber(i)) 
-                                            #GET_MEMORY_ADDRESS command(#214) in Flir IDD also appears to apply, not sure if it was used previously
 
 
-def snap_erase():                           # Deletes the snap in given address
-  for item in size_location:
-    self._send('0xD4(' + item + ')') 
-  # ERASE_MEMORY_BLOCK command(#212) with flash 
-  # block calculated from find_address() as argument
 
