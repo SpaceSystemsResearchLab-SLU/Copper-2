@@ -6,8 +6,9 @@
 #
 # Description:
 # ------------
-#
-#
+# This will serve as the main script that will run on the Copper-2
+# raspberry pi. It will monitor the PIC for commands and be able to
+# use the pi camera and Quark IR camera. It will also run ARES.
 #
 #################################################################
 
