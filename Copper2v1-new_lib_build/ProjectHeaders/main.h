@@ -37,5 +37,6 @@ typedef struct {
 
 // Extern variable declarations.
 extern csk_status_t csk_status;
+extern unsigned char TAKEPICPI;
 
 #endif /* __main_h */
