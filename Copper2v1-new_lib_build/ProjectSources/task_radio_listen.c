@@ -11,38 +11,60 @@
 static int i;
 static char temp[100];
 static unsigned char received_packet[MAX_RADIO_PACKET_LENGTH];
+static unsigned char MYCALL[6] = {2*CALL0,2*CALL1,2*CALL2,0x40,0x40,0x40};
+static unsigned char UNPROTO[6] = {2*GROUND0,2*GROUND1,2*GROUND2,2*GROUND3,2*GROUND4,2*GROUND5};
 
-extern RADIO_CONFIGURATION_TYPE radio_configuration;
-
+extern RADIO_CONFIGURATION_TYPE radio_config;
 extern void printnames();
 extern void print_radio_config();
 extern void write_msgqmessage_to_OStypeMsgP(MSGQMESSAGE* message_struct, OStypeMsgP message);
+extern void fill_out_radio_tx_packet(RADIO_TX_PACKET*, RADIO_TX_PACKET_HEADER*, unsigned int, unsigned int, char* );
+extern void send_packet_to_radio(RADIO_TX_PACKET*);
+extern void process_command(char*); // in external_commands.c
 
+
+int callsignCheck(char* received_packet) {
+  int currPos;
+  int startPos = 8; // start at 9th Byte in received_packet
+  unsigned char test = received_packet[8];
+  unsigned char test2 = received_packet[startPos+7];
+  
+  for (currPos = 0; currPos < 6; currPos++) {
+    if(
+       ((unsigned char)received_packet[currPos+startPos]!=MYCALL[currPos])
+      || ((unsigned char)received_packet[currPos+startPos+7]!=UNPROTO[currPos])) {
+      return(0);
+    }
+  }
+  return(1);
+}
 void fill_out_radio_config(unsigned char* config_array) {
   static int i;
 
-  radio_configuration.interface_baud_rate = config_array[0];
-  radio_configuration.tx_power_amp_level = config_array[1];
-  radio_configuration.rx_rf_baud_rate = config_array[2];
-  radio_configuration.tx_rf_baud_rate = config_array[3];
-  radio_configuration.rx_modulation = config_array[4];
-  radio_configuration.tx_modulation = config_array[5];
-  radio_configuration.rx_freq = (long)config_array[6];
-  radio_configuration.tx_freq = (long)config_array[10];
+  radio_config.interface_baud_rate = config_array[0];
+  radio_config.tx_power_amp_level = config_array[1];
+  radio_config.rx_rf_baud_rate = config_array[2];
+  radio_config.tx_rf_baud_rate = config_array[3];
+  radio_config.rx_modulation = config_array[4];
+  radio_config.tx_modulation = config_array[5];
+  radio_config.rx_freq = (long)config_array[6];
+  radio_config.tx_freq = (long)config_array[10];
   for (i = 0; i < 6; i++) {
-    radio_configuration.source[i] = config_array[14 + i];
-    radio_configuration.destination[i] = config_array[20 + i];
+    radio_config.source[i] = config_array[14 + i];
+    radio_config.destination[i] = config_array[20 + i];
   }
-  radio_configuration.tx_preamble = (int)config_array[26];
-  radio_configuration.tx_postamble = (int)config_array[28];
-  radio_configuration.function_config = (int)config_array[30];
-  radio_configuration.function_config2 = (int)config_array[32];
+  radio_config.tx_preamble = (int)config_array[26];
+  radio_config.tx_postamble = (int)config_array[28];
+  radio_config.function_config = (int)config_array[30];
+  radio_config.function_config2 = (int)config_array[32];
 }
 
 void task_radio_listen(void) {
   int j;
   static unsigned int received;
   static int binsem;
+  static RADIO_TX_PACKET_HEADER header;
+  static RADIO_TX_PACKET packet;
   //static char message_to_send[MAX_OSMESSAGEARRAY_LEN];
   //MSGQMESSAGE message_to_tasktalk;
 
@@ -50,33 +72,34 @@ void task_radio_listen(void) {
   // flush uart1
   //for (i=0; i <100; i++) { csk_uart1_putchar(NULL); }
   received = 0; // init flag to false
+
+  dprintf("Starting task_radio_listen...\r\n");
   while (1) {
     // Wait to make sure task_radio_talk is not using radio
     //OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
 // dprintf("received = %d\tuart1_count= %d\r\n", received,csk_uart1_count());
     // wait until uart has something
-    while (!csk_uart1_count()) { OS_Delay(20);
-    Nop();Nop();Nop();Nop();Nop();
-    }
+    while (!csk_uart1_count()) { OS_Delay(20); }
       //dprintf("task listen waiting for something on radio\r\n");
       //while(!received && (csk_uart1_count() > 0) ) {
       while(csk_uart1_count() > 0 ) {
-        Nop();Nop();Nop();Nop();Nop(); //debug
         //dprintf("task listen got something on radio\r\n");
         received_packet[i] = csk_uart1_getchar();
         i++;
+Nop();Nop();Nop();Nop();Nop(); //debug
       }
       // check packet header for 'He' to see if Helium is talking to us
 //      if ((received_packet[0] == SYNC_A) && (received_packet[1] == SYNC_B)) { // 'He'
 //          received = 1;
 //     }
+
 Nop();Nop();Nop();Nop();Nop(); //debug
-j=0;
-for (j=0; j<i;j++) {
- csk_uart0_putchar(received_packet[j]);
-}
-dprintf("\r\n");
-Nop();Nop();Nop();Nop();Nop(); //debug
+//j=0;
+//for (j=0; j<i;j++) {
+ //csk_uart0_putchar(received_packet[j]);
+//}
+//dprintf("\r\n");
+//Nop();Nop();Nop();Nop();Nop(); //debug
 //dnprintf(i, received_packet);
 
       // start parsing radio response (command type bytes for responses will
@@ -97,8 +120,14 @@ Nop();Nop();Nop();Nop();Nop(); //debug
             // parse the data
             dprintf("Incoming received data:\r\n");
             dnprintf(i, received_packet);
-            if (received_packet[24] == 'N' && received_packet[25] == 'A' && received_packet[26] == 'M' && received_packet[27] == 'E' && received_packet[28] == 'S') {
-                printnames();
+            int callsigncheck;
+            callsigncheck = callsignCheck(received_packet);
+Nop();Nop();Nop();Nop();Nop(); //debug
+            if (callsignCheck(received_packet)){
+              //if (received_packet[24] == 'N' && received_packet[25] == 'A' && received_packet[26] == 'M' && received_packet[27] == 'E' && received_packet[28] == 'S') {
+             //     printnames();
+              //}
+              process_command(received_packet);
             }
             //memcpy(received_packet, message_to_send, i); THIS IS SIMPLE LOOPBACK FOR RADIO TESTING
             // more robust messaging implementation
@@ -123,7 +152,14 @@ Nop();Nop();Nop();Nop();Nop(); //debug
             //dprintf("set config ACK\r\n");
             break;
           case INCOMING_TELEMETRY_STRUCT:  // incoming telemetry data struct
-            dprintf("incoming telemetry data\r\n");
+            sprintf(temp, "RSSI: %d\r\n", (unsigned int)received_packet[15]);
+            fill_out_radio_tx_packet(&packet,
+              &header,
+              TRANSMIT_DATA,
+              HE_TELEM_LEN,
+              temp);
+            send_packet_to_radio(&packet);
+            //dprintf("incoming telemetry data\r\n");
             break;
           case WRITE_FLASH_ACK:  // write flash ACK (writing the flash sets the power-on config settings)
             dprintf("write flash ACK\r\n");

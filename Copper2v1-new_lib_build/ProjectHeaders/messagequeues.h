@@ -1,6 +1,4 @@
-#define SIZEOFRADIOMSGQ                 20
-
-#define RADIOMSGQCBP                    OSMQCBP(1)
+#define SIZEOF_RADIO_MSGQ                 16
 
 #define MESSAGE_SENTINEL                "SENTINEL"
 #define MAX_OSMESSAGEARRAY_LEN          (MAX_RADIO_PACKET_LENGTH + 10)

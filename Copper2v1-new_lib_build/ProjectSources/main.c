@@ -17,6 +17,7 @@
 #include "task_radio_listen.h"
 #include "task_scheduler.h"
 #include "task_beacon.h"
+#include "task_pi.h"
 
 csk_status_t csk_status;
 
@@ -66,17 +67,19 @@ int main() {
   */
   // Create tasks -- MAKE SURE THAT OSTASKS in salvocfg.h IS LARGE ENOUGH!
   //OSCreateTask(task_test,               TASK_TEST_P,              2);
-  OSCreateTask(task_radio_listen,       TASK_RADIO_LISTEN_P,      1);
-  OSCreateTask(task_radio_talk,         TASK_RADIO_TALK_P,        1);
+  //OSCreateTask(task_radio_listen,       TASK_RADIO_LISTEN_P,      2);
+  //OSCreateTask(task_radio_talk,         TASK_RADIO_TALK_P,        3);
+  OSCreateTask(task_pi,                 TASK_PI_P,                1);
   //OSCreateTask(task_scheduler,          TASK_SCHEDULER_P,           4);
-  //OSCreateTask(task_beacon,             TASK_BEACON_P,              2);
+  //OSCreateTask(task_beacon,             TASK_BEACON_P,              3);
   
   // Create semaphore
   //OSCreateBinSem(BINSEM_RADIO_CLEAR,  1);    // initialize this to 1 to signal that radio is not in use
 
   // Create message queues
   //OSgltypeMsgQP radio_messageq_buffer[SIZEOFRADIOMSGQ];
-  //OSCreateMsgQ (RADIOMSGQP, RADIOMSGQCBP, radio_messageq_buffer, SIZEOFRADIOMSGQ);
+  //OSgltypeMsgQP radioMsgBuff[SIZEOF_RADIO_MSGQ];
+  //OSCreateMsgQ(RADIO_MSGQ_P, RADIO_MSGQ_CBP_P, radioMsgBuff, SIZEOF_RADIO_MSGQ);
 
 //Init SD-Card
   //csk_sd_pwr_on();

@@ -13,5 +13,7 @@
  *  we are including all our event macros here.
  */
 
-#define BINSEM_RADIO_CLEAR            OSECBP(1)
-#define RADIOMSGQP                    OSECBP(2)
+#define BINSEM_RADIO_CLEAR          OSECBP(1)
+//#define RADIO_MSGQ_P                OSECBP(2)
+
+//#define RADIO_MSGQ_CBP_P            OSMQCBP(1)
