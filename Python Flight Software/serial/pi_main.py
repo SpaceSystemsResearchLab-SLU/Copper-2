@@ -32,8 +32,8 @@ PI_IMG_CTR = getPiIMGCount()
 
 
 # ------------------- COMMANDS -----------------------------------
-PI_PICTURE     = 'TAKEPIIMAGE'
-QUARK_PICTURE  = 'TAKEQIMAGE'
+PI_PICTURE     = 'TAKEPICPI'
+QUARK_PICTURE  = 'TAKEPICQ'
 SEND_PI_IMG    = 'SENDPIIMG'
 SEND_QUARK_IMG = 'SENDQIMG'
 ARES_ON        = 'ARESON'
@@ -82,85 +82,75 @@ def write_to_pic(gpio_line, MESSAGE):
 #######################################################################
 
 
+def main()
+  while True:
+    try:
+      while not gpio.inWaiting():
+        gpio.write('11'.decode('hex'))  # Serves as the 'CTS'
+        sleep(0.5)
 
+      while gpio.inWaiting():     
+        
+        header = gpio.read(3)
+      
+        if header == HEADER:
+          msg = gpio.read()
+        
+          if msg == PI_PICTURE:            
+            # Respond to the PIC:
+            write_to_pic(gpio, HEADER + 'TAKING_PI_IMG')
+            
+            # Run the Pi Picture Function
+            take_pi_picture('pi_img_' + str(PI_IMG_CTR) + '.jpg')
+            incrementPiIMGCount()
+
+            # Alert when the picture has been taken - 
+            # Send ACK w/ current number of Images in directory
+            write_to_pic(gpio, HEADER + 'PI_IMAGE_TAKEN_' + str(PI_IMG_CTR))
+
+
+          elif msg == QUARK_PICTURE:
+            True
+
+          elif msg == SEND_PI_IMG:
+            True
+
+          elif msg == SEND_QUARK_IMG:
+            True
+
+          elif msg == ARES_ON:
+            True
+
+          elif msg == ARES_OFF:
+            True
+
+          elif msg == PI_SHUTDOWN:
+            #os.system('./shutdown_pi.sh')
+            True
+
+          else:
+            gpio.write(HEADER + 'CMD_NOT_VALID')
+
+    except(KeyboardInterrupt):
+      gpio.flush()
+      gpio.close()
+      break
+
+
+#####################################
 while True:
   try:
-    while not gpio.inWaiting():
-      sleep(0.5)
-
     while gpio.inWaiting():
-      header = gpio.read(3)
-      
-      if header == HEADER:
-        msg = gpio.read()
-        
-        if msg == PI_PICTURE:            
-          # Respond to the PIC:
-          write_to_pic(gpio, HEADER + 'TAKING_PI_IMG')
-            
-          # Run the Pi Picture Function
-          take_pi_picture('pi_img_' + str(PI_IMG_CTR) + '.jpg')
-          incrementPiIMGCount()
+      RTS = gpio.read()
+      if RTS == '11'.decode('hex'))
+        main()
+      else:
+        print 'bad connection'
 
-          # Alert when the picture has been taken - 
-          # Send ACK w/ current number of Images in directory
-          write_to_pic(gpio, HEADER + 'PI_IMAGE_TAKEN_' + str(PI_IMG_CTR))
-
-
-        elif msg == QUARK_PICTURE:
-          True
-
-        elif msg == SEND_PI_IMG:
-           True
-
-        elif msg == SEND_QUARK_IMG:
-           True
-
-        elif msg == ARES_ON:
-           True
-
-        elif msg == ARES_OFF:
-           True
-
-        elif msg == PI_SHUTDOWN:
-          #os.system('./shutdown_pi.sh')
-          True
-
-        else:
-          gpio.write(HEADER + 'CMD_NOT_VALID')
-
-  except:
+  except(KeyboardInterrupt):
     gpio.flush()
     gpio.close()
     break
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
 
 
 
