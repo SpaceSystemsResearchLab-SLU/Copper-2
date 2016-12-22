@@ -3,7 +3,7 @@ from time import sleep
 
 def main():
   baud = raw_input("baud? ")
-  gpio = serial.Serial("/dev/ttyUSB2", baud)
+  gpio = serial.Serial("/dev/ttyUSB1", baud)
   #mess = open("testFile.txt")
   #message = mess.read()
 
