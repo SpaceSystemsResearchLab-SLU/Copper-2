@@ -14,7 +14,7 @@ void _dprintf(const char* fmt, ...) {
   vsprintf(temp, fmt, arg);
   va_end(arg);
 
-  csk_uart0_puts(temp);
+  csk_uart2_puts(temp);
 }
 
 void dnprintf(unsigned int n, const unsigned char* buffer) {

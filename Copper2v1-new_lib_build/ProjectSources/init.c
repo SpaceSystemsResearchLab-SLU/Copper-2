@@ -79,9 +79,9 @@ void init(void) {
  
 // For safety -- Initialize power lines to Pi, Quark, and Burn Circuit to OFF!!
 
-  csk_io39_low();  // H2.9 == PI1_IO
-  csk_io35_low();  // H2.13 == QUARK_IO
-  csk_io34_low();  // H2.14 == BURN CIRCUIT (AKA: PI2_IO)
+  csk_io39_low();  // H2.9 == PI1_IO (Pi Power On/Off)
+  csk_io35_low();  // H2.13 == QUARK_IO (Quark Power On/Off)
+  csk_io34_low();  // H2.14 == BURN CIRCUIT (AKA: PI2_IO) (Burn Circuit Power On/Off)
 
   // Set up to run with primary oscillator.
   // See _CONFIG2 above. A configuration-word-centric setup of the
@@ -95,9 +95,9 @@ void init(void) {
              (MAIN_XTAL_FREQ/(2*100)));        // A prescalar is not required because 8E6/200 < 16 bits.
 
   // Configure I/O pins for UARTs via PIC24's PPS system.
-  // CSK UART0 (PIC24 UART1) TX/RX = IO.4/IO.5
-  // CSK UART1 (PIC24 UART2) TX/RX = IO.6/IO.7
-  // CSK UART2 (PIC24 UART3) TX/RX = IO.17/IO.19
+  // CSK UART0 (PIC24 UART1) TX/RX = IO.4/IO.5  -- to Pi
+  // CSK UART1 (PIC24 UART2) TX/RX = IO.6/IO.7  -- to Helium Radio
+  // CSK UART2 (PIC24 UART3) TX/RX = IO.17/IO.19 -- to nothing now (was for 2nd Pi)
   // RP30/RF2 & RP10/RF4 must be configured as inputs!
   iPPSInput(IN_FN_PPS_U1RX,IN_PIN_PPS_RP30);        // uart1 (csk_uart0) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP16,OUT_FN_PPS_U1TX);     // uart1 (csk_uart0) tx pin setup
@@ -105,6 +105,7 @@ void init(void) {
   // Funny, these just so happen to be the pins that the HE radio uses...
   iPPSInput(IN_FN_PPS_U2RX,IN_PIN_PPS_RP10);        // uart2 (csk_uart1) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP17,OUT_FN_PPS_U2TX);     // uart2 (csk_uart1) tx pin setup
+
   iPPSInput(IN_FN_PPS_U3RX,IN_PIN_PPS_RP25);        // uart3 (csk_uart2) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP22,OUT_FN_PPS_U3TX);     // uart3 (csk_uart2) tx pin setup
 
@@ -115,15 +116,16 @@ void init(void) {
           
   // Init UARTs...
   // UARTs won't transmit until interrupts are enabled ...
-  //csk_uart0_open(UART_115200_N81_MAIN); // goes to Pi's
- // csk_uart0_open(UART_1000000_N81_MAIN); // goes to Pi's
+  csk_uart0_open(UART_500000_N81_MAIN); // goes to Pi
+  //csk_uart0_open(UART_1000000_N81_MAIN); // goes to Pi
   // set radio uart to 9600
-  csk_uart1_open(UART_9600_N81_MAIN);
-  //csk_uart2_open(UART_115200_N81_MAIN);
+  //csk_uart1_open(UART_9600_N81_MAIN); // Helium Radio UART
+  csk_uart2_open(UART_115200_N81_MAIN);
   //csk_uart2_open(UART_1000000_N81_MAIN);
- // dprintf(STR_CRLF STR_CRLF);
- // dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
- // dprintf(STR_VERSION "." STR_CRLF);
+  dprintf(STR_CRLF STR_CRLF);
+  dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
+  dprintf(STR_VERSION "." STR_CRLF);
+  dprintf("(Re)Booting up...........\r\n");
   
   // initialize the real time clock
   RtccInitClock();
