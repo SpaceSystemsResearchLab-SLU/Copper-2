@@ -256,101 +256,45 @@ void task_radio_talk(void) {
   OS_Delay(50);
   configure_radio();
   OS_Delay(50);
-  
-   // ATMEGA EPS SPI settings
-  TRISE|=BIT9;
-  SCLK_LOW;
-  CS1_HIGH;
-  CS2_HIGH;
-  // END ATMEGA EPS SPI settings
-  OS_Delay(20); // this allows time for ATMEGA settings to settle
-
-  //Power Pi on!
-  //csk_io39_high();  // H2.9 == PI1_IO
 
   dprintf("Starting task_radio_talk...\r\n");
   
-  while (1) {    
+  while (1) {
+
     // wait to make sure task_radio_listen isn't receiving anything
     //OS_WaitBinSem(BINSEM_RADIO_CLEAR, OSNO_TIMEOUT);
     //dprintf("task talk has the semaphore\r\n");
 
-    /*if (OSMsgQCount(RADIOMSGQP)) {
-      msgqpayload = (char*)OSReadMsgQ(RADIOMSGQP);
-      }*/
-   CS1_LOW;
-  // Calling an OS_Delay here is ok as this function is inline and we will still be in the
-  // stack frame of the task function.
-  OS_Delay(20);
-Nop();Nop();Nop();Nop();Nop(); //debug
-  for(data=0;data<8;data++) { //ADC-Reads (10-Bits)
-    ADCData[data]=0;
-    for(count=0;count<10;count++) { //Bits
-      SCLK_HIGH;
-      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-      ADCData[data]|=(MISO<<count);
-      SCLK_LOW;
-      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-    }
-  }
-
-  CS1_HIGH;
-  OS_Delay(20);
-
-  CS2_LOW;
-  // Without this delay, ADC is read incorrectly
-  OS_Delay(20);
-
-  for(data=8;data<16;data++) { //ADC-Reads (10-Bits)
-    ADCData[data]=0;
-    for(count=0;count<10;count++) { //Bits
-      SCLK_HIGH;
-      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-      ADCData[data]|=(MISO<<count);
-      SCLK_LOW;
-      for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-    }
-  }
-  CS2_HIGH;
-Nop();Nop();Nop();Nop();Nop(); //debug
-  sprintf(beacon_header, "%03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X", ADCData[0], ADCData[1], ADCData[2], ADCData[3], ADCData[4],
-      ADCData[5], ADCData[6], ADCData[7], ADCData[8], ADCData[9], ADCData[10], ADCData[11],
-      ADCData[12], ADCData[13], ADCData[14], ADCData[15]);
-Nop();Nop();Nop();Nop();Nop(); //debug
-//csk_uart1_puts(beacon_header);
-   // read_eps_values(beacon_header);
-
-    fill_out_radio_tx_packet(&packet,
-            &header,
-            TRANSMIT_DATA,
-            65,
-            beacon_header);
-    send_packet_to_radio(&packet);
-
-OS_Delay(250);
+  //  if (OSMsgQCount(RADIOMSGQP)) {
+  //    msgqpayload = (char*)OSReadMsgQ(RADIOMSGQP);
+  //    }
+ 
+/*
     fill_out_radio_tx_packet(&packet,
             &header,
             TELEMETRY_QUERY,
             0,
             0);
     send_packet_to_radio(&packet);
-
-    
+*/
 
   //  OSSignalMsgQ(RADIO_MSGQ_P, (OStypeMsgP) &packet);
+    OS_WaitMsgQ(RADIO_MSGQ_P, &msgP, OSNO_TIMEOUT);
 
-   // OS_WaitMsgQ(RADIO_MSGQ_P, &msgP, OSNO_TIMEOUT);
-   // send_packet_to_radio(&msgP);
+    fill_out_radio_tx_packet(&packet,
+              &header,
+              TRANSMIT_DATA,
+              65,
+              msgP);
+    send_packet_to_radio(&packet);
+
+//dprintf("Sending beacon data...\r\n%s\r\n",msgP);
 //Nop();Nop();Nop();Nop();Nop(); //debug
 //print_radio_config();
-
     
-    OS_Delay(250);
-    OS_Delay(250);
-    OS_Delay(250);
-    
+   // OS_Delay(250);
+     
   // tell task_radio_listen that we're done transmitting
-  //OSSignalBinSem(BINSEM_RADIO_CLEAR);
-    
+  //OSSignalBinSem(BINSEM_RADIO_CLEAR); 
   } //end while(1) main
 }

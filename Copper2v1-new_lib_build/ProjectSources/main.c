@@ -70,16 +70,15 @@ int main() {
   OSCreateTask(task_radio_listen,       TASK_RADIO_LISTEN_P,      3);
   OSCreateTask(task_radio_talk,         TASK_RADIO_TALK_P,        3);
   OSCreateTask(task_pi,                 TASK_PI_P,                2);
+  OSCreateTask(task_beacon,             TASK_BEACON_P,              4);
   //OSCreateTask(task_scheduler,          TASK_SCHEDULER_P,           4);
-  //OSCreateTask(task_beacon,             TASK_BEACON_P,              3);
-  
   // Create semaphore
   //OSCreateBinSem(BINSEM_RADIO_CLEAR,  1);    // initialize this to 1 to signal that radio is not in use
 
   // Create message queues
   //OSgltypeMsgQP radio_messageq_buffer[SIZEOFRADIOMSGQ];
-  //OSgltypeMsgQP radioMsgBuff[SIZEOF_RADIO_MSGQ];
-  //OSCreateMsgQ(RADIO_MSGQ_P, RADIO_MSGQ_CBP_P, radioMsgBuff, SIZEOF_RADIO_MSGQ);
+  OSgltypeMsgQP radioMsgBuff[SIZEOF_RADIO_MSGQ];
+  OSCreateMsgQ(RADIO_MSGQ_P, RADIO_MSGQ_CBP_P, radioMsgBuff, SIZEOF_RADIO_MSGQ);
 
 //Init SD-Card
   //csk_sd_pwr_on();

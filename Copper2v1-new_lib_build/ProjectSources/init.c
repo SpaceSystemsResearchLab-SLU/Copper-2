@@ -48,10 +48,6 @@ void init(void) {
   // Keep interrupts off for now ...
   __disable_interrupt();
 
-  // H2.9  (IO.39 -> AN15 -> AN7 -> RB7) will be PI1 power
-  // H2.13 (IO.35 -> AN11 -> AN2 -> RB2) will be quark power
-  // H2.14 (IO.34 -> AN10 -> AN3 -> RB3) will be Burn Circuit (PI2) power
-
   // All CSK control signals are active LOW.
   TRISA = ~(BIT15+BIT14+BIT13+BIT12+                                          BIT3+BIT2          );
   TRISB = ~(BIT15+BIT14+BIT13+BIT12+BIT11+BIT10+BIT9+BIT8+BIT7+BIT6+BIT5+BIT4+BIT3+BIT2+BIT1+BIT0); // set RB2, 3, 7 as outputs
@@ -76,9 +72,11 @@ void init(void) {
   csk_mhx_pwr_off();
   csk_usb_close();
   csk_led_status_close();
- 
-// For safety -- Initialize power lines to Pi, Quark, and Burn Circuit to OFF!!
 
+  // H2.9  (IO.39 -> AN15 -> AN7 -> RB7) will be PI1 power
+  // H2.13 (IO.35 -> AN11 -> AN2 -> RB2) will be quark power
+  // H2.14 (IO.34 -> AN10 -> AN3 -> RB3) will be Burn Circuit (PI2) power
+// For safety -- Initialize power lines to Pi, Quark, and Burn Circuit to OFF!!
   csk_io39_low();  // H2.9 == PI1_IO (Pi Power On/Off)
   csk_io35_low();  // H2.13 == QUARK_IO (Quark Power On/Off)
   csk_io34_low();  // H2.14 == BURN CIRCUIT (AKA: PI2_IO) (Burn Circuit Power On/Off)
@@ -116,22 +114,24 @@ void init(void) {
           
   // Init UARTs...
   // UARTs won't transmit until interrupts are enabled ...
-  csk_uart0_open(UART_500000_N81_MAIN); // goes to Pi
+  csk_uart0_open(UART_38400_N81_MAIN);
+  //csk_uart0_open(UART_500000_N81_MAIN); // goes to Pi
   //csk_uart0_open(UART_1000000_N81_MAIN); // goes to Pi
   // set radio uart to 9600
-  //csk_uart1_open(UART_9600_N81_MAIN); // Helium Radio UART
-  csk_uart2_open(UART_115200_N81_MAIN);
+  csk_uart1_open(UART_9600_N81_MAIN); // Helium Radio UART
+  csk_uart2_open(UART_38400_N81_MAIN); // used for debug to console out
   //csk_uart2_open(UART_1000000_N81_MAIN);
   dprintf(STR_CRLF STR_CRLF);
   dprintf("Pumpkin " STR_CSK_TARGET " " STR_APP_NAME "." STR_CRLF);
   dprintf(STR_VERSION "." STR_CRLF);
   dprintf("(Re)Booting up...........\r\n");
-  
+
+  mRtccOn();
   // initialize the real time clock
   RtccInitClock();
-  //RtccWrOn(); // enable writing to the Rtcc register
-  mRtccOn();
-  //init_Rtcc();
+  RtccWrOn(); // enable writing to the Rtcc register
+  //mRtccOn();
+  init_Rtcc();
   
 } /* init() */
 
