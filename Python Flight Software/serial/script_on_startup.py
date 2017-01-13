@@ -16,49 +16,62 @@ import serial
 import binascii
 from time import sleep
 
-MESSAGE_TO_PIC = '$$$PIPOWEREDON'
+MESSAGE_TO_PIC = '$$$0BPIPOWEREDON'
 MESSAGE_FROM_PIC = 'ROGERTHAT'
 MESSAGE_HEADER = '$$$'
 
-
-gpio = serial.Serial('/dev/ttyAMA0', 1000000, timeout = 0)
+#gpio = serial.Serial('/dev/ttyAMA0', 1000000, timeout = 0)
+gpio = serial.Serial('/dev/ttyAMA0', 38400, timeout = 0)
 PIC_response = False
 
 # Loop until the PIC responds to the message
 while not PIC_response:
 
     # There is no response in the UART line
-    while not gpio.inWaiting():
+    while not gpio.inWaiting() and not PIC_response:
         gpio.write( MESSAGE_TO_PIC )     # Write message to PIC
         #DEBUG
-        print 'in waiting...'
+        print 'in waiting... ' + str(PIC_response)
         sleep(0.5)
-    
 
     # There is a response in the UART line
-    while gpio.inWaiting():    
-        gpio.write( MESSAGE_TO_PIC )     # Write message to PIC
+    while gpio.inWaiting() and not PIC_response:    
+        print '------------------'
+	gpio.write( MESSAGE_TO_PIC )     # Write message to PIC
 	sleep(0.5)	
 
         # Parse message
-        header = gpio.read(3)
-        PIC_message = gpio.read(gpio.inWaiting())
-       # num_bytes = PIC_message[1]
+        
+	PIC_message = gpio.read(gpio.inWaiting())
+        header = PIC_message[0:3]
+        msg_length = int(PIC_message[3:5], 16)
+        
+        if (isinstance(msg_length,(int,long))):
+            msg_length = int(msg_length)
+            print str(msg_length)
+        else:
+            break
+
+        message = str(PIC_message[5:5+msg_length+0])
 
         #DEBUG
         print 'not in waiting...'
-	print 'ascii header: ' + header
-	print 'ascii message: ' + PIC_message	
-	
+	#print 'ascii header + message: ' + header + message
+        #print header
+	print message 
+	print len(message)
+        print MESSAGE_FROM_PIC
+	print len(MESSAGE_FROM_PIC)
+        #print message == str(MESSAGE_FROM_PIC)
 
-        if header == MESSAGE_HEADER:
-            
-            if PIC_message == MESSAGE_FROM_PIC : # PIC confirms connection
+        if ((header == MESSAGE_HEADER)):
+            if message == MESSAGE_FROM_PIC: # PIC confirms connection
                 PIC_response = True
                 #DEBUG
                 print 'Got it! Connection Confirmed.'
-
+                break
+                
+    if PIC_response:
+        break
 
 gpio.close()
-
-
