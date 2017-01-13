@@ -14,6 +14,5 @@
  */
 
 #define BINSEM_RADIO_CLEAR          OSECBP(1)
-//#define RADIO_MSGQ_P                OSECBP(2)
-
-//#define RADIO_MSGQ_CBP_P            OSMQCBP(1)
+#define RADIO_MSGQ_P                OSECBP(2)
+#define RADIO_MSGQ_CBP_P            OSMQCBP(1)
