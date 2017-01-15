@@ -84,6 +84,6 @@ void task_beacon(void) {
     OS_Delay(250);
     OS_Delay(250);
     OS_Delay(250);
-    OS_Delay(250);
+    OS_Delay(230);
     } // end while(1)
 } // end task_beacon(void)

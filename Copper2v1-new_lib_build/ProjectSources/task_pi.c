@@ -14,6 +14,7 @@
 //#include "Rtcc.h"
 #include "ports.h"
 unsigned char TAKEPICPI = FALSE;
+unsigned char TAKEPICQ = FALSE;
 
 void task_pi(void) {
   static int received = 0;
@@ -30,7 +31,7 @@ void task_pi(void) {
   static BOOL RTS_FROM_PI = FALSE; // when Pi needs to talk to PIC
   static BOOL CTS_FROM_PI = FALSE; // when Pi needs to talk to PIC
   //rtccTimeDate init_rtcc_time;
-  TAKEPICPI = FALSE;
+  //TAKEPICPI = FALSE;
   
   dprintf("Starting task_pi...\r\n");
   

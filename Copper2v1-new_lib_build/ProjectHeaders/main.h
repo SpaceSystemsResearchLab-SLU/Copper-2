@@ -35,9 +35,11 @@ typedef struct {
   unsigned int exercise_io_running:1;
 } csk_status_t;
 
-// Extern variable declarations.
+// Global variable declarations.
 extern csk_status_t csk_status;
 extern unsigned char TAKEPICPI;
+extern unsigned char TAKEPICQ;
+extern unsigned char PIOFF;
 
 
 #endif /* __main_h */
