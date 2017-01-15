@@ -16,6 +16,7 @@
 #include "pic24_uart.h"
 
 // Microchip PIC24F Peripehral Library
+#include <PIC24F_periph_features.h>
 #include <pps.h>
 #include <pwrmgnt.h>
 #include <timer.h>
@@ -126,11 +127,17 @@ void init(void) {
   dprintf(STR_VERSION "." STR_CRLF);
   dprintf("(Re)Booting up...........\r\n");
 
-  mRtccOn();
+ // mRtccOn();
   // initialize the real time clock
-  RtccInitClock();
-  RtccWrOn(); // enable writing to the Rtcc register
+  //RtccInitClock();
+ // RtccWrOn(); // enable writing to the Rtcc register
   //mRtccOn();
+  OSCCONbits.SOSCEN = 1; Nop(); Nop(); Nop(); Nop(); Nop(); Nop();
+  dprintf("SOSCEN = %d", OSCCONbits.SOSCEN);
+  RCFGCALbits.RTCWREN = 1; Nop();
+  dprintf("RTCWREN = %d", RCFGCALbits.RTCWREN);
+  RCFGCALbits.RTCEN = 1; Nop();
+  dprintf("RTCEN = %d", RCFGCALbits.RTCEN);
   init_Rtcc();
   
 } /* init() */

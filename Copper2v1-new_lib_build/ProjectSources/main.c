@@ -18,6 +18,8 @@
 #include "task_scheduler.h"
 #include "task_beacon.h"
 #include "task_pi.h"
+#include "task_pi_listen.h"
+#include "task_burncircuit.h"
 
 csk_status_t csk_status;
 
@@ -69,12 +71,25 @@ int main() {
   //OSCreateTask(task_test,               TASK_TEST_P,              2);
   OSCreateTask(task_radio_listen,       TASK_RADIO_LISTEN_P,      3);
   OSCreateTask(task_radio_talk,         TASK_RADIO_TALK_P,        3);
-  OSCreateTask(task_pi,                 TASK_PI_P,                2);
-  OSCreateTask(task_beacon,             TASK_BEACON_P,              4);
+  OSCreateTask(task_pi,                 TASK_PI_P,                4);
+  OSCreateTask(task_beacon,             TASK_BEACON_P,            4);
+  OSCreateTask(task_pi_listen,          TASK_PI_LISTEN_P,         3);
+  OSCreateTask(task_burncircuit,        TASK_BURNCIRCUIT_P,       6);
   //OSCreateTask(task_scheduler,          TASK_SCHEDULER_P,           4);
-  // Create semaphore
+  
+  // Create binary semaphores -- MAKE SURE THEY'RE DEFINED IN events.h AND
+  // THAT OSEVENTS IN salvocfg.h IS LARGE ENOUGH!
   //OSCreateBinSem(BINSEM_RADIO_CLEAR,  1);    // initialize this to 1 to signal that radio is not in use
+  OSCreateBinSem(BINSEM_PION, 0);
+  OSCreateBinSem(BINSEM_PIOFF, 0);
+  OSCreateBinSem(BINSEM_QUARKON, 0);
+  OSCreateBinSem(BINSEM_QUARKOFF, 0);
+  OSCreateBinSem(BINSEM_BURNCIRCUIT,0);
+  OSCreateBinSem(BINSEM_TAKEPICPI, 0);
+  OSCreateBinSem(BINSEM_TAKEPICQ, 0);
+  OSCreateBinSem(BINSEM_GETBCN, 0);
 
+  
   // Create message queues
   //OSgltypeMsgQP radio_messageq_buffer[SIZEOFRADIOMSGQ];
   OSgltypeMsgQP radioMsgBuff[SIZEOF_RADIO_MSGQ];

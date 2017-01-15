@@ -2,6 +2,7 @@
 #include "debug_functions.h"
 #include "events.h"
 #include "radio.h"
+#include "task_beacon.h"
 
 //#include <stdio.h>
 
@@ -16,7 +17,6 @@
 // Salvo headers
 #include "salvo.h"
 
-#include "task_beacon.h"
 
 
 void task_beacon(void) {
@@ -41,46 +41,55 @@ void task_beacon(void) {
       OS_Delay(20); // this allows time for ATMEGA settings to settle
 
   /** Begin reading EPS values...*/
-      CS1_LOW; // Chip Select 1 (Select Atmel chip 1)
-  // Calling an OS_Delay here is ok as this function is inline and we will still be in the
-  // stack frame of the task function.
-      // Without this delay, ADC is read incorrectly
-      OS_Delay(20);
-      for(data=0;data<8;data++) { //ADC-Reads (10-Bits)
-        ADCData[data]=0;
-        for(count=0;count<10;count++) { //Bits
-          SCLK_HIGH;
-          for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-          ADCData[data]|=(MISO<<count);
-          SCLK_LOW;
-          for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+
+     // TODO: Need RTCC in order to have a beacon interval!!
+      OSSignalBinSem(BINSEM_GETBCN); // for testing
+      
+      if (OSReadBinSem(BINSEM_GETBCN)) {
+        OSTryBinSem(BINSEM_GETBCN);
+
+        CS1_LOW; // Chip Select 1 (Select Atmel chip 1)
+    // Calling an OS_Delay here is ok as this function is inline and we will still be in the
+    // stack frame of the task function.
+        // Without this delay, ADC is read incorrectly
+        OS_Delay(20);
+        for(data=0;data<8;data++) { //ADC-Reads (10-Bits)
+          ADCData[data]=0;
+          for(count=0;count<10;count++) { //Bits
+            SCLK_HIGH;
+            for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+            ADCData[data]|=(MISO<<count);
+            SCLK_LOW;
+            for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+          }
         }
-      }
-      CS1_HIGH;  // Deselect EPS Atmel chip 1
-      OS_Delay(20);
-      CS2_LOW;  // Select EPS Atmel chip 2
-      // Without this delay, ADC is read incorrectly
-      OS_Delay(20);
-      for(data=8;data<16;data++) { //ADC-Reads (10-Bits)
-        ADCData[data]=0;
-        for(count=0;count<10;count++) { //Bits
-          SCLK_HIGH;
-          for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
-          ADCData[data]|=(MISO<<count);
-          SCLK_LOW;
-          for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+        CS1_HIGH;  // Deselect EPS Atmel chip 1
+        OS_Delay(20);
+        CS2_LOW;  // Select EPS Atmel chip 2
+        // Without this delay, ADC is read incorrectly
+        OS_Delay(20);
+        for(data=8;data<16;data++) { //ADC-Reads (10-Bits)
+          ADCData[data]=0;
+          for(count=0;count<10;count++) { //Bits
+            SCLK_HIGH;
+            for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+            ADCData[data]|=(MISO<<count);
+            SCLK_LOW;
+            for(i=0;i<SCLK_DELAY;i++) Nop(); //Delay
+          }
         }
-      }
-      CS2_HIGH;
-/** End reading EPS values */
+        CS2_HIGH;
+  /** End reading EPS values */
 
-      sprintf(beacon_header, "%03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X",
-          ADCData[0], ADCData[1], ADCData[2], ADCData[3], ADCData[4],
-          ADCData[5], ADCData[6], ADCData[7], ADCData[8], ADCData[9], ADCData[10], ADCData[11],
-          ADCData[12], ADCData[13], ADCData[14], ADCData[15]);
+        sprintf(beacon_header, "%03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X %03X",
+            ADCData[0], ADCData[1], ADCData[2], ADCData[3], ADCData[4],
+            ADCData[5], ADCData[6], ADCData[7], ADCData[8], ADCData[9], ADCData[10], ADCData[11],
+            ADCData[12], ADCData[13], ADCData[14], ADCData[15]);
 
-    OSSignalMsgQ(RADIO_MSGQ_P, (OStypeMsgP) beacon_header);
+        OSSignalMsgQ(RADIO_MSGQ_P, (OStypeMsgP) beacon_header);
 
+      } // end: if(OSReadBinSem(...)
+      
     OS_Delay(250);
     OS_Delay(250);
     OS_Delay(250);
