@@ -39,7 +39,7 @@ if __name__ == '__main__':
   # Global variables:
   take_picture = False
   send_pic_response = False
-  message = ""
+  message = "pics"
 
   job1 = Process(target=talk).start()
   job2 = Process(target=listen).start()
