@@ -3,6 +3,8 @@
 #define TASK_RADIO_LISTEN_P     OSTCBP(2)
 #define TASK_RADIO_TALK_P       OSTCBP(3)
 #define TASK_BEACON_P           OSTCBP(4)
+#define TASK_PI_LISTEN_P        OSTCBP(5)
+#define TASK_BURNCIRCUIT_P      OSTCBP(6)
 
 //#define TASK_SCHEDULER_P        OSTCBP(4)
 //#define TASK_TEST_P             OSTCBP(3)

@@ -8,5 +8,5 @@
 //#define OSLIBRARY_OPTION            OSA
 #define OSMESSAGE_QUEUES            1
 #define OSEVENTS                    16
-#define OSEVENT_FLAGS               5
+#define OSEVENT_FLAGS               7
 #define OSTASKS                     7 // remember to change to higher # like 7!

@@ -39,6 +39,7 @@ typedef struct {
 extern csk_status_t csk_status;
 extern unsigned char TAKEPICPI;
 extern unsigned char TAKEPICQ;
+extern unsigned char PION;
 extern unsigned char PIOFF;
 
 

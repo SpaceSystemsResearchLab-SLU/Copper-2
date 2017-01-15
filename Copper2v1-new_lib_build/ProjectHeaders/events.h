@@ -15,4 +15,13 @@
 
 #define BINSEM_RADIO_CLEAR          OSECBP(1)
 #define RADIO_MSGQ_P                OSECBP(2)
+#define BINSEM_PION                 OSECBP(3)
+#define BINSEM_PIOFF                OSECBP(4)
+#define BINSEM_BURNCIRCUIT          OSECBP(5)
+#define BINSEM_TAKEPICPI            OSECBP(6)
+#define BINSEM_TAKEPICQ             OSECBP(7)
+#define BINSEM_QUARKON              OSECBP(8)
+#define BINSEM_QUARKOFF             OSECBP(9)
+#define BINSEM_GETBCN               OSECBP(10)
+
 #define RADIO_MSGQ_CBP_P            OSMQCBP(1)
