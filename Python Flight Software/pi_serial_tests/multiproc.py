@@ -1,6 +1,7 @@
 from multiprocessing import *
 from flat_file_getandset import *
 from time import sleep
+from picamera import *
 import sys
 import os
 
@@ -31,6 +32,11 @@ def cameraMonitor():
       setTakePicture(0)
       setMessage("")
       setSendPicResponse(1)
+      #### FOR RASPBERRY PI ONLY ####
+      cam = PiCamera()
+      cam.capture('tester.jpg')
+      print 'Picture Taken'
+      ###############################
 
 def setState(newstdin):
   while True:
