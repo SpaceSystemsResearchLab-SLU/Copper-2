@@ -1,48 +1,48 @@
 from multiprocessing import *
+from flat_file_getandset import *
 from time import sleep
+import sys
+import os
+
 
 def listen():
   while True:
-    if message == 'pics':
-      take_picture = True
-
+    if getMessage() == 'pics':
+      setTakePicture(1)
 
 def talk():
   while True:
-    if send_pic_response == True:
+    if getSendPicResponse() == '1':
       print 'Sending message!'
-      send_pic_response = False
+      setSendPicResponse(0)
 
 def printState():
   while True:
-    print 'Message: ' + message
-    print 'take_picture: ' + str(take_picture)
-    print 'send_pic_response: ' + str(send_pic_response)
+    print 'Message: ' + getMessage()
+    print 'take_picture: ' + getTakePicture()
+    print 'send_pic_response: ' + getSendPicResponse()
     print '-------------------'
     sleep(1)
 
 def cameraMonitor():
   while True:
-    if take_picture == True:
+    if getTakePicture() == '1':
       print 'Taking Picture!'
-      take_picture = False
-      message = ""
-      send_pic_response = True
+      setTakePicture(0)
+      setMessage("")
+      setSendPicResponse(1)
 
-def setState():
+def setState(newstdin):
   while True:
+    sys.stdin = newstdin
     answer = raw_input('Message[n to not change]: ')
     if answer.lower().strip() != 'n':
-      message = answer
+      setMessage(str(answer))
 
 if __name__ == '__main__':
-  # Global variables:
-  take_picture = False
-  send_pic_response = False
-  message = "pics"
-
   job1 = Process(target=talk).start()
   job2 = Process(target=listen).start()
   job3 = Process(target=printState).start()
   job4 = Process(target=cameraMonitor).start()
-  job5 = Process(target=setState).start()
+  newstdin = os.fdopen(os.dup(sys.stdin.fileno()))
+  job5 = Process(target=setState, args=(newstdin,)).start()
