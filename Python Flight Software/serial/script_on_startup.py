@@ -14,11 +14,18 @@
 
 import serial
 import binascii
+from picamera import *
 from time import sleep
+from datetime import *
 
 MESSAGE_TO_PIC = '$$$0BPIPOWEREDON'
 MESSAGE_FROM_PIC = 'ROGERTHAT'
+TAKE_PIC_PI = "TAKEPICPI"
+PI_OFF = "PIOFF"
+
 MESSAGE_HEADER = '$$$'
+
+pic_pi_comm_valid = False
 
 #gpio = serial.Serial('/dev/ttyAMA0', 1000000, timeout = 0)
 gpio = serial.Serial('/dev/ttyAMA0', 38400, timeout = 0)
@@ -32,13 +39,13 @@ while not PIC_response:
         gpio.write( MESSAGE_TO_PIC )     # Write message to PIC
         #DEBUG
         print 'in waiting... ' + str(PIC_response)
-        sleep(0.5)
+        sleep(0.75)
 
     # There is a response in the UART line
     while gpio.inWaiting() and not PIC_response:    
         print '------------------'
 	gpio.write( MESSAGE_TO_PIC )     # Write message to PIC
-	sleep(0.5)	
+	sleep(0.75)	
 
         # Parse message
         
@@ -60,17 +67,26 @@ while not PIC_response:
         #print header
 	print message 
 	print len(message)
-        print MESSAGE_FROM_PIC
-	print len(MESSAGE_FROM_PIC)
+        #print MESSAGE_FROM_PIC
+	#print len(MESSAGE_FROM_PIC)
         #print message == str(MESSAGE_FROM_PIC)
 
         if ((header == MESSAGE_HEADER)):
             if message == MESSAGE_FROM_PIC: # PIC confirms connection
-                PIC_response = True
+                #PIC_response = True
                 #DEBUG
                 print 'Got it! Connection Confirmed.'
+                pic_pi_comm_valid = True
+            if pic_pi_comm_valid and message == TAKE_PIC_PI:
+                # take Pi Picture
+                cam = PiCamera()
+                fn = '{:%m-%d-%Y_%H:%M:%S}'.format(datetime.now()) + '.jpg' 
+                cam.capture(fn)
+                print 'picture confirm'
+                PIC_response = True
                 break
-                
+
+
     if PIC_response:
         break
 
