@@ -31,9 +31,13 @@ extern "C" {
 #define CALL0	'C'  // 0x41 *2 = 0x82
 #define CALL1	'U'  // 0x52 *2 = 0xA4
 #define CALL2	'2'  // 0x47 *2 = 0x8E
-#define CALL3	0x00
-#define CALL4	0x00
-#define CALL5	0x00
+//#define CALL3	0x00
+//#define CALL4	0x00
+//#define CALL5	0x00
+#define CALL3	'C'
+#define CALL4	'U'
+#define CALL5	'2'
+
 #define GROUND0	'S'  // 0x53 *2 = 0xA6
 #define GROUND1	'L'  // 0x4C *2 = 0x98
 #define GROUND2	'U'  // 0x55 *2 = 0xAA

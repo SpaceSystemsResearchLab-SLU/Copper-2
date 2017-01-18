@@ -30,25 +30,40 @@ void task_pi(void) {
   static BOOL CTS_FROM_PI = FALSE; // when Pi needs to talk to PIC
   //rtccTimeDate init_rtcc_time;
   //TAKEPICPI = FALSE;
-  
+
+ // static char test[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  //static char* test2;
+
+ // test2 = (char*)test+25;
+
+ // dprintf("test: %s Length = %d\r\n",test,strlen(test));
+ // dprintf("test2: %s Length = %d\r\n",test2,strlen(test2));
+
   dprintf("Starting task_pi...\r\n");
   
   while(1) {
-
-
+    //dprintf("In task_pi...\r\n");
+    unsigned char rg1_status = PORTGbits.RG1;
+    dprintf("RG1 Status: %d\r\n",rg1_status);
+    
     if (OSReadBinSem(BINSEM_PION)) {
-      OSTryBinSem(BINSEM_PION);
-      csk_io39_high();
+      //OSTryBinSem(BINSEM_PION);
+      //csk_io39_high();
       //PION = TRUE;
     }  
     if (OSReadBinSem(BINSEM_PIOFF)) {
+      csk_uart0_puts("$$$05PIOFF");
+      OS_Delay(50);
+      csk_uart0_puts("$$$05PIOFF");
+      OS_Delay(50);
+      csk_uart0_puts("$$$05PIOFF");
+      OS_Delay(250);OS_Delay(250);OS_Delay(250);OS_Delay(250); // wait 10sec
+      csk_io39_low(); // turn Pi power off
       OSTryBinSem(BINSEM_PIOFF);
-      csk_uart0_puts("$$$05PIOFF");
-      OS_Delay(100);
-      csk_uart0_puts("$$$05PIOFF");
     }
-    if (OSReadBinSem(BINSEM_TAKEPICPI)) {
+    if (OSReadBinSem(BINSEM_TAKEPICPI) && OSReadBinSem(BINSEM_PI_ISON)) {
       csk_uart0_puts("$$$09TAKEPICPI");
+      //csk_uart2_puts("$$$09TAKEPICPI");
     } // end: BINSEM_TAKEPICPI
     if (OSReadBinSem(BINSEM_TAKEPICQ)) {
       OSTryBinSem(BINSEM_TAKEPICQ);
@@ -64,7 +79,7 @@ void task_pi(void) {
       csk_io35_low();
 
     }
- 
-    OS_Delay(50);
+ //RTCCgrab();
+    OS_Delay(100);
   } // end while(1)
 } // end task_pi()

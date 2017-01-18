@@ -81,7 +81,8 @@ void init(void) {
   csk_io39_low();  // H2.9 == PI1_IO (Pi Power On/Off)
   csk_io35_low();  // H2.13 == QUARK_IO (Quark Power On/Off)
   csk_io34_low();  // H2.14 == BURN CIRCUIT (AKA: PI2_IO) (Burn Circuit Power On/Off)
-
+  //csk_io24_high(); // for testing
+  
   // Set up to run with primary oscillator.
   // See _CONFIG2 above. A configuration-word-centric setup of the
   //  oscillator(s) was chosen because of its relative simplicity.
@@ -107,11 +108,6 @@ void init(void) {
 
   iPPSInput(IN_FN_PPS_U3RX,IN_PIN_PPS_RP25);        // uart3 (csk_uart2) rx pin setup
   iPPSOutput(OUT_PIN_PPS_RP22,OUT_FN_PPS_U3TX);     // uart3 (csk_uart2) tx pin setup
-
-  // enable motherboard pin h2.22 (IO.26)
-  InputChange_Clear_Intr_Status_Bit;
-  ConfigIntCN(INT_ENABLE|INT_PRI_1);
-  EnableCN78;
           
   // Init UARTs...
   // UARTs won't transmit until interrupts are enabled ...
@@ -132,13 +128,9 @@ void init(void) {
   //RtccInitClock();
  // RtccWrOn(); // enable writing to the Rtcc register
   //mRtccOn();
-  OSCCONbits.SOSCEN = 1; Nop(); Nop(); Nop(); Nop(); Nop(); Nop();
-  dprintf("SOSCEN = %d", OSCCONbits.SOSCEN);
-  RCFGCALbits.RTCWREN = 1; Nop();
-  dprintf("RTCWREN = %d", RCFGCALbits.RTCWREN);
-  RCFGCALbits.RTCEN = 1; Nop();
-  dprintf("RTCEN = %d", RCFGCALbits.RTCEN);
-  init_Rtcc();
+
+
+ // RTCCmain(); // located in RTCC.c
   
 } /* init() */
 

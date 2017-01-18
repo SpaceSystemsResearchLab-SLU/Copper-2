@@ -89,9 +89,11 @@ void task_beacon(void) {
         OSSignalMsgQ(RADIO_MSGQ_P, (OStypeMsgP) beacon_header);
 
       } // end: if(OSReadBinSem(...)
-      
+   //  static char msg_test[] = "This is a test from Copper-2!";
+   // OSSignalMsgQ(RADIO_MSGQ_P, (OStypeMsgP) msg_test);
+  
     OS_Delay(250);
-    OS_Delay(250);
+    OS_Delay(250); 
     OS_Delay(250);
     OS_Delay(230);
     } // end while(1)
