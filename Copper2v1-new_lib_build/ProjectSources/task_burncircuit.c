@@ -26,6 +26,7 @@ $Date: 2009-11-02 00:45:07-08 $
 #include "salvo.h"
 
 void task_burncircuit(void) {
+  static char* tmp;
   // This task runs the burn circuit any time the binary
   // semaphore is enabled
   while(1) {
@@ -34,11 +35,15 @@ void task_burncircuit(void) {
 	//OS_WaitBinSem(BINSEM_BURNCIRCUIT, OSNO_TIMEOUT);
     // WaitBinSem sets the semaphore low again
     if(OSReadBinSem(BINSEM_BURNCIRCUIT)) {
-		  OSTryBinSem(BINSEM_BURNCIRCUIT);
 //	csk_uart0_puts("Turning on Burn Circuit\r\n");
 	    csk_io34_high();
-	    OS_Delay(250);OS_Delay(250);OS_Delay(250);OS_Delay(250);
-	    csk_io34_low();
+      sprintf(tmp, "Burn circuit ON!\r\n");
+    OSSignalMsgQ(RADIO_MSGQ_P, (OStypeMsgP) tmp);
+	    //OS_Delay(250);OS_Delay(250);OS_Delay(250);OS_Delay(50);
+	    //csk_io34_low();
+      OSTryBinSem(BINSEM_BURNCIRCUIT);
+      sprintf(tmp, "Burn circuit OFF!\r\n");
+    OSSignalMsgQ(RADIO_MSGQ_P, (OStypeMsgP) tmp);
 //	csk_uart0_puts("Turning off Burn Circuit\r\n");
     } // end: if(OSReadBinSem...)
   } // end: while(1)

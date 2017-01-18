@@ -204,16 +204,16 @@ void configure_radio(void) {
   static RADIO_TX_PACKET packet;
 
   radio_config.interface_baud_rate = HE_UART_BAUD_RATE_9600;
-  radio_config.tx_power_amp_level = 0x87;
+  radio_config.tx_power_amp_level = 0x87;  // 0x87 = default
   radio_config.rx_rf_baud_rate = HE_RF_BAUD_RATE_9600;
   radio_config.tx_rf_baud_rate = HE_RF_BAUD_RATE_9600;
   radio_config.rx_modulation = HE_RF_MODULATION_GFSK;
   radio_config.tx_modulation = HE_RF_MODULATION_GFSK;
   radio_config.rx_freq = ONE_FORTY_FIVE_ZERO_ZERO_ZERO_KHZ;
-  radio_config.tx_freq = FOUR_THIRTY_SEVEN_TWO_FOUR_EIGHT_KHZ;
+  radio_config.tx_freq = FOUR_THIRTY_SEVEN_TWO_FOUR_EIGHT_KHZ; // 437.250 actual
   radio_config.source[0] = CALL0;
   radio_config.source[1] = CALL1;
-  radio_config.source[2] = CALL2;
+  radio_config.source[2] = CALL2; // MYCALL HAS TO BE 6 chars else Kenwood TNC fails to decode AX.25 packet
   radio_config.source[3] = CALL3;
   radio_config.source[4] = CALL4;
   radio_config.source[5] = CALL5;
@@ -284,7 +284,8 @@ void task_radio_talk(void) {
     fill_out_radio_tx_packet(&packet,
               &header,
               TRANSMIT_DATA,
-              65,
+            // 65,
+              strlen(msgP),
               msgP);
     send_packet_to_radio(&packet);
 

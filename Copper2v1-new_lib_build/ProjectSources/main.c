@@ -80,12 +80,13 @@ int main() {
   // Create binary semaphores -- MAKE SURE THEY'RE DEFINED IN events.h AND
   // THAT OSEVENTS IN salvocfg.h IS LARGE ENOUGH!
   //OSCreateBinSem(BINSEM_RADIO_CLEAR,  1);    // initialize this to 1 to signal that radio is not in use
-  OSCreateBinSem(BINSEM_PION, 0);
+  OSCreateBinSem(BINSEM_PION, 1);
+  OSCreateBinSem(BINSEM_PI_ISON, 0);
   OSCreateBinSem(BINSEM_PIOFF, 0);
   OSCreateBinSem(BINSEM_QUARKON, 0);
   OSCreateBinSem(BINSEM_QUARKOFF, 0);
-  OSCreateBinSem(BINSEM_BURNCIRCUIT,0);
-  OSCreateBinSem(BINSEM_TAKEPICPI, 0);
+  OSCreateBinSem(BINSEM_BURNCIRCUIT, 0);
+  OSCreateBinSem(BINSEM_TAKEPICPI, 1);
   OSCreateBinSem(BINSEM_TAKEPICQ, 0);
   OSCreateBinSem(BINSEM_GETBCN, 0);
 

@@ -23,5 +23,6 @@
 #define BINSEM_QUARKON              OSECBP(8)
 #define BINSEM_QUARKOFF             OSECBP(9)
 #define BINSEM_GETBCN               OSECBP(10)
+#define BINSEM_PI_ISON              OSECBP(11)
 
 #define RADIO_MSGQ_CBP_P            OSMQCBP(1)

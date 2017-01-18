@@ -10,7 +10,7 @@
 
 static char temp[100];
 static unsigned char received_packet[MAX_RADIO_PACKET_LENGTH];
-static unsigned char MYCALL[6] = {2*CALL0,2*CALL1,2*CALL2,0x40,0x40,0x40};
+static unsigned char MYCALL[6] = {2*CALL0,2*CALL1,2*CALL2,2*CALL3,2*CALL4,2*CALL5};
 static unsigned char UNPROTO[6] = {2*GROUND0,2*GROUND1,2*GROUND2,2*GROUND3,2*GROUND4,2*GROUND5};
 
 extern RADIO_CONFIGURATION_TYPE radio_config;
@@ -106,10 +106,11 @@ void task_radio_listen(void) {
           // dprintf("transmit data ACK\r\n");
           break;
         case INCOMING_RECEIVED_DATA: ;// data from ground
-          int callsigncheck;
-          callsigncheck = callsignCheck(received_packet);
+          //int callsigncheck;
+          //callsigncheck = callsignCheck(received_packet);
           if (callsignCheck(received_packet)){
             process_command(received_packet);
+           // process_command(((char*)received_packet)+25); // in external_commands.c
           }
           break;
         case INCOMING_TRANSCEIVER_CONFIG:  // transceiver config incoming, this will be in response to a 0x1005 command to the radio
